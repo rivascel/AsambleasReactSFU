@@ -2,12 +2,11 @@ import React, { useState, useEffect, useContext, useRef } from "react";
 import axios from "axios";
 import { UserContext } from "../../components/UserContext";
 import { io } from "socket.io-client";
-import { listenToUserRequests } from '../../supabase-client';
+import { listenToUserRequests, requestToJoinRoom, getPendingRequest, getPendingRequestById, 
+  getApprovedUserById, deleteCandidate /*ApprovedUserQuery,approveUser*/ } from '../../supabase-client';
 import AppContext from '../../context/AppContext';
 
-
 const AskToParticipate = () => {
-  // const API_URL = import.meta.env.VITE_API_URL;
   const { apiUrl } = useContext(AppContext);
 
   const socketRef = useRef(null);
@@ -15,13 +14,14 @@ const AskToParticipate = () => {
   const [loading, setLoading] = useState(true);
   const { email, setCheckApprove } = useContext(UserContext);
   const [requestStatus, setRequestStatus] = useState(() => {
-    const saved = localStorage.getItem("requestStatus");
-    // console.log("💾 [AskToParticipate] Estado cargado de localStorage:", saved);
-    if (!saved || saved === "undefined") return "none";
-    return saved;
-    });
+  const saved = localStorage.getItem("requestStatus");
+  
+  // console.log("💾 [AskToParticipate] Estado cargado de localStorage:", saved);
+  if (!saved || saved === "undefined") return "none";
+  return saved;
+  });
 
-    socketRef.current = io(`${apiUrl}`, {
+  socketRef.current = io(`${apiUrl}`, {
     withCredentials: true,
     transports: ["websocket"]
   });
@@ -84,55 +84,30 @@ const AskToParticipate = () => {
   };
 }, [email, roomId]);
 
-
-
   useEffect( ()=>{
     if (!email) return;
 
-    const fetchUsers = async () =>  {
-      try {
-        const [pendingRes] = await Promise.all([
-          fetch(`${apiUrl}/api/recover-users-id`, { 
-              method: 'POST',
-              headers: { 'Content-Type':'application/json' },
-              body: JSON.stringify({ roomId: "main-room", userId: email }),
-            })
-        ]);
+    try {
 
-        if (!pendingRes.ok /* || !approvedRes.ok */) {
-          throw new Error("Error al cargar los usuarios");
-        }
+        const pendingUsersById=getPendingRequestById(roomId, email) || [];
+        const approvedUsersById=getApprovedUserById(roomId, email) || [];
 
-        const pendingData = await pendingRes.json();
-
-        const pendingUsersById = pendingData.pendingUsersById || [];
-        const approvedUsersById = pendingData.approvedUsersById || [];
-
-        if (Array.isArray(pendingUsersById) && pendingUsersById.includes(email)) {
-        } else if (Array.isArray(approvedUsersById) && approvedUsersById.includes(email)) {
-        }
-
-        return { pendingUsersById, approvedUsersById /*, approvedUsers*/};
-
-      } catch (error) {
-        console.error("Error cargando usuarios:", error);
-        return { pendingUsersById: [], approvedUsersById: [] /*, approvedUsers: []*/ };
-      } finally {
-        setLoading(false);
+      if (Array.isArray(pendingUsersById) && pendingUsersById.includes(email)) {
+      } else if (Array.isArray(approvedUsersById) && approvedUsersById.includes(email)) {
       }
-    };
-    fetchUsers();
+
+
+    } catch (error) {
+      console.error("Error cargando usuarios:", error);
+    } finally {
+      setLoading(false);
+    }
     
   },[email]);
 
   const handleRequest = async () => {
     try {
-      // Ejemplo de envío al backend (ajusta a tu API o Supabase)
-      await axios.post(`${apiUrl}/api/request-participation`, 
-        { roomId: "main-room" }, 
-        {
-        withCredentials: true, // si usas cookies seguras
-      });
+      requestToJoinRoom(roomId, email);
       
       // setReq(true);
       setRequestStatus('pending');
@@ -145,11 +120,7 @@ const AskToParticipate = () => {
 
   const cancelRequest = async () => {
     try {
-      // Ejemplo de envío al backend (ajusta a tu API o Supabase)
-      await axios.post(`${apiUrl}/api/cancel-users`, 
-        { roomId: "main-room", userId:email }, 
-        {withCredentials: true} // si usas cookies seguras
-      );
+      deleteCandidate(email, roomId )
       setRequestStatus('none');
       // setReq(false);
 

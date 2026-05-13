@@ -50,8 +50,6 @@ const ProtectedRoute = ({ children }) => {
           }
           // No redirijas inmediatamente si estás en medio de la carga
         }
-
-        
       } catch (error) {
         console.warn("❌ No autenticado:", error);
 

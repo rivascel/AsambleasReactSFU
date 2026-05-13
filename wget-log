@@ -1,0 +1,1377 @@
+--2026-04-23 17:05:54--  https://update.code.visualstudio.com/commit:10c8e557c8b9f9ed0a87f61f1c9a44bde731c409/server-linux-x64/stable
+Resolving update.code.visualstudio.com (update.code.visualstudio.com)... 150.171.109.114, 2620:1ec:29:1::41, 2620:1ec:48:1::41
+Connecting to update.code.visualstudio.com (update.code.visualstudio.com)|150.171.109.114|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://vscode.download.prss.microsoft.com/dbazure/download/stable/10c8e557c8b9f9ed0a87f61f1c9a44bde731c409/vscode-server-linux-x64.tar.gz [following]
+--2026-04-23 17:05:55--  https://vscode.download.prss.microsoft.com/dbazure/download/stable/10c8e557c8b9f9ed0a87f61f1c9a44bde731c409/vscode-server-linux-x64.tar.gz
+Resolving vscode.download.prss.microsoft.com (vscode.download.prss.microsoft.com)... 23.218.213.13, 23.218.213.15, 2600:1419:c200:6::216:14b3, ...
+Connecting to vscode.download.prss.microsoft.com (vscode.download.prss.microsoft.com)|23.218.213.13|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 113186068 (108M) [application/octet-stream]
+Saving to: ‘/home/rivascel/.vscode-server/bin/10c8e557c8b9f9ed0a87f61f1c9a44bde731c409-1776981944.tar.gz’
+
+ome/rivascel/.vscode-server/b  38%[==================>                               ]  42.05M  --.-KB/s    eta 14m 38sme/rivascel/.vscode-server/bi  38%[==================>                               ]  42.05M  --.-KB/s    eta 14m 41se/rivascel/.vscode-server/bin  38%[==================>                               ]  42.05M  --.-KB/s    eta 14m 41s/rivascel/.vscode-server/bin/  38%[==================>                               ]  42.05M  --.-KB/s    eta 14m 44srivascel/.vscode-server/bin/1  38%[==================>                               ]  42.05M  --.-KB/s    eta 14m 44sivascel/.vscode-server/bin/10  38%[==================>                               ]  42.05M  --.-KB/s    eta 14m 47svascel/.vscode-server/bin/10c  38%[==================>                               ]  42.05M  --.-KB/s    eta 14m 47sascel/.vscode-server/bin/10c8  38%[==================>                               ]  42.05M  --.-KB/s    eta 14m 50sscel/.vscode-server/bin/10c8e  38%[==================>                               ]  42.05M  --.-KB/s    eta 14m 50scel/.vscode-server/bin/10c8e5  38%[==================>                               ]  42.05M  --.-KB/s    eta 14m 53sel/.vscode-server/bin/10c8e55  38%[==================>                               ]  42.05M  --.-KB/s    eta 14m 53sl/.vscode-server/bin/10c8e557  38%[==================>                               ]  42.05M  --.-KB/s    eta 14m 56s/.vscode-server/bin/10c8e557c  38%[==================>                               ]  42.05M  --.-KB/s    eta 14m 56s.vscode-server/bin/10c8e557c8  38%[==================>                               ]  42.05M  --.-KB/s    eta 14m 59svscode-server/bin/10c8e557c8b  38%[==================>                               ]  42.05M  --.-KB/s    eta 14m 59sscode-server/bin/10c8e557c8b9  38%[==================>                               ]  42.05M  --.-KB/s    eta 15m 2s code-server/bin/10c8e557c8b9f  38%[==================>                               ]  42.05M  --.-KB/s    eta 15m 2s ode-server/bin/10c8e557c8b9f9  38%[==================>                               ]  42.05M  --.-KB/s    eta 15m 5s de-server/bin/10c8e557c8b9f9e  38%[==================>                               ]  42.05M  --.-KB/s    eta 15m 5s e-server/bin/10c8e557c8b9f9ed  38%[==================>                               ]  42.05M  --.-KB/s    eta 15m 8s -server/bin/10c8e557c8b9f9ed0  38%[==================>                               ]  42.05M  --.-KB/s    eta 15m 8s server/bin/10c8e557c8b9f9ed0a  38%[==================>                               ]  42.05M  --.-KB/s    eta 15m 11server/bin/10c8e557c8b9f9ed0a8  38%[==================>                               ]  42.05M  --.-KB/s    eta 15m 11srver/bin/10c8e557c8b9f9ed0a87  38%[==================>                               ]  42.05M  --.-KB/s    eta 15m 14sver/bin/10c8e557c8b9f9ed0a87f  38%[==================>                               ]  42.05M  --.-KB/s    eta 15m 14ser/bin/10c8e557c8b9f9ed0a87f6  38%[==================>                               ]  42.05M  --.-KB/s    eta 15m 17sr/bin/10c8e557c8b9f9ed0a87f61  38%[==================>                               ]  42.05M  --.-KB/s    eta 15m 17s/bin/10c8e557c8b9f9ed0a87f61f  38%[==================>                               ]  42.05M  --.-KB/s    eta 15m 20sbin/10c8e557c8b9f9ed0a87f61f1  38%[==================>                               ]  42.05M  --.-KB/s    eta 15m 20sin/10c8e557c8b9f9ed0a87f61f1c  38%[==================>                               ]  42.05M  --.-KB/s    eta 15m 23sn/10c8e557c8b9f9ed0a87f61f1c9  38%[==================>                               ]  42.05M  --.-KB/s    eta 15m 23s/10c8e557c8b9f9ed0a87f61f1c9a  38%[==================>                               ]  42.05M  --.-KB/s    eta 15m 26s10c8e557c8b9f9ed0a87f61f1c9a4  38%[==================>                               ]  42.05M  --.-KB/s    eta 15m 26s0c8e557c8b9f9ed0a87f61f1c9a44  38%[==================>                               ]  42.05M  --.-KB/s    eta 15m 29sc8e557c8b9f9ed0a87f61f1c9a44b  38%[==================>                               ]  42.05M  --.-KB/s    eta 15m 29s8e557c8b9f9ed0a87f61f1c9a44bd  38%[==================>                               ]  42.05M  --.-KB/s    eta 15m 32se557c8b9f9ed0a87f61f1c9a44bde  38%[==================>                               ]  42.05M  --.-KB/s    eta 15m 32s557c8b9f9ed0a87f61f1c9a44bde7  38%[==================>                               ]  42.05M  --.-KB/s    eta 15m 35s57c8b9f9ed0a87f61f1c9a44bde73  38%[==================>                               ]  42.05M  --.-KB/s    eta 15m 35s7c8b9f9ed0a87f61f1c9a44bde731  38%[==================>                               ]  42.05M  --.-KB/s    eta 15m 38sc8b9f9ed0a87f61f1c9a44bde731c  38%[==================>                               ]  42.05M  --.-KB/s    eta 15m 38s8b9f9ed0a87f61f1c9a44bde731c4  38%[==================>                               ]  42.05M  --.-KB/s    eta 15m 41sb9f9ed0a87f61f1c9a44bde731c40  38%[==================>                               ]  42.05M  --.-KB/s    eta 15m 41s9f9ed0a87f61f1c9a44bde731c409  38%[==================>                               ]  42.05M  --.-KB/s    eta 15m 44sf9ed0a87f61f1c9a44bde731c409-  38%[==================>                               ]  42.05M  --.-KB/s    eta 15m 44s9ed0a87f61f1c9a44bde731c409-1  38%[==================>                               ]  42.05M  --.-KB/s    eta 15m 47sed0a87f61f1c9a44bde731c409-17  38%[==================>                               ]  42.05M  --.-KB/s    eta 15m 47sd0a87f61f1c9a44bde731c409-177  38%[==================>                               ]  42.05M  --.-KB/s    eta 15m 50s0a87f61f1c9a44bde731c409-1776  38%[==================>                               ]  42.05M  --.-KB/s    eta 15m 50sa87f61f1c9a44bde731c409-17769  38%[==================>                               ]  42.05M  --.-KB/s    eta 15m 53s87f61f1c9a44bde731c409-177698  38%[==================>                               ]  42.05M  --.-KB/s    eta 15m 53s7f61f1c9a44bde731c409-1776981  38%[==================>                               ]  42.05M  --.-KB/s    eta 15m 56sf61f1c9a44bde731c409-17769819  38%[==================>                               ]  42.05M  --.-KB/s    eta 15m 56s61f1c9a44bde731c409-177698194  38%[==================>                               ]  42.05M  --.-KB/s    eta 15m 59s1f1c9a44bde731c409-1776981944  38%[==================>                               ]  42.05M  --.-KB/s    eta 15m 59sf1c9a44bde731c409-1776981944.  38%[==================>                               ]  42.05M  --.-KB/s    eta 16m 2s 1c9a44bde731c409-1776981944.t  38%[==================>                               ]  42.05M  --.-KB/s    eta 16m 2s c9a44bde731c409-1776981944.ta  38%[==================>                               ]  42.05M  --.-KB/s    eta 16m 5s 9a44bde731c409-1776981944.tar  38%[==================>                               ]  42.05M  --.-KB/s    eta 16m 5s a44bde731c409-1776981944.tar.  38%[==================>                               ]  42.05M  --.-KB/s    eta 16m 8s 44bde731c409-1776981944.tar.g  38%[==================>                               ]  42.05M  --.-KB/s    eta 16m 8s 4bde731c409-1776981944.tar.gz  38%[==================>                               ]  42.05M  --.-KB/s    eta 16m 11sbde731c409-1776981944.tar.gz   38%[==================>                               ]  42.05M  --.-KB/s    eta 16m 11sde731c409-1776981944.tar.gz    38%[==================>                               ]  42.05M  --.-KB/s    eta 16m 14se731c409-1776981944.tar.gz     38%[==================>                               ]  42.05M  --.-KB/s    eta 16m 14s731c409-1776981944.tar.gz      38%[==================>                               ]  42.05M  --.-KB/s    eta 16m 17s31c409-1776981944.tar.gz       38%[==================>                               ]  42.05M  --.-KB/s    eta 16m 17s1c409-1776981944.tar.gz        38%[==================>                               ]  42.05M  --.-KB/s    eta 16m 20sc409-1776981944.tar.gz         38%[==================>                               ]  42.05M  --.-KB/s    eta 16m 20s409-1776981944.tar.gz          38%[==================>                               ]  42.05M  --.-KB/s    eta 16m 23s09-1776981944.tar.gz           38%[==================>                               ]  42.05M  --.-KB/s    eta 16m 23s9-1776981944.tar.gz            38%[==================>                               ]  42.05M  --.-KB/s    eta 16m 26s-1776981944.tar.gz             38%[==================>                               ]  42.05M  --.-KB/s    eta 16m 26s1776981944.tar.gz              38%[==================>                               ]  42.05M  --.-KB/s    eta 16m 29s776981944.tar.gz               38%[==================>                               ]  42.05M  --.-KB/s    eta 16m 29s76981944.tar.gz                38%[==================>                               ]  42.05M  --.-KB/s    eta 16m 32s6981944.tar.gz                 38%[==================>                               ]  42.05M  --.-KB/s    eta 16m 32s981944.tar.gz                  38%[==================>                               ]  42.05M  --.-KB/s    eta 16m 35s81944.tar.gz                   38%[==================>                               ]  42.05M  --.-KB/s    eta 16m 35s1944.tar.gz                    38%[==================>                               ]  42.05M  --.-KB/s    eta 16m 38s944.tar.gz                     38%[==================>                               ]  42.05M  --.-KB/s    eta 16m 38s44.tar.gz                      38%[==================>                               ]  42.05M  --.-KB/s    eta 16m 41s4.tar.gz                       38%[==================>                               ]  42.05M  --.-KB/s    eta 16m 41s.tar.gz                        38%[==================>                               ]  42.05M  --.-KB/s    eta 16m 44star.gz                         38%[==================>                               ]  42.05M  --.-KB/s    eta 16m 44sar.gz                          38%[==================>                               ]  42.05M  --.-KB/s    eta 16m 47sr.gz                           38%[==================>                               ]  42.05M  --.-KB/s    eta 16m 47s.gz                            38%[==================>                               ]  42.05M  --.-KB/s    eta 16m 50sgz                             38%[==================>                               ]  42.05M  --.-KB/s    eta 16m 50sz                              38%[==================>                               ]  42.05M  --.-KB/s    eta 16m 53s                               38%[==================>                               ]  42.05M  --.-KB/s    eta 16m 53s                            /  38%[==================>                               ]  42.05M  --.-KB/s    eta 16m 56s                           /h  38%[==================>                               ]  42.05M  --.-KB/s    eta 16m 56s                          /ho  38%[==================>                               ]  42.05M  --.-KB/s    eta 16m 59s                         /hom  38%[==================>                               ]  42.05M  --.-KB/s    eta 16m 59s                        /home  38%[==================>                               ]  42.05M  --.-KB/s    eta 17m 2s                        /home/  38%[==================>                               ]  42.05M  --.-KB/s    eta 17m 2s                       /home/r  38%[==================>                               ]  42.05M  --.-KB/s    eta 17m 5s                      /home/ri  38%[==================>                               ]  42.05M  --.-KB/s    eta 17m 5s                     /home/riv  38%[==================>                               ]  42.05M  --.-KB/s    eta 17m 8s                    /home/riva  38%[==================>                               ]  42.05M  --.-KB/s    eta 17m 8s                   /home/rivas  38%[==================>                               ]  42.05M  --.-KB/s    eta 17m 10s                 /home/rivasc  38%[==================>                               ]  42.05M  --.-KB/s    eta 17m 10s                /home/rivasce  38%[==================>                               ]  42.05M  --.-KB/s    eta 17m 13s               /home/rivascel  38%[==================>                               ]  42.05M  --.-KB/s    eta 17m 13s              /home/rivascel/  38%[==================>                               ]  42.05M  --.-KB/s    eta 17m 16s             /home/rivascel/.  38%[==================>                               ]  42.05M  --.-KB/s    eta 17m 16s            /home/rivascel/.v  38%[==================>                               ]  42.05M  --.-KB/s    eta 17m 19s           /home/rivascel/.vs  38%[==================>                               ]  42.05M  --.-KB/s    eta 17m 19s          /home/rivascel/.vsc  38%[==================>                               ]  42.05M  --.-KB/s    eta 17m 22s         /home/rivascel/.vsco  38%[==================>                               ]  42.05M  --.-KB/s    eta 17m 22s        /home/rivascel/.vscod  38%[==================>                               ]  42.05M  --.-KB/s    eta 17m 25s       /home/rivascel/.vscode  38%[==================>                               ]  42.05M  --.-KB/s    eta 17m 25s      /home/rivascel/.vscode-  38%[==================>                               ]  42.05M  --.-KB/s    eta 17m 28s     /home/rivascel/.vscode-s  38%[==================>                               ]  42.05M  --.-KB/s    eta 17m 28s    /home/rivascel/.vscode-se  38%[==================>                               ]  42.05M  --.-KB/s    eta 17m 31s   /home/rivascel/.vscode-ser  38%[==================>                               ]  42.05M  --.-KB/s    eta 17m 31s  /home/rivascel/.vscode-serv  38%[==================>                               ]  42.05M  --.-KB/s    eta 17m 34s /home/rivascel/.vscode-serve  38%[==================>                               ]  42.05M  --.-KB/s    eta 17m 34s/home/rivascel/.vscode-server  38%[==================>                               ]  42.05M  --.-KB/s    eta 17m 37shome/rivascel/.vscode-server/  38%[==================>                               ]  42.05M  --.-KB/s    eta 17m 37some/rivascel/.vscode-server/b  38%[==================>                               ]  42.05M  --.-KB/s    eta 17m 40sme/rivascel/.vscode-server/bi  38%[==================>                               ]  42.05M  --.-KB/s    eta 17m 40se/rivascel/.vscode-server/bin  38%[==================>                               ]  42.05M  --.-KB/s    eta 17m 43s/rivascel/.vscode-server/bin/  38%[==================>                               ]  42.05M  --.-KB/s    eta 17m 43srivascel/.vscode-server/bin/1  38%[==================>                               ]  42.05M  --.-KB/s    eta 17m 46sivascel/.vscode-server/bin/10  38%[==================>                               ]  42.05M  --.-KB/s    eta 17m 46svascel/.vscode-server/bin/10c  38%[==================>                               ]  42.05M  --.-KB/s    eta 17m 49sascel/.vscode-server/bin/10c8  38%[==================>                               ]  42.05M  --.-KB/s    eta 17m 49sscel/.vscode-server/bin/10c8e  38%[==================>                               ]  42.05M  --.-KB/s    eta 17m 52scel/.vscode-server/bin/10c8e5  38%[==================>                               ]  42.05M  --.-KB/s    eta 17m 52sel/.vscode-server/bin/10c8e55  38%[==================>                               ]  42.05M  --.-KB/s    eta 17m 55sl/.vscode-server/bin/10c8e557  38%[==================>                               ]  42.05M  --.-KB/s    eta 17m 55s/.vscode-server/bin/10c8e557c  38%[==================>                               ]  42.05M  --.-KB/s    eta 17m 58s.vscode-server/bin/10c8e557c8  38%[==================>                               ]  42.05M  --.-KB/s    eta 17m 58svscode-server/bin/10c8e557c8b  38%[==================>                               ]  42.05M  --.-KB/s    eta 18m 1s scode-server/bin/10c8e557c8b9  38%[==================>                               ]  42.05M  --.-KB/s    eta 18m 1s code-server/bin/10c8e557c8b9f  38%[==================>                               ]  42.05M  --.-KB/s    eta 18m 4s ode-server/bin/10c8e557c8b9f9  38%[==================>                               ]  42.05M  --.-KB/s    eta 18m 4s de-server/bin/10c8e557c8b9f9e  38%[==================>                               ]  42.05M  --.-KB/s    eta 18m 7s e-server/bin/10c8e557c8b9f9ed  38%[==================>                               ]  42.05M  --.-KB/s    eta 18m 7s -server/bin/10c8e557c8b9f9ed0  38%[==================>                               ]  42.05M  --.-KB/s    eta 18m 10sserver/bin/10c8e557c8b9f9ed0a  38%[==================>                               ]  42.05M  --.-KB/s    eta 18m 10server/bin/10c8e557c8b9f9ed0a8  38%[==================>                               ]  42.05M  --.-KB/s    eta 18m 13srver/bin/10c8e557c8b9f9ed0a87  38%[==================>                               ]  42.05M  --.-KB/s    eta 18m 13sver/bin/10c8e557c8b9f9ed0a87f  38%[==================>                               ]  42.05M  --.-KB/s    eta 18m 16ser/bin/10c8e557c8b9f9ed0a87f6  38%[==================>                               ]  42.05M  --.-KB/s    eta 18m 16sr/bin/10c8e557c8b9f9ed0a87f61  38%[==================>                               ]  42.05M  --.-KB/s    eta 18m 19s/bin/10c8e557c8b9f9ed0a87f61f  38%[==================>                               ]  42.05M  --.-KB/s    eta 18m 19sbin/10c8e557c8b9f9ed0a87f61f1  38%[==================>                               ]  42.05M  --.-KB/s    eta 18m 22sin/10c8e557c8b9f9ed0a87f61f1c  38%[==================>                               ]  42.05M  --.-KB/s    eta 18m 22sn/10c8e557c8b9f9ed0a87f61f1c9  38%[==================>                               ]  42.05M  --.-KB/s    eta 18m 25s/10c8e557c8b9f9ed0a87f61f1c9a  38%[==================>                               ]  42.05M  --.-KB/s    eta 18m 25s10c8e557c8b9f9ed0a87f61f1c9a4  38%[==================>                               ]  42.05M  --.-KB/s    eta 18m 28s0c8e557c8b9f9ed0a87f61f1c9a44  38%[==================>                               ]  42.05M  --.-KB/s    eta 18m 28sc8e557c8b9f9ed0a87f61f1c9a44b  38%[==================>                               ]  42.05M  --.-KB/s    eta 18m 31s8e557c8b9f9ed0a87f61f1c9a44bd  38%[==================>                               ]  42.05M  --.-KB/s    eta 18m 31se557c8b9f9ed0a87f61f1c9a44bde  38%[==================>                               ]  42.05M  --.-KB/s    eta 18m 34s557c8b9f9ed0a87f61f1c9a44bde7  38%[==================>                               ]  42.05M  --.-KB/s    eta 18m 34s57c8b9f9ed0a87f61f1c9a44bde73  38%[==================>                               ]  42.05M  --.-KB/s    eta 18m 37s7c8b9f9ed0a87f61f1c9a44bde731  38%[==================>                               ]  42.05M  --.-KB/s    eta 18m 37sc8b9f9ed0a87f61f1c9a44bde731c  38%[==================>                               ]  42.05M  --.-KB/s    eta 18m 40s8b9f9ed0a87f61f1c9a44bde731c4  38%[==================>                               ]  42.05M  --.-KB/s    eta 18m 40sb9f9ed0a87f61f1c9a44bde731c40  38%[==================>                               ]  42.05M  --.-KB/s    eta 18m 43s9f9ed0a87f61f1c9a44bde731c409  38%[==================>                               ]  42.05M  --.-KB/s    eta 18m 43sf9ed0a87f61f1c9a44bde731c409-  38%[==================>                               ]  42.05M  --.-KB/s    eta 18m 46s9ed0a87f61f1c9a44bde731c409-1  38%[==================>                               ]  42.05M  --.-KB/s    eta 18m 46sed0a87f61f1c9a44bde731c409-17  38%[==================>                               ]  42.05M  --.-KB/s    eta 18m 49sd0a87f61f1c9a44bde731c409-177  38%[==================>                               ]  42.05M  --.-KB/s    eta 18m 49s0a87f61f1c9a44bde731c409-1776  38%[==================>                               ]  42.05M  --.-KB/s    eta 18m 52sa87f61f1c9a44bde731c409-17769  38%[==================>                               ]  42.05M  --.-KB/s    eta 18m 52s87f61f1c9a44bde731c409-177698  38%[==================>                               ]  42.05M  --.-KB/s    eta 18m 55s7f61f1c9a44bde731c409-1776981  38%[==================>                               ]  42.05M  --.-KB/s    eta 18m 55sf61f1c9a44bde731c409-17769819  38%[==================>                               ]  42.05M  --.-KB/s    eta 18m 58s61f1c9a44bde731c409-177698194  38%[==================>                               ]  42.05M  --.-KB/s    eta 18m 58s1f1c9a44bde731c409-1776981944  38%[==================>                               ]  42.05M  --.-KB/s    eta 19m 1s f1c9a44bde731c409-1776981944.  38%[==================>                               ]  42.05M  --.-KB/s    eta 19m 1s 1c9a44bde731c409-1776981944.t  38%[==================>                               ]  42.05M  --.-KB/s    eta 19m 4s c9a44bde731c409-1776981944.ta  38%[==================>                               ]  42.05M  --.-KB/s    eta 19m 4s 9a44bde731c409-1776981944.tar  38%[==================>                               ]  42.05M  --.-KB/s    eta 19m 7s a44bde731c409-1776981944.tar.  38%[==================>                               ]  42.05M  --.-KB/s    eta 19m 7s 44bde731c409-1776981944.tar.g  38%[==================>                               ]  42.05M  --.-KB/s    eta 19m 10s4bde731c409-1776981944.tar.gz  38%[==================>                               ]  42.05M  --.-KB/s    eta 19m 10sbde731c409-1776981944.tar.gz   38%[==================>                               ]  42.05M  --.-KB/s    eta 19m 13sde731c409-1776981944.tar.gz    38%[==================>                               ]  42.05M  --.-KB/s    eta 19m 13se731c409-1776981944.tar.gz     38%[==================>                               ]  42.05M  --.-KB/s    eta 19m 16s731c409-1776981944.tar.gz      38%[==================>                               ]  42.05M  --.-KB/s    eta 19m 16s31c409-1776981944.tar.gz       38%[==================>                               ]  42.05M  --.-KB/s    eta 19m 19s1c409-1776981944.tar.gz        38%[==================>                               ]  42.05M  --.-KB/s    eta 19m 19sc409-1776981944.tar.gz         38%[==================>                               ]  42.05M  --.-KB/s    eta 19m 22s409-1776981944.tar.gz          38%[==================>                               ]  42.05M  --.-KB/s    eta 19m 22s09-1776981944.tar.gz           38%[==================>                               ]  42.05M  --.-KB/s    eta 19m 25s9-1776981944.tar.gz            38%[==================>                               ]  42.05M  --.-KB/s    eta 19m 25s-1776981944.tar.gz             38%[==================>                               ]  42.05M  --.-KB/s    eta 19m 28s1776981944.tar.gz              38%[==================>                               ]  42.05M  --.-KB/s    eta 19m 28s776981944.tar.gz               38%[==================>                               ]  42.05M  --.-KB/s    eta 19m 31s76981944.tar.gz                38%[==================>                               ]  42.05M  --.-KB/s    eta 19m 31s6981944.tar.gz                 38%[==================>                               ]  42.05M  --.-KB/s    eta 19m 34s981944.tar.gz                  38%[==================>                               ]  42.05M  --.-KB/s    eta 19m 34s81944.tar.gz                   38%[==================>                               ]  42.05M  --.-KB/s    eta 19m 37s1944.tar.gz                    38%[==================>                               ]  42.05M  --.-KB/s    eta 19m 37s944.tar.gz                     38%[==================>                               ]  42.05M  --.-KB/s    eta 19m 40s44.tar.gz                      38%[==================>                               ]  42.05M  --.-KB/s    eta 19m 40s4.tar.gz                       38%[==================>                               ]  42.05M  --.-KB/s    eta 19m 43s.tar.gz                        38%[==================>                               ]  42.05M  --.-KB/s    eta 19m 43star.gz                         38%[==================>                               ]  42.05M  --.-KB/s    eta 19m 46sar.gz                          38%[==================>                               ]  42.05M  --.-KB/s    eta 19m 46sr.gz                           38%[==================>                               ]  42.05M  --.-KB/s    eta 19m 49s.gz                            38%[==================>                               ]  42.05M  --.-KB/s    eta 19m 49sgz                             38%[==================>                               ]  42.05M  --.-KB/s    eta 19m 51sz                              38%[==================>                               ]  42.05M  --.-KB/s    eta 19m 51s                               38%[==================>                               ]  42.05M  --.-KB/s    eta 19m 54s                            /  38%[==================>                               ]  42.05M  --.-KB/s    eta 19m 54s                           /h  38%[==================>                               ]  42.05M  --.-KB/s    eta 19m 57s                          /ho  38%[==================>                               ]  42.05M  --.-KB/s    eta 19m 57s                         /hom  38%[==================>                               ]  42.05M  --.-KB/s    eta 20m 0s                         /home  38%[==================>                               ]  42.05M  --.-KB/s    eta 20m 0s                        /home/  38%[==================>                               ]  42.05M  --.-KB/s    eta 20m 3s                       /home/r  38%[==================>                               ]  42.05M  --.-KB/s    eta 20m 3s                      /home/ri  38%[==================>                               ]  42.05M  --.-KB/s    eta 20m 6s                     /home/riv  38%[==================>                               ]  42.05M  --.-KB/s    eta 20m 6s                    /home/riva  38%[==================>                               ]  42.05M  --.-KB/s    eta 20m 9s                   /home/rivas  38%[==================>                               ]  42.05M  --.-KB/s    eta 20m 9s                  /home/rivasc  38%[==================>                               ]  42.05M  --.-KB/s    eta 20m 12s                /home/rivasce  38%[==================>                               ]  42.05M  --.-KB/s    eta 20m 12s               /home/rivascel  38%[==================>                               ]  42.05M  --.-KB/s    eta 20m 15s              /home/rivascel/  38%[==================>                               ]  42.05M  --.-KB/s    eta 20m 15s             /home/rivascel/.  38%[==================>                               ]  42.05M  --.-KB/s    eta 20m 18s            /home/rivascel/.v  38%[==================>                               ]  42.05M  --.-KB/s    eta 20m 18s           /home/rivascel/.vs  38%[==================>                               ]  42.05M  --.-KB/s    eta 20m 21s          /home/rivascel/.vsc  38%[==================>                               ]  42.05M  --.-KB/s    eta 20m 21s         /home/rivascel/.vsco  38%[==================>                               ]  42.05M  --.-KB/s    eta 20m 24s        /home/rivascel/.vscod  38%[==================>                               ]  42.05M  --.-KB/s    eta 20m 24s       /home/rivascel/.vscode  38%[==================>                               ]  42.05M  --.-KB/s    eta 20m 27s      /home/rivascel/.vscode-  38%[==================>                               ]  42.05M  --.-KB/s    eta 20m 27s     /home/rivascel/.vscode-s  38%[==================>                               ]  42.05M  --.-KB/s    eta 20m 30s    /home/rivascel/.vscode-se  38%[==================>                               ]  42.05M  --.-KB/s    eta 20m 30s   /home/rivascel/.vscode-ser  38%[==================>                               ]  42.05M  --.-KB/s    eta 20m 33s  /home/rivascel/.vscode-serv  38%[==================>                               ]  42.05M  --.-KB/s    eta 20m 33s /home/rivascel/.vscode-serve  38%[==================>                               ]  42.05M  --.-KB/s    eta 20m 36s/home/rivascel/.vscode-server  38%[==================>                               ]  42.05M  --.-KB/s    eta 20m 36shome/rivascel/.vscode-server/  38%[==================>                               ]  42.05M  --.-KB/s    eta 20m 39some/rivascel/.vscode-server/b  38%[==================>                               ]  42.05M  --.-KB/s    eta 20m 39sme/rivascel/.vscode-server/bi  38%[==================>                               ]  42.05M  --.-KB/s    eta 20m 42se/rivascel/.vscode-server/bin  38%[==================>                               ]  42.05M  --.-KB/s    eta 20m 42s/rivascel/.vscode-server/bin/  38%[==================>                               ]  42.05M  --.-KB/s    eta 20m 45srivascel/.vscode-server/bin/1  38%[==================>                               ]  42.05M  --.-KB/s    eta 20m 45sivascel/.vscode-server/bin/10  38%[==================>                               ]  42.05M  --.-KB/s    eta 20m 48svascel/.vscode-server/bin/10c  38%[==================>                               ]  42.05M  --.-KB/s    eta 20m 48sascel/.vscode-server/bin/10c8  38%[==================>                               ]  42.05M  --.-KB/s    eta 20m 51sscel/.vscode-server/bin/10c8e  38%[==================>                               ]  42.05M  --.-KB/s    eta 20m 51scel/.vscode-server/bin/10c8e5  38%[==================>                               ]  42.05M  --.-KB/s    eta 20m 54sel/.vscode-server/bin/10c8e55  38%[==================>                               ]  42.05M  --.-KB/s    eta 20m 54sl/.vscode-server/bin/10c8e557  38%[==================>                               ]  42.05M  --.-KB/s    eta 20m 57s/.vscode-server/bin/10c8e557c  38%[==================>                               ]  42.05M  --.-KB/s    eta 20m 57s.vscode-server/bin/10c8e557c8  38%[==================>                               ]  42.05M  --.-KB/s    eta 21m 0s vscode-server/bin/10c8e557c8b  38%[==================>                               ]  42.05M  --.-KB/s    eta 21m 0s scode-server/bin/10c8e557c8b9  38%[==================>                               ]  42.05M  --.-KB/s    eta 21m 3s code-server/bin/10c8e557c8b9f  38%[==================>                               ]  42.05M  --.-KB/s    eta 21m 3s ode-server/bin/10c8e557c8b9f9  38%[==================>                               ]  42.05M  --.-KB/s    eta 21m 6s de-server/bin/10c8e557c8b9f9e  38%[==================>                               ]  42.05M  --.-KB/s    eta 21m 6s e-server/bin/10c8e557c8b9f9ed  38%[==================>                               ]  42.05M  --.-KB/s    eta 21m 9s -server/bin/10c8e557c8b9f9ed0  38%[==================>                               ]  42.05M  --.-KB/s    eta 21m 9s server/bin/10c8e557c8b9f9ed0a  38%[==================>                               ]  42.05M  --.-KB/s    eta 21m 12server/bin/10c8e557c8b9f9ed0a8  38%[==================>                               ]  42.05M  --.-KB/s    eta 21m 12srver/bin/10c8e557c8b9f9ed0a87  38%[==================>                               ]  42.05M  --.-KB/s    eta 21m 15sver/bin/10c8e557c8b9f9ed0a87f  38%[==================>                               ]  42.05M  --.-KB/s    eta 21m 15ser/bin/10c8e557c8b9f9ed0a87f6  38%[==================>                               ]  42.05M  --.-KB/s    eta 21m 18sr/bin/10c8e557c8b9f9ed0a87f61  38%[==================>                               ]  42.05M  --.-KB/s    eta 21m 18s/bin/10c8e557c8b9f9ed0a87f61f  38%[==================>                               ]  42.05M  --.-KB/s    eta 21m 21sbin/10c8e557c8b9f9ed0a87f61f1  38%[==================>                               ]  42.05M  --.-KB/s    eta 21m 21sin/10c8e557c8b9f9ed0a87f61f1c  38%[==================>                               ]  42.05M  --.-KB/s    eta 21m 24sn/10c8e557c8b9f9ed0a87f61f1c9  38%[==================>                               ]  42.05M  --.-KB/s    eta 21m 24s/10c8e557c8b9f9ed0a87f61f1c9a  38%[==================>                               ]  42.05M  --.-KB/s    eta 21m 27s10c8e557c8b9f9ed0a87f61f1c9a4  38%[==================>                               ]  42.05M  --.-KB/s    eta 21m 27s0c8e557c8b9f9ed0a87f61f1c9a44  38%[==================>                               ]  42.05M  --.-KB/s    eta 21m 30sc8e557c8b9f9ed0a87f61f1c9a44b  38%[==================>                               ]  42.05M  --.-KB/s    eta 21m 30s8e557c8b9f9ed0a87f61f1c9a44bd  38%[==================>                               ]  42.05M  --.-KB/s    eta 21m 33se557c8b9f9ed0a87f61f1c9a44bde  38%[==================>                               ]  42.05M  --.-KB/s    eta 21m 33s557c8b9f9ed0a87f61f1c9a44bde7  38%[==================>                               ]  42.05M  --.-KB/s    eta 21m 36s57c8b9f9ed0a87f61f1c9a44bde73  38%[==================>                               ]  42.05M  --.-KB/s    eta 21m 36s7c8b9f9ed0a87f61f1c9a44bde731  38%[==================>                               ]  42.05M  --.-KB/s    eta 21m 39sc8b9f9ed0a87f61f1c9a44bde731c  38%[==================>                               ]  42.05M  --.-KB/s    eta 21m 39s8b9f9ed0a87f61f1c9a44bde731c4  38%[==================>                               ]  42.05M  --.-KB/s    eta 21m 42sb9f9ed0a87f61f1c9a44bde731c40  38%[==================>                               ]  42.05M  --.-KB/s    eta 21m 42s9f9ed0a87f61f1c9a44bde731c409  38%[==================>                               ]  42.05M  --.-KB/s    eta 21m 45sf9ed0a87f61f1c9a44bde731c409-  38%[==================>                               ]  42.05M  --.-KB/s    eta 21m 45s9ed0a87f61f1c9a44bde731c409-1  38%[==================>                               ]  42.05M  --.-KB/s    eta 21m 48sed0a87f61f1c9a44bde731c409-17  38%[==================>                               ]  42.05M  --.-KB/s    eta 21m 48sd0a87f61f1c9a44bde731c409-177  38%[==================>                               ]  42.05M  --.-KB/s    eta 21m 51s0a87f61f1c9a44bde731c409-1776  38%[==================>                               ]  42.05M  --.-KB/s    eta 21m 51sa87f61f1c9a44bde731c409-17769  38%[==================>                               ]  42.05M  --.-KB/s    eta 21m 54s87f61f1c9a44bde731c409-177698  38%[==================>                               ]  42.05M  --.-KB/s    eta 21m 54s7f61f1c9a44bde731c409-1776981  38%[==================>                               ]  42.05M  --.-KB/s    eta 21m 57sf61f1c9a44bde731c409-17769819  38%[==================>                               ]  42.05M  --.-KB/s    eta 21m 57s61f1c9a44bde731c409-177698194  38%[==================>                               ]  42.05M  --.-KB/s    eta 22m 0s 1f1c9a44bde731c409-1776981944  38%[==================>                               ]  42.05M  --.-KB/s    eta 22m 0s f1c9a44bde731c409-1776981944.  38%[==================>                               ]  42.05M  --.-KB/s    eta 22m 3s 1c9a44bde731c409-1776981944.t  38%[==================>                               ]  42.05M  --.-KB/s    eta 22m 3s c9a44bde731c409-1776981944.ta  38%[==================>                               ]  42.05M  --.-KB/s    eta 22m 6s 9a44bde731c409-1776981944.tar  38%[==================>                               ]  42.05M  --.-KB/s    eta 22m 6s a44bde731c409-1776981944.tar.  38%[==================>                               ]  42.05M  --.-KB/s    eta 22m 9s 44bde731c409-1776981944.tar.g  38%[==================>                               ]  42.05M  --.-KB/s    eta 22m 9s 4bde731c409-1776981944.tar.gz  38%[==================>                               ]  42.05M  --.-KB/s    eta 22m 12sbde731c409-1776981944.tar.gz   38%[==================>                               ]  42.05M  --.-KB/s    eta 22m 12sde731c409-1776981944.tar.gz    38%[==================>                               ]  42.05M  --.-KB/s    eta 22m 15se731c409-1776981944.tar.gz     38%[==================>                               ]  42.05M  --.-KB/s    eta 22m 15s731c409-1776981944.tar.gz      38%[==================>                               ]  42.05M  --.-KB/s    eta 22m 18s31c409-1776981944.tar.gz       38%[==================>                               ]  42.05M  --.-KB/s    eta 22m 18s1c409-1776981944.tar.gz        38%[==================>                               ]  42.05M  --.-KB/s    eta 22m 21sc409-1776981944.tar.gz         38%[==================>                               ]  42.05M  --.-KB/s    eta 22m 21s409-1776981944.tar.gz          38%[==================>                               ]  42.05M  --.-KB/s    eta 22m 24s09-1776981944.tar.gz           38%[==================>                               ]  42.05M  --.-KB/s    eta 22m 24s9-1776981944.tar.gz            38%[==================>                               ]  42.05M  --.-KB/s    eta 22m 27s-1776981944.tar.gz             38%[==================>                               ]  42.05M  --.-KB/s    eta 22m 27s1776981944.tar.gz              38%[==================>                               ]  42.05M  --.-KB/s    eta 22m 30s776981944.tar.gz               38%[==================>                               ]  42.05M  --.-KB/s    eta 22m 30s76981944.tar.gz                38%[==================>                               ]  42.05M  --.-KB/s    eta 22m 33s6981944.tar.gz                 38%[==================>                               ]  42.05M  --.-KB/s    eta 22m 33s981944.tar.gz                  38%[==================>                               ]  42.05M  --.-KB/s    eta 22m 36s81944.tar.gz                   38%[==================>                               ]  42.05M  --.-KB/s    eta 22m 36s1944.tar.gz                    38%[==================>                               ]  42.05M  --.-KB/s    eta 22m 39s944.tar.gz                     38%[==================>                               ]  42.05M  --.-KB/s    eta 22m 39s44.tar.gz                      38%[==================>                               ]  42.05M  --.-KB/s    eta 22m 42s4.tar.gz                       38%[==================>                               ]  42.05M  --.-KB/s    eta 22m 42s.tar.gz                        38%[==================>                               ]  42.05M  --.-KB/s    eta 22m 44star.gz                         38%[==================>                               ]  42.05M  --.-KB/s    eta 22m 44sar.gz                          38%[==================>                               ]  42.05M  --.-KB/s    eta 22m 47sr.gz                           38%[==================>                               ]  42.05M  --.-KB/s    eta 22m 47s.gz                            38%[==================>                               ]  42.05M  --.-KB/s    eta 22m 50sgz                             38%[==================>                               ]  42.05M  --.-KB/s    eta 22m 50sz                              38%[==================>                               ]  42.05M  --.-KB/s    eta 22m 53s                               38%[==================>                               ]  42.05M  --.-KB/s    eta 22m 53s                            /  38%[==================>                               ]  42.05M  --.-KB/s    eta 22m 56s                           /h  38%[==================>                               ]  42.05M  --.-KB/s    eta 22m 56s                          /ho  38%[==================>                               ]  42.05M  --.-KB/s    eta 22m 59s                         /hom  38%[==================>                               ]  42.05M  --.-KB/s    eta 22m 59s                        /home  38%[==================>                               ]  42.05M  --.-KB/s    eta 23m 2s                        /home/  38%[==================>                               ]  42.05M  --.-KB/s    eta 23m 2s                       /home/r  38%[==================>                               ]  42.05M  --.-KB/s    eta 23m 5s                      /home/ri  38%[==================>                               ]  42.05M  --.-KB/s    eta 23m 5s                     /home/riv  38%[==================>                               ]  42.05M  --.-KB/s    eta 23m 8s                    /home/riva  38%[==================>                               ]  42.05M  --.-KB/s    eta 23m 8s                   /home/rivas  38%[==================>                               ]  42.05M  --.-KB/s    eta 23m 11s                 /home/rivasc  38%[==================>                               ]  42.05M  --.-KB/s    eta 23m 11s                /home/rivasce  38%[==================>                               ]  42.05M  --.-KB/s    eta 23m 14s               /home/rivascel  38%[==================>                               ]  42.05M  --.-KB/s    eta 23m 14s              /home/rivascel/  38%[==================>                               ]  42.05M  --.-KB/s    eta 23m 17s             /home/rivascel/.  38%[==================>                               ]  42.05M  --.-KB/s    eta 23m 17s            /home/rivascel/.v  38%[==================>                               ]  42.05M  --.-KB/s    eta 23m 20s           /home/rivascel/.vs  38%[==================>                               ]  42.05M  --.-KB/s    eta 23m 20s          /home/rivascel/.vsc  38%[==================>                               ]  42.05M  --.-KB/s    eta 23m 23s         /home/rivascel/.vsco  38%[==================>                               ]  42.05M  --.-KB/s    eta 23m 23s        /home/rivascel/.vscod  38%[==================>                               ]  42.05M  --.-KB/s    eta 23m 26s       /home/rivascel/.vscode  38%[==================>                               ]  42.05M  --.-KB/s    eta 23m 26s      /home/rivascel/.vscode-  38%[==================>                               ]  42.05M  --.-KB/s    eta 23m 29s     /home/rivascel/.vscode-s  38%[==================>                               ]  42.05M  --.-KB/s    eta 23m 29s    /home/rivascel/.vscode-se  38%[==================>                               ]  42.05M  --.-KB/s    eta 23m 32s   /home/rivascel/.vscode-ser  38%[==================>                               ]  42.05M  --.-KB/s    eta 23m 32s  /home/rivascel/.vscode-serv  38%[==================>                               ]  42.05M  --.-KB/s    eta 23m 35s /home/rivascel/.vscode-serve  38%[==================>                               ]  42.05M  --.-KB/s    eta 23m 35s/home/rivascel/.vscode-server  38%[==================>                               ]  42.05M  --.-KB/s    eta 23m 38shome/rivascel/.vscode-server/  38%[==================>                               ]  42.05M  --.-KB/s    eta 23m 38some/rivascel/.vscode-server/b  38%[==================>                               ]  42.05M  --.-KB/s    eta 23m 41sme/rivascel/.vscode-server/bi  38%[==================>                               ]  42.05M  --.-KB/s    eta 23m 41se/rivascel/.vscode-server/bin  38%[==================>                               ]  42.05M  --.-KB/s    eta 23m 44s/rivascel/.vscode-server/bin/  38%[==================>                               ]  42.05M  --.-KB/s    eta 23m 44srivascel/.vscode-server/bin/1  38%[==================>                               ]  42.05M  --.-KB/s    eta 23m 47sivascel/.vscode-server/bin/10  38%[==================>                               ]  42.05M  --.-KB/s    eta 23m 47svascel/.vscode-server/bin/10c  38%[==================>                               ]  42.05M  --.-KB/s    eta 23m 50sascel/.vscode-server/bin/10c8  38%[==================>                               ]  42.05M  --.-KB/s    eta 23m 50sscel/.vscode-server/bin/10c8e  38%[==================>                               ]  42.05M  --.-KB/s    eta 23m 53scel/.vscode-server/bin/10c8e5  38%[==================>                               ]  42.05M  --.-KB/s    eta 23m 53sel/.vscode-server/bin/10c8e55  38%[==================>                               ]  42.05M  --.-KB/s    eta 23m 56sl/.vscode-server/bin/10c8e557  38%[==================>                               ]  42.05M  --.-KB/s    eta 23m 56s/.vscode-server/bin/10c8e557c  38%[==================>                               ]  42.05M  --.-KB/s    eta 23m 59s.vscode-server/bin/10c8e557c8  38%[==================>                               ]  42.05M  --.-KB/s    eta 23m 59svscode-server/bin/10c8e557c8b  38%[==================>                               ]  42.05M  --.-KB/s    eta 24m 2s scode-server/bin/10c8e557c8b9  38%[==================>                               ]  42.05M  --.-KB/s    eta 24m 2s code-server/bin/10c8e557c8b9f  38%[==================>                               ]  42.05M  --.-KB/s    eta 24m 5s ode-server/bin/10c8e557c8b9f9  38%[==================>                               ]  42.05M  --.-KB/s    eta 24m 5s de-server/bin/10c8e557c8b9f9e  38%[==================>                               ]  42.05M  --.-KB/s    eta 24m 8s e-server/bin/10c8e557c8b9f9ed  38%[==================>                               ]  42.05M  --.-KB/s    eta 24m 8s -server/bin/10c8e557c8b9f9ed0  38%[==================>                               ]  42.05M  --.-KB/s    eta 24m 11sserver/bin/10c8e557c8b9f9ed0a  38%[==================>                               ]  42.05M  --.-KB/s    eta 24m 11server/bin/10c8e557c8b9f9ed0a8  38%[==================>                               ]  42.05M  --.-KB/s    eta 24m 14srver/bin/10c8e557c8b9f9ed0a87  38%[==================>                               ]  42.05M  --.-KB/s    eta 24m 14sver/bin/10c8e557c8b9f9ed0a87f  38%[==================>                               ]  42.05M  --.-KB/s    eta 24m 17ser/bin/10c8e557c8b9f9ed0a87f6  38%[==================>                               ]  42.05M  --.-KB/s    eta 24m 17sr/bin/10c8e557c8b9f9ed0a87f61  38%[==================>                               ]  42.05M  --.-KB/s    eta 24m 20s/bin/10c8e557c8b9f9ed0a87f61f  38%[==================>                               ]  42.05M  --.-KB/s    eta 24m 20sbin/10c8e557c8b9f9ed0a87f61f1  38%[==================>                               ]  42.05M  --.-KB/s    eta 24m 23sin/10c8e557c8b9f9ed0a87f61f1c  38%[==================>                               ]  42.05M  --.-KB/s    eta 24m 23sn/10c8e557c8b9f9ed0a87f61f1c9  38%[==================>                               ]  42.05M  --.-KB/s    eta 24m 26s/10c8e557c8b9f9ed0a87f61f1c9a  38%[==================>                               ]  42.05M  --.-KB/s    eta 24m 26s10c8e557c8b9f9ed0a87f61f1c9a4  38%[==================>                               ]  42.05M  --.-KB/s    eta 24m 29s0c8e557c8b9f9ed0a87f61f1c9a44  38%[==================>                               ]  42.05M  --.-KB/s    eta 24m 29sc8e557c8b9f9ed0a87f61f1c9a44b  38%[==================>                               ]  42.05M  --.-KB/s    eta 24m 32s8e557c8b9f9ed0a87f61f1c9a44bd  38%[==================>                               ]  42.05M  --.-KB/s    eta 24m 32se557c8b9f9ed0a87f61f1c9a44bde  38%[==================>                               ]  42.05M  --.-KB/s    eta 24m 35s557c8b9f9ed0a87f61f1c9a44bde7  38%[==================>                               ]  42.05M  --.-KB/s    eta 24m 35s57c8b9f9ed0a87f61f1c9a44bde73  38%[==================>                               ]  42.05M  --.-KB/s    eta 24m 38s7c8b9f9ed0a87f61f1c9a44bde731  38%[==================>                               ]  42.05M  --.-KB/s    eta 24m 38sc8b9f9ed0a87f61f1c9a44bde731c  38%[==================>                               ]  42.05M  --.-KB/s    eta 24m 41s8b9f9ed0a87f61f1c9a44bde731c4  38%[==================>                               ]  42.05M  --.-KB/s    eta 24m 41sb9f9ed0a87f61f1c9a44bde731c40  38%[==================>                               ]  42.05M  --.-KB/s    eta 24m 44s9f9ed0a87f61f1c9a44bde731c409  38%[==================>                               ]  42.05M  --.-KB/s    eta 24m 44sf9ed0a87f61f1c9a44bde731c409-  38%[==================>                               ]  42.05M  --.-KB/s    eta 24m 47s9ed0a87f61f1c9a44bde731c409-1  38%[==================>                               ]  42.05M  --.-KB/s    eta 24m 47sed0a87f61f1c9a44bde731c409-17  38%[==================>                               ]  42.05M  --.-KB/s    eta 24m 50sd0a87f61f1c9a44bde731c409-177  38%[==================>                               ]  42.05M  --.-KB/s    eta 24m 50s0a87f61f1c9a44bde731c409-1776  38%[==================>                               ]  42.05M  --.-KB/s    eta 24m 53sa87f61f1c9a44bde731c409-17769  38%[==================>                               ]  42.05M  --.-KB/s    eta 24m 53s87f61f1c9a44bde731c409-177698  38%[==================>                               ]  42.05M  --.-KB/s    eta 24m 56s7f61f1c9a44bde731c409-1776981  38%[==================>                               ]  42.05M  --.-KB/s    eta 24m 56sf61f1c9a44bde731c409-17769819  38%[==================>                               ]  42.05M  --.-KB/s    eta 24m 59s61f1c9a44bde731c409-177698194  38%[==================>                               ]  42.05M  --.-KB/s    eta 24m 59s1f1c9a44bde731c409-1776981944  38%[==================>                               ]  42.05M  --.-KB/s    eta 25m 2s f1c9a44bde731c409-1776981944.  38%[==================>                               ]  42.05M  --.-KB/s    eta 25m 2s 1c9a44bde731c409-1776981944.t  38%[==================>                               ]  42.05M  --.-KB/s    eta 25m 5s c9a44bde731c409-1776981944.ta  38%[==================>                               ]  42.05M  --.-KB/s    eta 25m 5s 9a44bde731c409-1776981944.tar  38%[==================>                               ]  42.05M  --.-KB/s    eta 25m 8s a44bde731c409-1776981944.tar.  38%[==================>                               ]  42.05M  --.-KB/s    eta 25m 8s 44bde731c409-1776981944.tar.g  38%[==================>                               ]  42.05M  --.-KB/s    eta 25m 11s4bde731c409-1776981944.tar.gz  38%[==================>                               ]  42.05M  --.-KB/s    eta 25m 11sbde731c409-1776981944.tar.gz   38%[==================>                               ]  42.05M  --.-KB/s    eta 25m 14sde731c409-1776981944.tar.gz    38%[==================>                               ]  42.05M  --.-KB/s    eta 25m 14se731c409-1776981944.tar.gz     38%[==================>                               ]  42.05M  --.-KB/s    eta 25m 17s731c409-1776981944.tar.gz      38%[==================>                               ]  42.05M  --.-KB/s    eta 25m 17s31c409-1776981944.tar.gz       38%[==================>                               ]  42.05M  --.-KB/s    eta 25m 20s1c409-1776981944.tar.gz        38%[==================>                               ]  42.05M  --.-KB/s    eta 25m 20sc409-1776981944.tar.gz         38%[==================>                               ]  42.05M  --.-KB/s    eta 25m 23s409-1776981944.tar.gz          38%[==================>                               ]  42.05M  --.-KB/s    eta 25m 23s09-1776981944.tar.gz           38%[==================>                               ]  42.05M  --.-KB/s    eta 25m 26s9-1776981944.tar.gz            38%[==================>                               ]  42.05M  --.-KB/s    eta 25m 26s-1776981944.tar.gz             38%[==================>                               ]  42.05M  --.-KB/s    eta 25m 29s1776981944.tar.gz              38%[==================>                               ]  42.05M  --.-KB/s    eta 25m 29s776981944.tar.gz               38%[==================>                               ]  42.05M  --.-KB/s    eta 25m 32s76981944.tar.gz                38%[==================>                               ]  42.05M  --.-KB/s    eta 25m 32s6981944.tar.gz                 38%[==================>                               ]  42.05M  --.-KB/s    eta 25m 35s981944.tar.gz                  38%[==================>                               ]  42.05M  --.-KB/s    eta 25m 35s81944.tar.gz                   38%[==================>                               ]  42.05M  --.-KB/s    eta 25m 37s1944.tar.gz                    38%[==================>                               ]  42.05M  --.-KB/s    eta 25m 37s944.tar.gz                     38%[==================>                               ]  42.05M  --.-KB/s    eta 25m 40s44.tar.gz                      38%[==================>                               ]  42.05M  --.-KB/s    eta 25m 40s4.tar.gz                       38%[==================>                               ]  42.05M  --.-KB/s    eta 25m 43s.tar.gz                        38%[==================>                               ]  42.05M  --.-KB/s    eta 25m 43star.gz                         38%[==================>                               ]  42.05M  --.-KB/s    eta 25m 46sar.gz                          38%[==================>                               ]  42.05M  --.-KB/s    eta 25m 46sr.gz                           38%[==================>                               ]  42.05M  --.-KB/s    eta 25m 49s.gz                            38%[==================>                               ]  42.05M  --.-KB/s    eta 25m 49sgz                             38%[==================>                               ]  42.05M  --.-KB/s    eta 25m 52sz                              38%[==================>                               ]  42.05M  --.-KB/s    eta 25m 52s                               38%[==================>                               ]  42.05M  --.-KB/s    eta 25m 55s                            /  38%[==================>                               ]  42.05M  --.-KB/s    eta 25m 55s                           /h  38%[==================>                               ]  42.05M  --.-KB/s    eta 25m 58s                          /ho  38%[==================>                               ]  42.05M  --.-KB/s    eta 25m 58s                         /hom  38%[==================>                               ]  42.05M  --.-KB/s    eta 26m 1s                         /home  38%[==================>                               ]  42.05M  --.-KB/s    eta 26m 1s                        /home/  38%[==================>                               ]  42.05M  --.-KB/s    eta 26m 4s                       /home/r  38%[==================>                               ]  42.05M  --.-KB/s    eta 26m 4s                      /home/ri  38%[==================>                               ]  42.05M  --.-KB/s    eta 26m 7s                     /home/riv  38%[==================>                               ]  42.05M  --.-KB/s    eta 26m 7s                    /home/riva  38%[==================>                               ]  42.05M  --.-KB/s    eta 26m 10s                  /home/rivas  38%[==================>                               ]  42.05M  --.-KB/s    eta 26m 10s                 /home/rivasc  38%[==================>                               ]  42.05M  --.-KB/s    eta 26m 13s                /home/rivasce  38%[==================>                               ]  42.05M  --.-KB/s    eta 26m 13s               /home/rivascel  38%[==================>                               ]  42.05M  --.-KB/s    eta 26m 16s              /home/rivascel/  38%[==================>                               ]  42.05M  --.-KB/s    eta 26m 16s             /home/rivascel/.  38%[==================>                               ]  42.05M  --.-KB/s    eta 26m 19s            /home/rivascel/.v  38%[==================>                               ]  42.05M  --.-KB/s    eta 26m 19s           /home/rivascel/.vs  38%[==================>                               ]  42.05M  --.-KB/s    eta 26m 22s          /home/rivascel/.vsc  38%[==================>                               ]  42.05M  --.-KB/s    eta 26m 22s         /home/rivascel/.vsco  38%[==================>                               ]  42.05M  --.-KB/s    eta 26m 25s        /home/rivascel/.vscod  38%[==================>                               ]  42.05M  --.-KB/s    eta 26m 25s       /home/rivascel/.vscode  38%[==================>                               ]  42.05M  --.-KB/s    eta 26m 28s      /home/rivascel/.vscode-  38%[==================>                               ]  42.05M  --.-KB/s    eta 26m 28s     /home/rivascel/.vscode-s  38%[==================>                               ]  42.05M  --.-KB/s    eta 26m 31s    /home/rivascel/.vscode-se  38%[==================>                               ]  42.05M  --.-KB/s    eta 26m 31s   /home/rivascel/.vscode-ser  38%[==================>                               ]  42.05M  --.-KB/s    eta 26m 34s  /home/rivascel/.vscode-serv  38%[==================>                               ]  42.05M  --.-KB/s    eta 26m 34s /home/rivascel/.vscode-serve  38%[==================>                               ]  42.05M  --.-KB/s    eta 26m 37s/home/rivascel/.vscode-server  38%[==================>                               ]  42.05M  --.-KB/s    eta 26m 37shome/rivascel/.vscode-server/  38%[==================>                               ]  42.05M  --.-KB/s    eta 26m 40some/rivascel/.vscode-server/b  38%[==================>                               ]  42.05M  --.-KB/s    eta 26m 40sme/rivascel/.vscode-server/bi  38%[==================>                               ]  42.05M  --.-KB/s    eta 26m 43se/rivascel/.vscode-server/bin  38%[==================>                               ]  42.05M  --.-KB/s    eta 26m 43s/rivascel/.vscode-server/bin/  38%[==================>                               ]  42.05M  --.-KB/s    eta 26m 46srivascel/.vscode-server/bin/1  38%[==================>                               ]  42.05M  --.-KB/s    eta 26m 46sivascel/.vscode-server/bin/10  38%[==================>                               ]  42.05M  --.-KB/s    eta 26m 49svascel/.vscode-server/bin/10c  38%[==================>                               ]  42.05M  --.-KB/s    eta 26m 49sascel/.vscode-server/bin/10c8  38%[==================>                               ]  42.05M  --.-KB/s    eta 26m 52sscel/.vscode-server/bin/10c8e  38%[==================>                               ]  42.05M  --.-KB/s    eta 26m 52scel/.vscode-server/bin/10c8e5  38%[==================>                               ]  42.05M  --.-KB/s    eta 26m 55sel/.vscode-server/bin/10c8e55  38%[==================>                               ]  42.05M  --.-KB/s    eta 26m 55sl/.vscode-server/bin/10c8e557  38%[==================>                               ]  42.05M  --.-KB/s    eta 26m 58s/.vscode-server/bin/10c8e557c  38%[==================>                               ]  42.05M  --.-KB/s    eta 26m 58s.vscode-server/bin/10c8e557c8  38%[==================>                               ]  42.05M  --.-KB/s    eta 27m 1s vscode-server/bin/10c8e557c8b  38%[==================>                               ]  42.05M  --.-KB/s    eta 27m 1s scode-server/bin/10c8e557c8b9  38%[==================>                               ]  42.05M  --.-KB/s    eta 27m 4s code-server/bin/10c8e557c8b9f  38%[==================>                               ]  42.05M  --.-KB/s    eta 27m 4s ode-server/bin/10c8e557c8b9f9  38%[==================>                               ]  42.05M  --.-KB/s    eta 27m 7s de-server/bin/10c8e557c8b9f9e  38%[==================>                               ]  42.05M  --.-KB/s    eta 27m 7s e-server/bin/10c8e557c8b9f9ed  38%[==================>                               ]  42.05M  --.-KB/s    eta 27m 10s-server/bin/10c8e557c8b9f9ed0  38%[==================>                               ]  42.05M  --.-KB/s    eta 27m 10sserver/bin/10c8e557c8b9f9ed0a  38%[==================>                               ]  42.05M  --.-KB/s    eta 27m 13server/bin/10c8e557c8b9f9ed0a8  38%[==================>                               ]  42.05M  --.-KB/s    eta 27m 13srver/bin/10c8e557c8b9f9ed0a87  38%[==================>                               ]  42.05M  --.-KB/s    eta 27m 16sver/bin/10c8e557c8b9f9ed0a87f  38%[==================>                               ]  42.05M  --.-KB/s    eta 27m 16ser/bin/10c8e557c8b9f9ed0a87f6  38%[==================>                               ]  42.05M  --.-KB/s    eta 27m 19sr/bin/10c8e557c8b9f9ed0a87f61  38%[==================>                               ]  42.05M  --.-KB/s    eta 27m 19s/bin/10c8e557c8b9f9ed0a87f61f  38%[==================>                               ]  42.05M  --.-KB/s    eta 27m 22sbin/10c8e557c8b9f9ed0a87f61f1  38%[==================>                               ]  42.05M  --.-KB/s    eta 27m 22sin/10c8e557c8b9f9ed0a87f61f1c  38%[==================>                               ]  42.05M  --.-KB/s    eta 27m 25sn/10c8e557c8b9f9ed0a87f61f1c9  38%[==================>                               ]  42.05M  --.-KB/s    eta 27m 25s/10c8e557c8b9f9ed0a87f61f1c9a  38%[==================>                               ]  42.05M  --.-KB/s    eta 27m 28s10c8e557c8b9f9ed0a87f61f1c9a4  38%[==================>                               ]  42.05M  --.-KB/s    eta 27m 28s0c8e557c8b9f9ed0a87f61f1c9a44  38%[==================>                               ]  42.05M  --.-KB/s    eta 27m 31sc8e557c8b9f9ed0a87f61f1c9a44b  38%[==================>                               ]  42.05M  --.-KB/s    eta 27m 31s8e557c8b9f9ed0a87f61f1c9a44bd  38%[==================>                               ]  42.05M  --.-KB/s    eta 27m 34se557c8b9f9ed0a87f61f1c9a44bde  38%[==================>                               ]  42.05M  --.-KB/s    eta 27m 34s557c8b9f9ed0a87f61f1c9a44bde7  38%[==================>                               ]  42.05M  --.-KB/s    eta 27m 37s57c8b9f9ed0a87f61f1c9a44bde73  38%[==================>                               ]  42.05M  --.-KB/s    eta 27m 37s7c8b9f9ed0a87f61f1c9a44bde731  38%[==================>                               ]  42.05M  --.-KB/s    eta 27m 40sc8b9f9ed0a87f61f1c9a44bde731c  38%[==================>                               ]  42.05M  --.-KB/s    eta 27m 40s8b9f9ed0a87f61f1c9a44bde731c4  38%[==================>                               ]  42.05M  --.-KB/s    eta 27m 43sb9f9ed0a87f61f1c9a44bde731c40  38%[==================>                               ]  42.05M  --.-KB/s    eta 27m 43s9f9ed0a87f61f1c9a44bde731c409  38%[==================>                               ]  42.05M  --.-KB/s    eta 27m 46sf9ed0a87f61f1c9a44bde731c409-  38%[==================>                               ]  42.05M  --.-KB/s    eta 27m 46s9ed0a87f61f1c9a44bde731c409-1  38%[==================>                               ]  42.05M  --.-KB/s    eta 27m 49sed0a87f61f1c9a44bde731c409-17  38%[==================>                               ]  42.05M  --.-KB/s    eta 27m 49sd0a87f61f1c9a44bde731c409-177  38%[==================>                               ]  42.05M  --.-KB/s    eta 27m 52s0a87f61f1c9a44bde731c409-1776  38%[==================>                               ]  42.05M  --.-KB/s    eta 27m 52sa87f61f1c9a44bde731c409-17769  38%[==================>                               ]  42.05M  --.-KB/s    eta 27m 55s87f61f1c9a44bde731c409-177698  38%[==================>                               ]  42.05M  --.-KB/s    eta 27m 55s7f61f1c9a44bde731c409-1776981  38%[==================>                               ]  42.05M  --.-KB/s    eta 27m 58sf61f1c9a44bde731c409-17769819  38%[==================>                               ]  42.05M  --.-KB/s    eta 27m 58s61f1c9a44bde731c409-177698194  38%[==================>                               ]  42.05M  --.-KB/s    eta 28m 1s 1f1c9a44bde731c409-1776981944  38%[==================>                               ]  42.05M  --.-KB/s    eta 28m 1s f1c9a44bde731c409-1776981944.  38%[==================>                               ]  42.05M  --.-KB/s    eta 28m 4s 1c9a44bde731c409-1776981944.t  38%[==================>                               ]  42.05M  --.-KB/s    eta 28m 4s c9a44bde731c409-1776981944.ta  38%[==================>                               ]  42.05M  --.-KB/s    eta 28m 7s 9a44bde731c409-1776981944.tar  38%[==================>                               ]  42.05M  --.-KB/s    eta 28m 7s a44bde731c409-1776981944.tar.  38%[==================>                               ]  42.05M  --.-KB/s    eta 28m 10s44bde731c409-1776981944.tar.g  38%[==================>                               ]  42.05M  --.-KB/s    eta 28m 10s4bde731c409-1776981944.tar.gz  38%[==================>                               ]  42.05M  --.-KB/s    eta 28m 13sbde731c409-1776981944.tar.gz   38%[==================>                               ]  42.05M  --.-KB/s    eta 28m 13sde731c409-1776981944.tar.gz    38%[==================>                               ]  42.05M  --.-KB/s    eta 28m 16se731c409-1776981944.tar.gz     38%[==================>                               ]  42.05M  --.-KB/s    eta 28m 16s/home/rivascel/.vscode-server  38%[==================>                               ]  42.05M  --.-KB/s    in 18m 3s  
+
+2026-04-23 17:23:58 (39.8 KB/s) - Read error at byte 44096096/113186068 (Connection timed out). Retrying.
+
+--2026-04-23 17:23:59--  (try: 2)  https://vscode.download.prss.microsoft.com/dbazure/download/stable/10c8e557c8b9f9ed0a87f61f1c9a44bde731c409/vscode-server-linux-x64.tar.gz
+Connecting to vscode.download.prss.microsoft.com (vscode.download.prss.microsoft.com)|23.218.213.13|:443... connected.
+HTTP request sent, awaiting response... 206 Partial Content
+Length: 113186068 (108M), 69089972 (66M) remaining [application/octet-stream]
+Saving to: ‘/home/rivascel/.vscode-server/bin/10c8e557c8b9f9ed0a87f61f1c9a44bde731c409-1776981944.tar.gz’
+
+        [ skipping 43050K ]
+ 43050K ,,,,,,,,,, ,,........ .......... .......... .......... 38% 2.09M 42s
+ 43100K .......... .......... .......... .......... .......... 39% 1.44M 44s
+ 43150K .......... .......... .......... .......... .......... 39% 1.29M 47s
+ 43200K .......... .......... .......... .......... .......... 39%  461K 73s
+ 43250K .......... .......... .......... .......... .......... 39% 1.16M 70s
+ 43300K .......... .......... .......... .......... .......... 39%  101K 2m53s
+ 43350K .......... .......... .......... .......... .......... 39% 5.57M 2m29s
+ 43400K .......... .......... .......... .......... .......... 39%  996K 2m19s
+ 43450K .......... .......... .......... .......... .......... 39%  652K 2m15s
+ 43500K .......... .......... .......... .......... .......... 39% 1.55M 2m5s
+ 43550K .......... .......... .......... .......... .......... 39% 1.23M 1m58s
+ 43600K .......... .......... .......... .......... .......... 39% 3.51M 1m50s
+ 43650K .......... .......... .......... .......... .......... 39%  943K 1m46s
+ 43700K .......... .......... .......... .......... .......... 39% 2.18M 1m41s
+ 43750K .......... .......... .......... .......... .......... 39%  218K 1m55s
+ 43800K .......... .......... .......... .......... .......... 39%  922K 1m52s
+ 43850K .......... .......... .......... .......... .......... 39%  887K 1m50s
+ 43900K .......... .......... .......... .......... .......... 39%  628K 1m49s
+ 43950K .......... .......... .......... .......... .......... 39%  273K 1m56s
+ 44000K .......... .......... .......... .......... .......... 39%  908K 1m54s
+ 44050K .......... .......... .......... .......... .......... 39% 71.5K 2m33s
+ 44100K .......... .......... .......... .......... .......... 39% 87.2M 2m26s
+ 44150K .......... .......... .......... .......... .......... 39% 77.6M 2m20s
+ 44200K .......... .......... .......... .......... .......... 40% 86.1M 2m14s
+ 44250K .......... .......... .......... .......... .......... 40% 2.35M 2m9s
+ 44300K .......... .......... .......... .......... .......... 40%  864K 2m7s
+ 44350K .......... .......... .......... .......... .......... 40% 1.34M 2m4s
+ 44400K .......... .......... .......... .......... .......... 40%  154K 2m15s
+ 44450K .......... .......... .......... .......... .......... 40%  829K 2m13s
+ 44500K .......... .......... .......... .......... .......... 40%  283K 2m16s
+ 44550K .......... .......... .......... .......... .......... 40% 1.41M 2m13s
+ 44600K .......... .......... .......... .......... .......... 40%  519K 2m13s
+ 44650K .......... .......... .......... .......... .......... 40%  288K 2m16s
+ 44700K .......... .......... .......... .......... .......... 40% 83.7K 2m35s
+ 44750K .......... .......... .......... .......... .......... 40%  852K 2m33s
+ 44800K .......... .......... .......... .......... .......... 40%  639K 2m31s
+ 44850K .......... .......... .......... .......... .......... 40%  900K 2m29s
+ 44900K .......... .......... .......... .......... .......... 40%  718K 2m27s
+ 44950K .......... .......... .......... .......... .......... 40%  177K 2m33s
+ 45000K .......... .......... .......... .......... .......... 40%  483K 2m32s
+ 45050K .......... .......... .......... .......... .......... 40%  249K 2m35s
+ 45100K .......... .......... .......... .......... .......... 40%  426K 2m35s
+ 45150K .......... .......... .......... .......... .......... 40%  169K 2m40s
+ 45200K .......... .......... .......... .......... .......... 40%  124K 2m48s
+ 45250K .......... .......... .......... .......... .......... 40%  957K 2m46s
+ 45300K .......... .......... .......... .......... .......... 41%  540K 2m45s
+ 45350K .......... .......... .......... .......... .......... 41%  744K 2m43s
+ 45400K .......... .......... .......... .......... .......... 41%  262K 2m45s
+ 45450K .......... .......... .......... .......... .......... 41%  137K 2m51s
+ 45500K .......... .......... .......... .......... .......... 41% 1.64M 2m48s
+ 45550K .......... .......... .......... .......... .......... 41% 1.47M 2m46s
+ 45600K .......... .......... .......... .......... .......... 41% 1009K 2m44s
+ 45650K .......... .......... .......... .......... .......... 41% 3.72M 2m41s
+ 45700K .......... .......... .......... .......... .......... 41% 1.58M 2m38s
+ 45750K .......... .......... .......... .......... .......... 41% 84.1K 2m49s
+ 45800K .......... .......... .......... .......... .......... 41% 1.72M 2m47s
+ 45850K .......... .......... .......... .......... .......... 41% 7.46M 2m44s
+ 45900K .......... .......... .......... .......... .......... 41% 3.47M 2m41s
+ 45950K .......... .......... .......... .......... .......... 41% 1.53M 2m39s
+ 46000K .......... .......... .......... .......... .......... 41%  203K 2m42s
+ 46050K .......... .......... .......... .......... .......... 41%  234K 2m43s
+ 46100K .......... .......... .......... .......... .......... 41%  108K 2m50s
+ 46150K .......... .......... .......... .......... .......... 41% 94.4M 2m47s
+ 46200K .......... .......... .......... .......... .......... 41% 24.0M 2m45s
+ 46250K .......... .......... .......... .......... .......... 41% 29.7M 2m42s
+ 46300K .......... .......... .......... .......... .......... 41% 2.02M 2m40s
+ 46350K .......... .......... .......... .......... .......... 41%  164K 2m43s
+ 46400K .......... .......... .......... .......... .......... 42%  136K 2m48s
+ 46450K .......... .......... .......... .......... .......... 42% 2.14M 2m46s
+ 46500K .......... .......... .......... .......... .......... 42%  510K 2m45s
+ 46550K .......... .......... .......... .......... .......... 42%  473K 2m44s
+ 46600K .......... .......... .......... .......... .......... 42% 2.18M 2m42s
+ 46650K .......... .......... .......... .......... .......... 42% 87.6K 2m50s
+ 46700K .......... .......... .......... .......... .......... 42% 2.21M 2m48s
+ 46750K .......... .......... .......... .......... .......... 42% 24.5M 2m46s
+ 46800K .......... .......... .......... .......... .......... 42%  493K 2m45s
+ 46850K .......... .......... .......... .......... .......... 42% 2.66M 2m43s
+ 46900K .......... .......... .......... .......... .......... 42% 90.8K 2m50s
+ 46950K .......... .......... .......... .......... .......... 42%  471K 2m49s
+ 47000K .......... .......... .......... .......... .......... 42% 66.5M 2m47s
+ 47050K .......... .......... .......... .......... .......... 42%  107K 2m52s
+ 47100K .......... .......... .......... .......... .......... 42% 45.8M 2m50s
+ 47150K .......... .......... .......... .......... .......... 42% 55.4M 2m48s
+ 47200K .......... .......... .......... .......... .......... 42%  127K 2m52s
+ 47250K .......... .......... .......... .......... .......... 42% 38.3M 2m49s
+ 47300K .......... .......... .......... .......... .......... 42% 24.5M 2m47s
+ 47350K .......... .......... .......... .......... .......... 42% 3.23M 2m45s
+ 47400K .......... .......... .......... .......... .......... 42%  673K 2m45s
+ 47450K .......... .......... .......... .......... .......... 42%  467K 2m44s
+ 47500K .......... .......... .......... .......... .......... 43%  223K 2m45s
+ 47550K .......... .......... .......... .......... .......... 43%  318K 2m45s
+ 47600K .......... .......... .......... .......... .......... 43% 1.29M 2m44s
+ 47650K .......... .......... .......... .......... .......... 43%  268K 2m45s
+ 47700K .......... .......... .......... .......... .......... 43% 1.42M 2m43s
+ 47750K .......... .......... .......... .......... .......... 43%  382K 2m43s
+ 47800K .......... .......... .......... .......... .......... 43%  207K 2m44s
+ 47850K .......... .......... .......... .......... .......... 43%  139K 2m47s
+ 47900K .......... .......... .......... .......... .......... 43% 1.47M 2m46s
+ 47950K .......... .......... .......... .......... .......... 43%  380K 2m46s
+ 48000K .......... .......... .......... .......... .......... 43%  885K 2m45s
+ 48050K .......... .......... .......... .......... .......... 43%  770K 2m44s
+ 48100K .......... .......... .......... .......... .......... 43% 83.9K 2m49s
+ 48150K .......... .......... .......... .......... .......... 43%  923K 2m48s
+ 48200K .......... .......... .......... .......... .......... 43%  494K 2m48s
+ 48250K .......... .......... .......... .......... .......... 43% 83.1K 2m53s
+ 48300K .......... .......... .......... .......... .......... 43%  293K 2m53s
+ 48350K .......... .......... .......... .......... .......... 43%  174K 2m55s
+ 48400K .......... .......... .......... .......... .......... 43%  234K 2m56s
+ 48450K .......... .......... .......... .......... .......... 43%  295K 2m56s
+ 48500K .......... .......... .......... .......... .......... 43%  118K 2m59s
+ 48550K .......... .......... .......... .......... .......... 43%  494K 2m58s
+ 48600K .......... .......... .......... .......... .......... 44%  274K 2m58s
+ 48650K .......... .......... .......... .......... .......... 44%  203K 2m59s
+ 48700K .......... .......... .......... .......... .......... 44%  174K 3m1s
+ 48750K .......... .......... .......... .......... .......... 44%  340K 3m1s
+ 48800K .......... .......... .......... .......... .......... 44%  209K 3m1s
+ 48850K .......... .......... .......... .......... .......... 44%  307K 3m1s
+ 48900K .......... .......... .......... .......... .......... 44% 82.1K 3m6s
+ 48950K .......... .......... .......... .......... .......... 44%  294K 3m6s
+ 49000K .......... .......... .......... .......... .......... 44%  171K 3m8s
+ 49050K .......... .......... .......... .......... .......... 44%  434K 3m7s
+ 49100K .......... .......... .......... .......... .......... 44%  536K 3m6s
+ 49150K .......... .......... .......... .......... .......... 44%  398K 3m6s
+ 49200K .......... .......... .......... .......... .......... 44%  515K 3m5s
+ 49250K .......... .......... .......... .......... .......... 44%  478K 3m5s
+ 49300K .......... .......... .......... .......... .......... 44% 1.12M 3m3s
+ 49350K .......... .......... .......... .......... .......... 44%  226K 3m4s
+ 49400K .......... .......... .......... .......... .......... 44%  135K 3m6s
+ 49450K .......... .......... .......... .......... .......... 44%  754K 3m5s
+ 49500K .......... .......... .......... .......... .......... 44%  911K 3m4s
+ 49550K .......... .......... .......... .......... .......... 44%  749K 3m3s
+ 49600K .......... .......... .......... .......... .......... 44%  214K 3m4s
+ 49650K .......... .......... .......... .......... .......... 44% 4.54M 3m2s
+ 49700K .......... .......... .......... .......... .......... 45%  145K 3m4s
+ 49750K .......... .......... .......... .......... .......... 45% 1.01M 3m3s
+ 49800K .......... .......... .......... .......... .......... 45%  738K 3m2s
+ 49850K .......... .......... .......... .......... .......... 45%  982K 3m1s
+ 49900K .......... .......... .......... .......... .......... 45% 1.25M 3m0s
+ 49950K .......... .......... .......... .......... .......... 45%  861K 2m59s
+ 50000K .......... .......... .......... .......... .......... 45%  237K 2m59s
+ 50050K .......... .......... .......... .......... .......... 45% 3.80M 2m58s
+ 50100K .......... .......... .......... .......... .......... 45%  168K 2m59s
+ 50150K .......... .......... .......... .......... .......... 45% 1.16M 2m58s
+ 50200K .......... .......... .......... .......... .......... 45%  911K 2m57s
+ 50250K .......... .......... .......... .......... .......... 45% 1.61M 2m56s
+ 50300K .......... .......... .......... .......... .......... 45%  837K 2m55s
+ 50350K .......... .......... .......... .......... .......... 45% 1.67M 2m54s
+ 50400K .......... .......... .......... .......... .......... 45% 83.8K 2m57s
+ 50450K .......... .......... .......... .......... .......... 45% 4.45M 2m56s
+ 50500K .......... .......... .......... .......... .......... 45% 4.94M 2m55s
+ 50550K .......... .......... .......... .......... .......... 45% 1.55M 2m54s
+ 50600K .......... .......... .......... .......... .......... 45% 64.9K 2m59s
+ 50650K .......... .......... .......... .......... .......... 45% 4.91M 2m57s
+ 50700K .......... .......... .......... .......... .......... 45%  592K 2m57s
+ 50750K .......... .......... .......... .......... .......... 45%  422K 2m56s
+ 50800K .......... .......... .......... .......... .......... 46%  123M 2m55s
+ 50850K .......... .......... .......... .......... .......... 46%  131K 2m57s
+ 50900K .......... .......... .......... .......... .......... 46%  262M 2m55s
+ 50950K .......... .......... .......... .......... .......... 46%  197M 2m54s
+ 51000K .......... .......... .......... .......... .......... 46%  241M 2m53s
+ 51050K .......... .......... .......... .......... .......... 46%  181M 2m52s
+ 51100K .......... .......... .......... .......... .......... 46%  907K 2m51s
+ 51150K .......... .......... .......... .......... .......... 46% 63.5M 2m50s
+ 51200K .......... .......... .......... .......... .......... 46% 89.4K 2m53s
+ 51250K .......... .......... .......... .......... .......... 46%  107M 2m51s
+ 51300K .......... .......... .......... .......... .......... 46%  188M 2m50s
+ 51350K .......... .......... .......... .......... .......... 46%  244K 2m51s
+ 51400K .......... .......... .......... .......... .......... 46% 53.1M 2m49s
+ 51450K .......... .......... .......... .......... .......... 46%  162K 2m50s
+ 51500K .......... .......... .......... .......... .......... 46%  801K 2m50s
+ 51550K .......... .......... .......... .......... .......... 46%  147K 2m51s
+ 51600K .......... .......... .......... .......... .......... 46%  364K 2m51s
+ 51650K .......... .......... .......... .......... .......... 46%  209K 2m51s
+ 51700K .......... .......... .......... .......... .......... 46%  146K 2m52s
+ 51750K .......... .......... .......... .......... .......... 46%  454K 2m52s
+ 51800K .......... .......... .......... .......... .......... 46%  255K 2m52s
+ 51850K .......... .......... .......... .......... .......... 46%  252K 2m52s
+ 51900K .......... .......... .......... .......... .......... 46%  169K 2m53s
+ 51950K .......... .......... .......... .......... .......... 47%  132K 2m55s
+ 52000K .......... .......... .......... .......... .......... 47%  824K 2m54s
+ 52050K .......... .......... .......... .......... .......... 47% 3.67M 2m53s
+ 52100K .......... .......... .......... .......... .......... 47% 1.03M 2m52s
+ 52150K .......... .......... .......... .......... .......... 47%  985K 2m51s
+ 52200K .......... .......... .......... .......... .......... 47% 1.80M 2m50s
+ 52250K .......... .......... .......... .......... .......... 47% 1.15M 2m50s
+ 52300K .......... .......... .......... .......... .......... 47%  234K 2m50s
+ 52350K .......... .......... .......... .......... .......... 47% 2.04M 2m49s
+ 52400K .......... .......... .......... .......... .......... 47%  150K 2m50s
+ 52450K .......... .......... .......... .......... .......... 47% 1.31M 2m49s
+ 52500K .......... .......... .......... .......... .......... 47% 1.85M 2m48s
+ 52550K .......... .......... .......... .......... .......... 47% 1.41M 2m47s
+ 52600K .......... .......... .......... .......... .......... 47% 1.98M 2m47s
+ 52650K .......... .......... .......... .......... .......... 47%  480K 2m46s
+ 52700K .......... .......... .......... .......... .......... 47% 97.7K 2m48s
+ 52750K .......... .......... .......... .......... .......... 47% 2.74M 2m47s
+ 52800K .......... .......... .......... .......... .......... 47% 4.48M 2m46s
+ 52850K .......... .......... .......... .......... .......... 47%  421K 2m46s
+ 52900K .......... .......... .......... .......... .......... 47%  137K 2m47s
+ 52950K .......... .......... .......... .......... .......... 47%  609K 2m47s
+ 53000K .......... .......... .......... .......... .......... 47%  119K 2m48s
+ 53050K .......... .......... .......... .......... .......... 48% 69.3M 2m47s
+ 53100K .......... .......... .......... .......... .......... 48% 1011K 2m47s
+ 53150K .......... .......... .......... .......... .......... 48% 45.8M 2m46s
+ 53200K .......... .......... .......... .......... .......... 48% 51.5M 2m45s
+ 53250K .......... .......... .......... .......... .......... 48% 85.5M 2m44s
+ 53300K .......... .......... .......... .......... .......... 48% 55.4M 2m43s
+ 53350K .......... .......... .......... .......... .......... 48%  106K 2m44s
+ 53400K .......... .......... .......... .......... .......... 48% 37.8M 2m44s
+ 53450K .......... .......... .......... .......... .......... 48% 18.9M 2m43s
+ 53500K .......... .......... .......... .......... .......... 48%  251K 2m43s
+ 53550K .......... .......... .......... .......... .......... 48%  133K 2m44s
+ 53600K .......... .......... .......... .......... .......... 48%  255K 2m44s
+ 53650K .......... .......... .......... .......... .......... 48%  500K 2m44s
+ 53700K .......... .......... .......... .......... .......... 48%  440K 2m43s
+ 53750K .......... .......... .......... .......... .......... 48%  681K 2m43s
+ 53800K .......... .......... .......... .......... .......... 48%  171K 2m43s
+ 53850K .......... .......... .......... .......... .......... 48%  781K 2m43s
+ 53900K .......... .......... .......... .......... .......... 48% 2.29M 2m42s
+ 53950K .......... .......... .......... .......... .......... 48%  363K 2m42s
+ 54000K .......... .......... .......... .......... .......... 48%  334K 2m42s
+ 54050K .......... .......... .......... .......... .......... 48%  484K 2m41s
+ 54100K .......... .......... .......... .......... .......... 48%  192K 2m42s
+ 54150K .......... .......... .......... .......... .......... 49%  263K 2m42s
+ 54200K .......... .......... .......... .......... .......... 49% 5.34M 2m41s
+ 54250K .......... .......... .......... .......... .......... 49%  465K 2m41s
+ 54300K .......... .......... .......... .......... .......... 49%  161K 2m42s
+ 54350K .......... .......... .......... .......... .......... 49%  130M 2m41s
+ 54400K .......... .......... .......... .......... .......... 49% 1.56M 2m40s
+ 54450K .......... .......... .......... .......... .......... 49% 88.6K 2m42s
+ 54500K .......... .......... .......... .......... .......... 49%  501K 2m42s
+ 54550K .......... .......... .......... .......... .......... 49%  445K 2m41s
+ 54600K .......... .......... .......... .......... .......... 49%  206K 2m42s
+ 54650K .......... .......... .......... .......... .......... 49%  825K 2m41s
+ 54700K .......... .......... .......... .......... .......... 49%  403K 2m41s
+ 54750K .......... .......... .......... .......... .......... 49%  543K 2m40s
+ 54800K .......... .......... .......... .......... .......... 49%  389K 2m40s
+ 54850K .......... .......... .......... .......... .......... 49%  373K 2m40s
+ 54900K .......... .......... .......... .......... .......... 49% 95.8K 2m42s
+ 54950K .......... .......... .......... .......... .......... 49% 1.44M 2m41s
+ 55000K .......... .......... .......... .......... .......... 49%  589K 2m41s
+ 55050K .......... .......... .......... .......... .......... 49%  512K 2m40s
+ 55100K .......... .......... .......... .......... .......... 49%  571K 2m40s
+ 55150K .......... .......... .......... .......... .......... 49%  261K 2m40s
+ 55200K .......... .......... .......... .......... .......... 49% 3.45M 2m39s
+ 55250K .......... .......... .......... .......... .......... 50%  145K 2m40s
+ 55300K .......... .......... .......... .......... .......... 50% 1.22M 2m39s
+ 55350K .......... .......... .......... .......... .......... 50%  759K 2m39s
+ 55400K .......... .......... .......... .......... .......... 50%  561K 2m38s
+ 55450K .......... .......... .......... .......... .......... 50% 1.74M 2m38s
+ 55500K .......... .......... .......... .......... .......... 50%  254K 2m38s
+ 55550K .......... .......... .......... .......... .......... 50%  186K 2m38s
+ 55600K .......... .......... .......... .......... .......... 50% 90.6M 2m37s
+ 55650K .......... .......... .......... .......... .......... 50%  153K 2m38s
+ 55700K .......... .......... .......... .......... .......... 50% 51.7M 2m37s
+ 55750K .......... .......... .......... .......... .......... 50% 66.7M 2m37s
+ 55800K .......... .......... .......... .......... .......... 50%  124K 2m38s
+ 55850K .......... .......... .......... .......... .......... 50%  109M 2m37s
+ 55900K .......... .......... .......... .......... .......... 50%  429K 2m37s
+ 55950K .......... .......... .......... .......... .......... 50% 18.2M 2m36s
+ 56000K .......... .......... .......... .......... .......... 50%  286K 2m36s
+ 56050K .......... .......... .......... .......... .......... 50% 77.9K 2m38s
+ 56100K .......... .......... .......... .......... .......... 50% 7.71M 2m37s
+ 56150K .......... .......... .......... .......... .......... 50% 1.69M 2m36s
+ 56200K .......... .......... .......... .......... .......... 50% 1022K 2m36s
+ 56250K .......... .......... .......... .......... .......... 50%  147K 2m37s
+ 56300K .......... .......... .......... .......... .......... 50%  273K 2m37s
+ 56350K .......... .......... .......... .......... .......... 51%  182K 2m37s
+ 56400K .......... .......... .......... .......... .......... 51%  160K 2m37s
+ 56450K .......... .......... .......... .......... .......... 51%  241K 2m38s
+ 56500K .......... .......... .......... .......... .......... 51%  166K 2m38s
+ 56550K .......... .......... .......... .......... .......... 51%  167K 2m39s
+ 56600K .......... .......... .......... .......... .......... 51%  241K 2m39s
+ 56650K .......... .......... .......... .......... .......... 51%  184K 2m39s
+ 56700K .......... .......... .......... .......... .......... 51%  190K 2m39s
+ 56750K .......... .......... .......... .......... .......... 51% 92.1K 2m41s
+ 56800K .......... .......... .......... .......... .......... 51%  149K 2m41s
+ 56850K .......... .......... .......... .......... .......... 51%  245K 2m41s
+ 56900K .......... .......... .......... .......... .......... 51%  169K 2m42s
+ 56950K .......... .......... .......... .......... .......... 51% 88.5K 2m43s
+ 57000K .......... .......... .......... .......... .......... 51%  306K 2m43s
+ 57050K .......... .......... .......... .......... .......... 51%  181K 2m43s
+ 57100K .......... .......... .......... .......... .......... 51% 1.12M 2m43s
+ 57150K .......... .......... .......... .......... .......... 51%  356K 2m43s
+ 57200K .......... .......... .......... .......... .......... 51%  718K 2m42s
+ 57250K .......... .......... .......... .......... .......... 51%  518K 2m42s
+ 57300K .......... .......... .......... .......... .......... 51%  618K 2m41s
+ 57350K .......... .......... .......... .......... .......... 51%  673K 2m41s
+ 57400K .......... .......... .......... .......... .......... 51%  938K 2m40s
+ 57450K .......... .......... .......... .......... .......... 52%  258K 2m40s
+ 57500K .......... .......... .......... .......... .......... 52%  670K 2m40s
+ 57550K .......... .......... .......... .......... .......... 52%  669K 2m40s
+ 57600K .......... .......... .......... .......... .......... 52%  735K 2m39s
+ 57650K .......... .......... .......... .......... .......... 52% 1.46M 2m39s
+ 57700K .......... .......... .......... .......... .......... 52%  759K 2m38s
+ 57750K .......... .......... .......... .......... .......... 52% 1.39M 2m38s
+ 57800K .......... .......... .......... .......... .......... 52%  928K 2m37s
+ 57850K .......... .......... .......... .......... .......... 52% 1.37M 2m36s
+ 57900K .......... .......... .......... .......... .......... 52%  175K 2m37s
+ 57950K .......... .......... .......... .......... .......... 52%  160K 2m37s
+ 58000K .......... .......... .......... .......... .......... 52% 2.43M 2m37s
+ 58050K .......... .......... .......... .......... .......... 52% 1.12M 2m36s
+ 58100K .......... .......... .......... .......... .......... 52% 1.04M 2m36s
+ 58150K .......... .......... .......... .......... .......... 52%  422K 2m35s
+ 58200K .......... .......... .......... .......... .......... 52% 99.0K 2m36s
+ 58250K .......... .......... .......... .......... .......... 52% 15.8M 2m36s
+ 58300K .......... .......... .......... .......... .......... 52% 3.54M 2m35s
+ 58350K .......... .......... .......... .......... .......... 52% 9.98M 2m35s
+ 58400K .......... .......... .......... .......... .......... 52%  420K 2m34s
+ 58450K .......... .......... .......... .......... .......... 52% 65.0K 2m36s
+ 58500K .......... .......... .......... .......... .......... 52% 51.0M 2m36s
+ 58550K .......... .......... .......... .......... .......... 53%  127M 2m35s
+ 58600K .......... .......... .......... .......... .......... 53% 9.57M 2m34s
+ 58650K .......... .......... .......... .......... .......... 53%  493K 2m34s
+ 58700K .......... .......... .......... .......... .......... 53% 68.2M 2m33s
+ 58750K .......... .......... .......... .......... .......... 53%  226K 2m33s
+ 58800K .......... .......... .......... .......... .......... 53%  138K 2m34s
+ 58850K .......... .......... .......... .......... .......... 53% 1.04M 2m34s
+ 58900K .......... .......... .......... .......... .......... 53% 1.04M 2m33s
+ 58950K .......... .......... .......... .......... .......... 53% 1.40M 2m33s
+ 59000K .......... .......... .......... .......... .......... 53%  239K 2m33s
+ 59050K .......... .......... .......... .......... .......... 53%  109K 2m33s
+ 59100K .......... .......... .......... .......... .......... 53%  227K 2m34s
+ 59150K .......... .......... .......... .......... .......... 53%  230K 2m34s
+ 59200K .......... .......... .......... .......... .......... 53%  104K 2m34s
+ 59250K .......... .......... .......... .......... .......... 53%  156K 2m35s
+ 59300K .......... .......... .......... .......... .......... 53%  138K 2m35s
+ 59350K .......... .......... .......... .......... .......... 53%  285K 2m35s
+ 59400K .......... .......... .......... .......... .......... 53%  202K 2m35s
+ 59450K .......... .......... .......... .......... .......... 53%  111K 2m36s
+ 59500K .......... .......... .......... .......... .......... 53%  138K 2m37s
+ 59550K .......... .......... .......... .......... .......... 53%  147K 2m37s
+ 59600K .......... .......... .......... .......... .......... 53%  278K 2m37s
+ 59650K .......... .......... .......... .......... .......... 54%  187K 2m37s
+ 59700K .......... .......... .......... .......... .......... 54%  110K 2m38s
+ 59750K .......... .......... .......... .......... .......... 54%  133K 2m39s
+ 59800K .......... .......... .......... .......... .......... 54%  102K 2m39s
+ 59850K .......... .......... .......... .......... .......... 54%  749K 2m39s
+ 59900K .......... .......... .......... .......... .......... 54%  204K 2m39s
+ 59950K .......... .......... .......... .......... .......... 54%  123K 2m40s
+ 60000K .......... .......... .......... .......... .......... 54%  239K 2m40s
+ 60050K .......... .......... .......... .......... .......... 54%  251K 2m40s
+ 60100K .......... .......... .......... .......... .......... 54%  664K 2m39s
+ 60150K .......... .......... .......... .......... .......... 54%  337K 2m39s
+ 60200K .......... .......... .......... .......... .......... 54%  652K 2m39s
+ 60250K .......... .......... .......... .......... .......... 54%  462K 2m38s
+ 60300K .......... .......... .......... .......... .......... 54%  733K 2m38s
+ 60350K .......... .......... .......... .......... .......... 54%  595K 2m38s
+ 60400K .......... .......... .......... .......... .......... 54%  237K 2m38s
+ 60450K .......... .......... .......... .......... .......... 54%  134K 2m38s
+ 60500K .......... .......... .......... .......... .......... 54%  477K 2m38s
+ 60550K .......... .......... .......... .......... .......... 54%  652K 2m37s
+ 60600K .......... .......... .......... .......... .......... 54%  807K 2m37s
+ 60650K .......... .......... .......... .......... .......... 54%  226K 2m37s
+ 60700K .......... .......... .......... .......... .......... 54% 7.61M 2m36s
+ 60750K .......... .......... .......... .......... .......... 55%  736K 2m36s
+ 60800K .......... .......... .......... .......... .......... 55%  586K 2m36s
+ 60850K .......... .......... .......... .......... .......... 55% 1.30M 2m35s
+ 60900K .......... .......... .......... .......... .......... 55%  499K 2m35s
+ 60950K .......... .......... .......... .......... .......... 55%  418K 2m34s
+ 61000K .......... .......... .......... .......... .......... 55%  411K 2m34s
+ 61050K .......... .......... .......... .......... .......... 55%  140K 2m35s
+ 61100K .......... .......... .......... .......... .......... 55% 56.0M 2m34s
+ 61150K .......... .......... .......... .......... .......... 55% 2.96M 2m33s
+ 61200K .......... .......... .......... .......... .......... 55% 1.54M 2m33s
+ 61250K .......... .......... .......... .......... .......... 55%  990K 2m33s
+ 61300K .......... .......... .......... .......... .......... 55%  191K 2m33s
+ 61350K .......... .......... .......... .......... .......... 55%  134M 2m32s
+ 61400K .......... .......... .......... .......... .......... 55%  468K 2m32s
+ 61450K .......... .......... .......... .......... .......... 55%  210K 2m32s
+ 61500K .......... .......... .......... .......... .......... 55% 99.1M 2m31s
+ 61550K .......... .......... .......... .......... .......... 55%  141K 2m32s
+ 61600K .......... .......... .......... .......... .......... 55%  108K 2m32s
+ 61650K .......... .......... .......... .......... .......... 55% 96.1M 2m32s
+ 61700K .......... .......... .......... .......... .......... 55% 42.2M 2m31s
+ 61750K .......... .......... .......... .......... .......... 55% 1.08M 2m31s
+ 61800K .......... .......... .......... .......... .......... 55%  201K 2m31s
+ 61850K .......... .......... .......... .......... .......... 56% 68.7M 2m30s
+ 61900K .......... .......... .......... .......... .......... 56%  674K 2m30s
+ 61950K .......... .......... .......... .......... .......... 56% 2.69M 2m29s
+ 62000K .......... .......... .......... .......... .......... 56% 7.19M 2m29s
+ 62050K .......... .......... .......... .......... .......... 56%  136K 2m29s
+ 62100K .......... .......... .......... .......... .......... 56%  104K 2m30s
+ 62150K .......... .......... .......... .......... .......... 56% 91.1M 2m29s
+ 62200K .......... .......... .......... .......... .......... 56% 82.3M 2m29s
+ 62250K .......... .......... .......... .......... .......... 56% 1.05M 2m29s
+ 62300K .......... .......... .......... .......... .......... 56%  143K 2m29s
+ 62350K .......... .......... .......... .......... .......... 56%  253K 2m29s
+ 62400K .......... .......... .......... .......... .......... 56%  192K 2m29s
+ 62450K .......... .......... .......... .......... .......... 56%  159K 2m29s
+ 62500K .......... .......... .......... .......... .......... 56%  209K 2m29s
+ 62550K .......... .......... .......... .......... .......... 56%  245K 2m29s
+ 62600K .......... .......... .......... .......... .......... 56%  151K 2m29s
+ 62650K .......... .......... .......... .......... .......... 56%  111K 2m30s
+ 62700K .......... .......... .......... .......... .......... 56% 1.85M 2m30s
+ 62750K .......... .......... .......... .......... .......... 56% 1.27M 2m29s
+ 62800K .......... .......... .......... .......... .......... 56% 1.14M 2m29s
+ 62850K .......... .......... .......... .......... .......... 56% 1.15M 2m28s
+ 62900K .......... .......... .......... .......... .......... 56%  681K 2m28s
+ 62950K .......... .......... .......... .......... .......... 56%  351K 2m28s
+ 63000K .......... .......... .......... .......... .......... 57% 3.96M 2m27s
+ 63050K .......... .......... .......... .......... .......... 57%  342K 2m27s
+ 63100K .......... .......... .......... .......... .......... 57%  917K 2m27s
+ 63150K .......... .......... .......... .......... .......... 57%  344K 2m26s
+ 63200K .......... .......... .......... .......... .......... 57%  291K 2m26s
+ 63250K .......... .......... .......... .......... .......... 57% 1014K 2m26s
+ 63300K .......... .......... .......... .......... .......... 57% 76.6M 2m25s
+ 63350K .......... .......... .......... .......... .......... 57% 77.8K 2m26s
+ 63400K .......... .......... .......... .......... .......... 57% 82.2M 2m26s
+ 63450K .......... .......... .......... .......... .......... 57% 38.7M 2m25s
+ 63500K .......... .......... .......... .......... .......... 57%  355K 2m25s
+ 63550K .......... .......... .......... .......... .......... 57% 77.0M 2m25s
+ 63600K .......... .......... .......... .......... .......... 57%  141M 2m24s
+ 63650K .......... .......... .......... .......... .......... 57% 82.2K 2m25s
+ 63700K .......... .......... .......... .......... .......... 57% 2.00M 2m25s
+ 63750K .......... .......... .......... .......... .......... 57%  702K 2m24s
+ 63800K .......... .......... .......... .......... .......... 57%  388K 2m24s
+ 63850K .......... .......... .......... .......... .......... 57% 93.7K 2m25s
+ 63900K .......... .......... .......... .......... .......... 57%  357K 2m25s
+ 63950K .......... .......... .......... .......... .......... 57%  151K 2m25s
+ 64000K .......... .......... .......... .......... .......... 57%  117K 2m25s
+ 64050K .......... .......... .......... .......... .......... 57%  278K 2m25s
+ 64100K .......... .......... .......... .......... .......... 58% 89.0K 2m26s
+ 64150K .......... .......... .......... .......... .......... 58%  288K 2m26s
+ 64200K .......... .......... .......... .......... .......... 58%  180K 2m26s
+ 64250K .......... .......... .......... .......... .......... 58%  723K 2m26s
+ 64300K .......... .......... .......... .......... .......... 58%  425K 2m25s
+ 64350K .......... .......... .......... .......... .......... 58%  292K 2m25s
+ 64400K .......... .......... .......... .......... .......... 58%  299K 2m25s
+ 64450K .......... .......... .......... .......... .......... 58%  339K 2m25s
+ 64500K .......... .......... .......... .......... .......... 58%  358K 2m25s
+ 64550K .......... .......... .......... .......... .......... 58%  324K 2m24s
+ 64600K .......... .......... .......... .......... .......... 58%  497K 2m24s
+ 64650K .......... .......... .......... .......... .......... 58%  474K 2m24s
+ 64700K .......... .......... .......... .......... .......... 58%  628K 2m24s
+ 64750K .......... .......... .......... .......... .......... 58%  502K 2m23s
+ 64800K .......... .......... .......... .......... .......... 58%  234K 2m23s
+ 64850K .......... .......... .......... .......... .......... 58%  139K 2m24s
+ 64900K .......... .......... .......... .......... .......... 58%  443K 2m23s
+ 64950K .......... .......... .......... .......... .......... 58%  852K 2m23s
+ 65000K .......... .......... .......... .......... .......... 58%  190K 2m23s
+ 65050K .......... .......... .......... .......... .......... 58% 2.60M 2m23s
+ 65100K .......... .......... .......... .......... .......... 58%  149K 2m23s
+ 65150K .......... .......... .......... .......... .......... 58%  653K 2m22s
+ 65200K .......... .......... .......... .......... .......... 59% 1.13M 2m22s
+ 65250K .......... .......... .......... .......... .......... 59%  858K 2m22s
+ 65300K .......... .......... .......... .......... .......... 59% 1.05M 2m21s
+ 65350K .......... .......... .......... .......... .......... 59% 86.0K 2m22s
+ 65400K .......... .......... .......... .......... .......... 59%  137M 2m22s
+ 65450K .......... .......... .......... .......... .......... 59% 94.5M 2m21s
+ 65500K .......... .......... .......... .......... .......... 59% 1.52M 2m21s
+ 65550K .......... .......... .......... .......... .......... 59% 1.28M 2m20s
+ 65600K .......... .......... .......... .......... .......... 59%  902K 2m20s
+ 65650K .......... .......... .......... .......... .......... 59% 1019K 2m20s
+ 65700K .......... .......... .......... .......... .......... 59% 1.90M 2m19s
+ 65750K .......... .......... .......... .......... .......... 59% 1.68M 2m19s
+ 65800K .......... .......... .......... .......... .......... 59%  230K 2m19s
+ 65850K .......... .......... .......... .......... .......... 59%  280K 2m19s
+ 65900K .......... .......... .......... .......... .......... 59% 16.3M 2m18s
+ 65950K .......... .......... .......... .......... .......... 59%  286K 2m18s
+ 66000K .......... .......... .......... .......... .......... 59% 5.23M 2m18s
+ 66050K .......... .......... .......... .......... .......... 59%  177M 2m17s
+ 66100K .......... .......... .......... .......... .......... 59% 70.1K 2m18s
+ 66150K .......... .......... .......... .......... .......... 59% 48.8M 2m18s
+ 66200K .......... .......... .......... .......... .......... 59% 52.5M 2m17s
+ 66250K .......... .......... .......... .......... .......... 59% 93.4M 2m17s
+ 66300K .......... .......... .......... .......... .......... 60% 27.9M 2m16s
+ 66350K .......... .......... .......... .......... .......... 60%  216K 2m16s
+ 66400K .......... .......... .......... .......... .......... 60% 41.8M 2m16s
+ 66450K .......... .......... .......... .......... .......... 60%  281K 2m16s
+ 66500K .......... .......... .......... .......... .......... 60%  164K 2m16s
+ 66550K .......... .......... .......... .......... .......... 60% 1.01M 2m15s
+ 66600K .......... .......... .......... .......... .......... 60%  297K 2m15s
+ 66650K .......... .......... .......... .......... .......... 60%  261K 2m15s
+ 66700K .......... .......... .......... .......... .......... 60%  143K 2m15s
+ 66750K .......... .......... .......... .......... .......... 60%  963K 2m15s
+ 66800K .......... .......... .......... .......... .......... 60%  403K 2m15s
+ 66850K .......... .......... .......... .......... .......... 60%  417K 2m15s
+ 66900K .......... .......... .......... .......... .......... 60%  591K 2m14s
+ 66950K .......... .......... .......... .......... .......... 60%  205K 2m14s
+ 67000K .......... .......... .......... .......... .......... 60%  545K 2m14s
+ 67050K .......... .......... .......... .......... .......... 60%  691K 2m14s
+ 67100K .......... .......... .......... .......... .......... 60%  785K 2m14s
+ 67150K .......... .......... .......... .......... .......... 60%  386K 2m13s
+ 67200K .......... .......... .......... .......... .......... 60%  105K 2m14s
+ 67250K .......... .......... .......... .......... .......... 60% 58.4M 2m13s
+ 67300K .......... .......... .......... .......... .......... 60% 1.05M 2m13s
+ 67350K .......... .......... .......... .......... .......... 60%  660K 2m13s
+ 67400K .......... .......... .......... .......... .......... 61%  682K 2m12s
+ 67450K .......... .......... .......... .......... .......... 61%  346K 2m12s
+ 67500K .......... .......... .......... .......... .......... 61%  579K 2m12s
+ 67550K .......... .......... .......... .......... .......... 61%  443K 2m12s
+ 67600K .......... .......... .......... .......... .......... 61%  174K 2m12s
+ 67650K .......... .......... .......... .......... .......... 61%  570K 2m12s
+ 67700K .......... .......... .......... .......... .......... 61% 1.46M 2m11s
+ 67750K .......... .......... .......... .......... .......... 61%  424K 2m11s
+ 67800K .......... .......... .......... .......... .......... 61%  645K 2m11s
+ 67850K .......... .......... .......... .......... .......... 61%  104K 2m11s
+ 67900K .......... .......... .......... .......... .......... 61% 1019K 2m11s
+ 67950K .......... .......... .......... .......... .......... 61% 3.32M 2m10s
+ 68000K .......... .......... .......... .......... .......... 61%  196K 2m10s
+ 68050K .......... .......... .......... .......... .......... 61%  948K 2m10s
+ 68100K .......... .......... .......... .......... .......... 61%  186K 2m10s
+ 68150K .......... .......... .......... .......... .......... 61%  110K 2m10s
+ 68200K .......... .......... .......... .......... .......... 61%  699K 2m10s
+ 68250K .......... .......... .......... .......... .......... 61%  417K 2m10s
+ 68300K .......... .......... .......... .......... .......... 61%  153K 2m10s
+ 68350K .......... .......... .......... .......... .......... 61% 1.12M 2m10s
+ 68400K .......... .......... .......... .......... .......... 61%  375K 2m10s
+ 68450K .......... .......... .......... .......... .......... 61%  542K 2m9s
+ 68500K .......... .......... .......... .......... .......... 62%  376K 2m9s
+ 68550K .......... .......... .......... .......... .......... 62%  425K 2m9s
+ 68600K .......... .......... .......... .......... .......... 62%  255K 2m9s
+ 68650K .......... .......... .......... .......... .......... 62%  136K 2m9s
+ 68700K .......... .......... .......... .......... .......... 62% 1.01M 2m9s
+ 68750K .......... .......... .......... .......... .......... 62%  657K 2m8s
+ 68800K .......... .......... .......... .......... .......... 62% 2.24M 2m8s
+ 68850K .......... .......... .......... .......... .......... 62%  913K 2m8s
+ 68900K .......... .......... .......... .......... .......... 62% 1.76M 2m7s
+ 68950K .......... .......... .......... .......... .......... 62% 4.47M 2m7s
+ 69000K .......... .......... .......... .......... .......... 62%  195K 2m7s
+ 69050K .......... .......... .......... .......... .......... 62% 1.21M 2m7s
+ 69100K .......... .......... .......... .......... .......... 62%  669K 2m6s
+ 69150K .......... .......... .......... .......... .......... 62% 97.1K 2m7s
+ 69200K .......... .......... .......... .......... .......... 62% 2.67M 2m6s
+ 69250K .......... .......... .......... .......... .......... 62%  422K 2m6s
+ 69300K .......... .......... .......... .......... .......... 62%  125K 2m6s
+ 69350K .......... .......... .......... .......... .......... 62% 3.38M 2m6s
+ 69400K .......... .......... .......... .......... .......... 62% 39.8M 2m6s
+ 69450K .......... .......... .......... .......... .......... 62% 2.01M 2m5s
+ 69500K .......... .......... .......... .......... .......... 62%  556K 2m5s
+ 69550K .......... .......... .......... .......... .......... 62%  490K 2m5s
+ 69600K .......... .......... .......... .......... .......... 63%  317K 2m5s
+ 69650K .......... .......... .......... .......... .......... 63%  494K 2m5s
+ 69700K .......... .......... .......... .......... .......... 63%  136M 2m4s
+ 69750K .......... .......... .......... .......... .......... 63%  357K 2m4s
+ 69800K .......... .......... .......... .......... .......... 63% 1.82M 2m4s
+ 69850K .......... .......... .......... .......... .......... 63% 1.34M 2m3s
+ 69900K .......... .......... .......... .......... .......... 63%  260K 2m3s
+ 69950K .......... .......... .......... .......... .......... 63%  238K 2m3s
+ 70000K .......... .......... .......... .......... .......... 63% 1.01M 2m3s
+ 70050K .......... .......... .......... .......... .......... 63%  647K 2m3s
+ 70100K .......... .......... .......... .......... .......... 63%  128K 2m3s
+ 70150K .......... .......... .......... .......... .......... 63% 29.9M 2m2s
+ 70200K .......... .......... .......... .......... .......... 63%  310K 2m2s
+ 70250K .......... .......... .......... .......... .......... 63%  458K 2m2s
+ 70300K .......... .......... .......... .......... .......... 63%  133K 2m2s
+ 70350K .......... .......... .......... .......... .......... 63% 40.7M 2m2s
+ 70400K .......... .......... .......... .......... .......... 63% 54.8K 2m3s
+ 70450K .......... .......... .......... .......... .......... 63% 47.8M 2m2s
+ 70500K .......... .......... .......... .......... .......... 63%  685K 2m2s
+ 70550K .......... .......... .......... .......... .......... 63%  629K 2m2s
+ 70600K .......... .......... .......... .......... .......... 63%  650K 2m2s
+ 70650K .......... .......... .......... .......... .......... 63%  231K 2m2s
+ 70700K .......... .......... .......... .......... .......... 64%  649K 2m1s
+ 70750K .......... .......... .......... .......... .......... 64%  768K 2m1s
+ 70800K .......... .......... .......... .......... .......... 64%  566K 2m1s
+ 70850K .......... .......... .......... .......... .......... 64%  706K 2m1s
+ 70900K .......... .......... .......... .......... .......... 64%  589K 2m0s
+ 70950K .......... .......... .......... .......... .......... 64%  542K 2m0s
+ 71000K .......... .......... .......... .......... .......... 64%  174K 2m0s
+ 71050K .......... .......... .......... .......... .......... 64%  147K 2m0s
+ 71100K .......... .......... .......... .......... .......... 64%  944K 2m0s
+ 71150K .......... .......... .......... .......... .......... 64% 3.78M 2m0s
+ 71200K .......... .......... .......... .......... .......... 64%  481K 1m59s
+ 71250K .......... .......... .......... .......... .......... 64%  999K 1m59s
+ 71300K .......... .......... .......... .......... .......... 64%  139K 1m59s
+ 71350K .......... .......... .......... .......... .......... 64%  169K 1m59s
+ 71400K .......... .......... .......... .......... .......... 64%  149M 1m59s
+ 71450K .......... .......... .......... .......... .......... 64%  103M 1m59s
+ 71500K .......... .......... .......... .......... .......... 64% 2.40M 1m58s
+ 71550K .......... .......... .......... .......... .......... 64% 93.0M 1m58s
+ 71600K .......... .......... .......... .......... .......... 64%  309K 1m58s
+ 71650K .......... .......... .......... .......... .......... 64%  135K 1m58s
+ 71700K .......... .......... .......... .......... .......... 64% 79.6M 1m57s
+ 71750K .......... .......... .......... .......... .......... 64%  486K 1m57s
+ 71800K .......... .......... .......... .......... .......... 65%  420K 1m57s
+ 71850K .......... .......... .......... .......... .......... 65%  326K 1m57s
+ 71900K .......... .......... .......... .......... .......... 65%  198K 1m57s
+ 71950K .......... .......... .......... .......... .......... 65%  144K 1m57s
+ 72000K .......... .......... .......... .......... .......... 65%  457K 1m57s
+ 72050K .......... .......... .......... .......... .......... 65%  564K 1m57s
+ 72100K .......... .......... .......... .......... .......... 65%  190K 1m57s
+ 72150K .......... .......... .......... .......... .......... 65%  438K 1m56s
+ 72200K .......... .......... .......... .......... .......... 65%  669K 1m56s
+ 72250K .......... .......... .......... .......... .......... 65%  428K 1m56s
+ 72300K .......... .......... .......... .......... .......... 65%  520K 1m56s
+ 72350K .......... .......... .......... .......... .......... 65%  446K 1m55s
+ 72400K .......... .......... .......... .......... .......... 65% 80.5K 1m56s
+ 72450K .......... .......... .......... .......... .......... 65%  423K 1m56s
+ 72500K .......... .......... .......... .......... .......... 65%  150K 1m56s
+ 72550K .......... .......... .......... .......... .......... 65%  864K 1m56s
+ 72600K .......... .......... .......... .......... .......... 65%  510K 1m55s
+ 72650K .......... .......... .......... .......... .......... 65%  508K 1m55s
+ 72700K .......... .......... .......... .......... .......... 65%  672K 1m55s
+ 72750K .......... .......... .......... .......... .......... 65%  606K 1m55s
+ 72800K .......... .......... .......... .......... .......... 65%  609K 1m54s
+ 72850K .......... .......... .......... .......... .......... 65%  882K 1m54s
+ 72900K .......... .......... .......... .......... .......... 65%  734K 1m54s
+ 72950K .......... .......... .......... .......... .......... 66%  239K 1m54s
+ 73000K .......... .......... .......... .......... .......... 66%  147K 1m54s
+ 73050K .......... .......... .......... .......... .......... 66%  886K 1m54s
+ 73100K .......... .......... .......... .......... .......... 66%  453K 1m53s
+ 73150K .......... .......... .......... .......... .......... 66% 2.33M 1m53s
+ 73200K .......... .......... .......... .......... .......... 66% 1017K 1m53s
+ 73250K .......... .......... .......... .......... .......... 66%  254K 1m53s
+ 73300K .......... .......... .......... .......... .......... 66%  544K 1m52s
+ 73350K .......... .......... .......... .......... .......... 66% 2.00M 1m52s
+ 73400K .......... .......... .......... .......... .......... 66%  266K 1m52s
+ 73450K .......... .......... .......... .......... .......... 66% 1.45M 1m52s
+ 73500K .......... .......... .......... .......... .......... 66% 1.25M 1m51s
+ 73550K .......... .......... .......... .......... .......... 66% 74.3K 1m52s
+ 73600K .......... .......... .......... .......... .......... 66%  584K 1m52s
+ 73650K .......... .......... .......... .......... .......... 66% 33.3M 1m51s
+ 73700K .......... .......... .......... .......... .......... 66% 1.53M 1m51s
+ 73750K .......... .......... .......... .......... .......... 66%  464K 1m51s
+ 73800K .......... .......... .......... .......... .......... 66%  158K 1m51s
+ 73850K .......... .......... .......... .......... .......... 66%  144K 1m51s
+ 73900K .......... .......... .......... .......... .......... 66% 8.66M 1m51s
+ 73950K .......... .......... .......... .......... .......... 66%  947K 1m50s
+ 74000K .......... .......... .......... .......... .......... 66% 1.03M 1m50s
+ 74050K .......... .......... .......... .......... .......... 67%  694K 1m50s
+ 74100K .......... .......... .......... .......... .......... 67%  196K 1m50s
+ 74150K .......... .......... .......... .......... .......... 67%  733K 1m50s
+ 74200K .......... .......... .......... .......... .......... 67%  519K 1m49s
+ 74250K .......... .......... .......... .......... .......... 67%  540K 1m49s
+ 74300K .......... .......... .......... .......... .......... 67%  300K 1m49s
+ 74350K .......... .......... .......... .......... .......... 67%  743K 1m49s
+ 74400K .......... .......... .......... .......... .......... 67%  127K 1m49s
+ 74450K .......... .......... .......... .......... .......... 67% 13.3M 1m49s
+ 74500K .......... .......... .......... .......... .......... 67%  522K 1m48s
+ 74550K .......... .......... .......... .......... .......... 67%  777K 1m48s
+ 74600K .......... .......... .......... .......... .......... 67%  419K 1m48s
+ 74650K .......... .......... .......... .......... .......... 67%  684K 1m48s
+ 74700K .......... .......... .......... .......... .......... 67%  340K 1m48s
+ 74750K .......... .......... .......... .......... .......... 67% 90.0K 1m48s
+ 74800K .......... .......... .......... .......... .......... 67%  642K 1m48s
+ 74850K .......... .......... .......... .......... .......... 67%  320K 1m48s
+ 74900K .......... .......... .......... .......... .......... 67%  215K 1m47s
+ 74950K .......... .......... .......... .......... .......... 67%  567K 1m47s
+ 75000K .......... .......... .......... .......... .......... 67%  421K 1m47s
+ 75050K .......... .......... .......... .......... .......... 67%  377K 1m47s
+ 75100K .......... .......... .......... .......... .......... 67%  319K 1m47s
+ 75150K .......... .......... .......... .......... .......... 68%  551K 1m47s
+ 75200K .......... .......... .......... .......... .......... 68% 80.3K 1m47s
+ 75250K .......... .......... .......... .......... .......... 68% 2.13M 1m47s
+ 75300K .......... .......... .......... .......... .......... 68%  437K 1m46s
+ 75350K .......... .......... .......... .......... .......... 68%  277K 1m46s
+ 75400K .......... .......... .......... .......... .......... 68%  626K 1m46s
+ 75450K .......... .......... .......... .......... .......... 68%  137K 1m46s
+ 75500K .......... .......... .......... .......... .......... 68%  734K 1m46s
+ 75550K .......... .......... .......... .......... .......... 68%  736K 1m46s
+ 75600K .......... .......... .......... .......... .......... 68%  700K 1m45s
+ 75650K .......... .......... .......... .......... .......... 68%  263K 1m45s
+ 75700K .......... .......... .......... .......... .......... 68% 1.61M 1m45s
+ 75750K .......... .......... .......... .......... .......... 68% 1.73M 1m45s
+ 75800K .......... .......... .......... .......... .......... 68%  951K 1m44s
+ 75850K .......... .......... .......... .......... .......... 68%  847K 1m44s
+ 75900K .......... .......... .......... .......... .......... 68%  828K 1m44s
+ 75950K .......... .......... .......... .......... .......... 68% 1.05M 1m44s
+ 76000K .......... .......... .......... .......... .......... 68%  397K 1m44s
+ 76050K .......... .......... .......... .......... .......... 68%  501K 1m43s
+ 76100K .......... .......... .......... .......... .......... 68%  830K 1m43s
+ 76150K .......... .......... .......... .......... .......... 68%  185K 1m43s
+ 76200K .......... .......... .......... .......... .......... 68%  148K 1m43s
+ 76250K .......... .......... .......... .......... .......... 69%  670K 1m43s
+ 76300K .......... .......... .......... .......... .......... 69% 1.82M 1m43s
+ 76350K .......... .......... .......... .......... .......... 69%  893K 1m42s
+ 76400K .......... .......... .......... .......... .......... 69%  468K 1m42s
+ 76450K .......... .......... .......... .......... .......... 69%  207K 1m42s
+ 76500K .......... .......... .......... .......... .......... 69%  553K 1m42s
+ 76550K .......... .......... .......... .......... .......... 69%  200K 1m42s
+ 76600K .......... .......... .......... .......... .......... 69% 65.8M 1m42s
+ 76650K .......... .......... .......... .......... .......... 69%  497K 1m41s
+ 76700K .......... .......... .......... .......... .......... 69% 1.57M 1m41s
+ 76750K .......... .......... .......... .......... .......... 69% 78.0K 1m41s
+ 76800K .......... .......... .......... .......... .......... 69% 3.06M 1m41s
+ 76850K .......... .......... .......... .......... .......... 69% 2.03M 1m41s
+ 76900K .......... .......... .......... .......... .......... 69%  578K 1m41s
+ 76950K .......... .......... .......... .......... .......... 69%  452K 1m40s
+ 77000K .......... .......... .......... .......... .......... 69% 87.3K 1m41s
+ 77050K .......... .......... .......... .......... .......... 69% 6.58M 1m40s
+ 77100K .......... .......... .......... .......... .......... 69%  707K 1m40s
+ 77150K .......... .......... .......... .......... .......... 69%  592K 1m40s
+ 77200K .......... .......... .......... .......... .......... 69% 1.05M 1m40s
+ 77250K .......... .......... .......... .......... .......... 69%  180K 1m40s
+ 77300K .......... .......... .......... .......... .......... 69% 10.5M 99s
+ 77350K .......... .......... .......... .......... .......... 70%  431K 99s
+ 77400K .......... .......... .......... .......... .......... 70%  638K 99s
+ 77450K .......... .......... .......... .......... .......... 70%  324K 99s
+ 77500K .......... .......... .......... .......... .......... 70%  267K 99s
+ 77550K .......... .......... .......... .......... .......... 70% 92.9M 99s
+ 77600K .......... .......... .......... .......... .......... 70%  147K 99s
+ 77650K .......... .......... .......... .......... .......... 70%  253K 98s
+ 77700K .......... .......... .......... .......... .......... 70%  813K 98s
+ 77750K .......... .......... .......... .......... .......... 70%  419K 98s
+ 77800K .......... .......... .......... .......... .......... 70%  183K 98s
+ 77850K .......... .......... .......... .......... .......... 70%  701K 98s
+ 77900K .......... .......... .......... .......... .......... 70%  724K 98s
+ 77950K .......... .......... .......... .......... .......... 70%  202K 97s
+ 78000K .......... .......... .......... .......... .......... 70%  378K 97s
+ 78050K .......... .......... .......... .......... .......... 70%  229K 97s
+ 78100K .......... .......... .......... .......... .......... 70% 59.2M 97s
+ 78150K .......... .......... .......... .......... .......... 70%  132K 97s
+ 78200K .......... .......... .......... .......... .......... 70%  345K 97s
+ 78250K .......... .......... .......... .......... .......... 70% 2.42M 97s
+ 78300K .......... .......... .......... .......... .......... 70%  595K 96s
+ 78350K .......... .......... .......... .......... .......... 70%  211K 96s
+ 78400K .......... .......... .......... .......... .......... 70% 6.26M 96s
+ 78450K .......... .......... .......... .......... .......... 71%  456K 96s
+ 78500K .......... .......... .......... .......... .......... 71%  315K 96s
+ 78550K .......... .......... .......... .......... .......... 71%  880K 95s
+ 78600K .......... .......... .......... .......... .......... 71%  353K 95s
+ 78650K .......... .......... .......... .......... .......... 71%  163K 95s
+ 78700K .......... .......... .......... .......... .......... 71%  141K 95s
+ 78750K .......... .......... .......... .......... .......... 71%  307K 95s
+ 78800K .......... .......... .......... .......... .......... 71%  439K 95s
+ 78850K .......... .......... .......... .......... .......... 71% 91.9K 95s
+ 78900K .......... .......... .......... .......... .......... 71%  611K 95s
+ 78950K .......... .......... .......... .......... .......... 71%  647K 95s
+ 79000K .......... .......... .......... .......... .......... 71%  869K 95s
+ 79050K .......... .......... .......... .......... .......... 71%  209K 94s
+ 79100K .......... .......... .......... .......... .......... 71% 19.2M 94s
+ 79150K .......... .......... .......... .......... .......... 71%  783K 94s
+ 79200K .......... .......... .......... .......... .......... 71%  627K 94s
+ 79250K .......... .......... .......... .......... .......... 71%  824K 94s
+ 79300K .......... .......... .......... .......... .......... 71%  518K 93s
+ 79350K .......... .......... .......... .......... .......... 71%  912K 93s
+ 79400K .......... .......... .......... .......... .......... 71%  961K 93s
+ 79450K .......... .......... .......... .......... .......... 71%  774K 93s
+ 79500K .......... .......... .......... .......... .......... 71%  161K 93s
+ 79550K .......... .......... .......... .......... .......... 72%  142K 93s
+ 79600K .......... .......... .......... .......... .......... 72% 4.09M 92s
+ 79650K .......... .......... .......... .......... .......... 72% 1.26M 92s
+ 79700K .......... .......... .......... .......... .......... 72% 1006K 92s
+ 79750K .......... .......... .......... .......... .......... 72%  372K 92s
+ 79800K .......... .......... .......... .......... .......... 72% 84.8K 92s
+ 79850K .......... .......... .......... .......... .......... 72% 5.06M 92s
+ 79900K .......... .......... .......... .......... .......... 72% 4.22M 91s
+ 79950K .......... .......... .......... .......... .......... 72% 2.18M 91s
+ 80000K .......... .......... .......... .......... .......... 72%  293K 91s
+ 80050K .......... .......... .......... .......... .......... 72% 86.4K 91s
+ 80100K .......... .......... .......... .......... .......... 72% 42.1M 91s
+ 80150K .......... .......... .......... .......... .......... 72% 6.88M 91s
+ 80200K .......... .......... .......... .......... .......... 72% 12.9M 90s
+ 80250K .......... .......... .......... .......... .......... 72%  119K 91s
+ 80300K .......... .......... .......... .......... .......... 72% 62.7M 90s
+ 80350K .......... .......... .......... .......... .......... 72%  127K 90s
+ 80400K .......... .......... .......... .......... .......... 72% 54.8M 90s
+ 80450K .......... .......... .......... .......... .......... 72% 94.2M 90s
+ 80500K .......... .......... .......... .......... .......... 72% 37.0M 89s
+ 80550K .......... .......... .......... .......... .......... 72%  419K 89s
+ 80600K .......... .......... .......... .......... .......... 72% 59.4M 89s
+ 80650K .......... .......... .......... .......... .......... 73% 77.7K 89s
+ 80700K .......... .......... .......... .......... .......... 73%  106M 89s
+ 80750K .......... .......... .......... .......... .......... 73% 1.55M 89s
+ 80800K .......... .......... .......... .......... .......... 73%  377K 89s
+ 80850K .......... .......... .......... .......... .......... 73%  651K 88s
+ 80900K .......... .......... .......... .......... .......... 73%  184K 88s
+ 80950K .......... .......... .......... .......... .......... 73%  659K 88s
+ 81000K .......... .......... .......... .......... .......... 73%  682K 88s
+ 81050K .......... .......... .......... .......... .......... 73%  460K 88s
+ 81100K .......... .......... .......... .......... .......... 73%  306K 88s
+ 81150K .......... .......... .......... .......... .......... 73%  138K 88s
+ 81200K .......... .......... .......... .......... .......... 73%  186M 87s
+ 81250K .......... .......... .......... .......... .......... 73%  574K 87s
+ 81300K .......... .......... .......... .......... .......... 73%  726K 87s
+ 81350K .......... .......... .......... .......... .......... 73%  324K 87s
+ 81400K .......... .......... .......... .......... .......... 73%  493K 87s
+ 81450K .......... .......... .......... .......... .......... 73%  536K 86s
+ 81500K .......... .......... .......... .......... .......... 73% 88.7K 87s
+ 81550K .......... .......... .......... .......... .......... 73% 1.23M 86s
+ 81600K .......... .......... .......... .......... .......... 73%  605K 86s
+ 81650K .......... .......... .......... .......... .......... 73%  833K 86s
+ 81700K .......... .......... .......... .......... .......... 73%  131K 86s
+ 81750K .......... .......... .......... .......... .......... 74%  132M 86s
+ 81800K .......... .......... .......... .......... .......... 74% 11.1M 85s
+ 81850K .......... .......... .......... .......... .......... 74%  265K 85s
+ 81900K .......... .......... .......... .......... .......... 74%  742K 85s
+ 81950K .......... .......... .......... .......... .......... 74%  301K 85s
+ 82000K .......... .......... .......... .......... .......... 74% 44.6M 85s
+ 82050K .......... .......... .......... .......... .......... 74% 96.4K 85s
+ 82100K .......... .......... .......... .......... .......... 74%  380K 85s
+ 82150K .......... .......... .......... .......... .......... 74% 7.78M 84s
+ 82200K .......... .......... .......... .......... .......... 74%  671K 84s
+ 82250K .......... .......... .......... .......... .......... 74%  164K 84s
+ 82300K .......... .......... .......... .......... .......... 74%  454K 84s
+ 82350K .......... .......... .......... .......... .......... 74%  528K 84s
+ 82400K .......... .......... .......... .......... .......... 74% 31.6M 84s
+ 82450K .......... .......... .......... .......... .......... 74%  300K 83s
+ 82500K .......... .......... .......... .......... .......... 74%  928K 83s
+ 82550K .......... .......... .......... .......... .......... 74%  406K 83s
+ 82600K .......... .......... .......... .......... .......... 74%  218K 83s
+ 82650K .......... .......... .......... .......... .......... 74%  481K 83s
+ 82700K .......... .......... .......... .......... .......... 74%  171K 83s
+ 82750K .......... .......... .......... .......... .......... 74%  156M 83s
+ 82800K .......... .......... .......... .......... .......... 74%  698K 82s
+ 82850K .......... .......... .......... .......... .......... 75%  117K 82s
+ 82900K .......... .......... .......... .......... .......... 75% 69.6M 82s
+ 82950K .......... .......... .......... .......... .......... 75%  255K 82s
+ 83000K .......... .......... .......... .......... .......... 75% 2.52M 82s
+ 83050K .......... .......... .......... .......... .......... 75%  527K 82s
+ 83100K .......... .......... .......... .......... .......... 75%  207K 81s
+ 83150K .......... .......... .......... .......... .......... 75%  252K 81s
+ 83200K .......... .......... .......... .......... .......... 75%  590K 81s
+ 83250K .......... .......... .......... .......... .......... 75% 44.2K 82s
+ 83300K .......... .......... .......... .......... .......... 75%  344K 82s
+ 83350K .......... .......... .......... .......... .......... 75%  216K 81s
+ 83400K .......... .......... .......... .......... .......... 75%  138K 81s
+ 83450K .......... .......... .......... .......... .......... 75%  343K 81s
+ 83500K .......... .......... .......... .......... .......... 75%  457K 81s
+ 83550K .......... .......... .......... .......... .......... 75%  244K 81s
+ 83600K .......... .......... .......... .......... .......... 75%  114K 81s
+ 83650K .......... .......... .......... .......... .......... 75%  500K 81s
+ 83700K .......... .......... .......... .......... .......... 75%  176K 81s
+ 83750K .......... .......... .......... .......... .......... 75%  126K 81s
+ 83800K .......... .......... .......... .......... .......... 75%  510K 81s
+ 83850K .......... .......... .......... .......... .......... 75%  190K 81s
+ 83900K .......... .......... .......... .......... .......... 75%  136K 81s
+ 83950K .......... .......... .......... .......... .......... 75%  593K 80s
+ 84000K .......... .......... .......... .......... .......... 76%  369K 80s
+ 84050K .......... .......... .......... .......... .......... 76%  227K 80s
+ 84100K .......... .......... .......... .......... .......... 76%  303K 80s
+ 84150K .......... .......... .......... .......... .......... 76%  620K 80s
+ 84200K .......... .......... .......... .......... .......... 76% 76.4K 80s
+ 84250K .......... .......... .......... .......... .......... 76%  445K 80s
+ 84300K .......... .......... .......... .......... .......... 76%  535K 80s
+ 84350K .......... .......... .......... .......... .......... 76%  421K 79s
+ 84400K .......... .......... .......... .......... .......... 76%  465K 79s
+ 84450K .......... .......... .......... .......... .......... 76%  812K 79s
+ 84500K .......... .......... .......... .......... .......... 76%  266K 79s
+ 84550K .......... .......... .......... .......... .......... 76% 1.65M 79s
+ 84600K .......... .......... .......... .......... .......... 76%  739K 78s
+ 84650K .......... .......... .......... .......... .......... 76%  598K 78s
+ 84700K .......... .......... .......... .......... .......... 76%  729K 78s
+ 84750K .......... .......... .......... .......... .......... 76%  759K 78s
+ 84800K .......... .......... .......... .......... .......... 76%  648K 78s
+ 84850K .......... .......... .......... .......... .......... 76% 1.15M 77s
+ 84900K .......... .......... .......... .......... .......... 76%  795K 77s
+ 84950K .......... .......... .......... .......... .......... 76%  977K 77s
+ 85000K .......... .......... .......... .......... .......... 76%  150K 77s
+ 85050K .......... .......... .......... .......... .......... 76% 9.51M 77s
+ 85100K .......... .......... .......... .......... .......... 77%  314K 77s
+ 85150K .......... .......... .......... .......... .......... 77%  351K 76s
+ 85200K .......... .......... .......... .......... .......... 77% 2.05M 76s
+ 85250K .......... .......... .......... .......... .......... 77%  261K 76s
+ 85300K .......... .......... .......... .......... .......... 77% 52.3M 76s
+ 85350K .......... .......... .......... .......... .......... 77%  110K 76s
+ 85400K .......... .......... .......... .......... .......... 77%  475K 76s
+ 85450K .......... .......... .......... .......... .......... 77%  453K 75s
+ 85500K .......... .......... .......... .......... .......... 77%  776K 75s
+ 85550K .......... .......... .......... .......... .......... 77%  192K 75s
+ 85600K .......... .......... .......... .......... .......... 77%  141K 75s
+ 85650K .......... .......... .......... .......... .......... 77%  813K 75s
+ 85700K .......... .......... .......... .......... .......... 77%  898K 75s
+ 85750K .......... .......... .......... .......... .......... 77% 1.07M 75s
+ 85800K .......... .......... .......... .......... .......... 77%  192K 74s
+ 85850K .......... .......... .......... .......... .......... 77%  836K 74s
+ 85900K .......... .......... .......... .......... .......... 77%  173K 74s
+ 85950K .......... .......... .......... .......... .......... 77%  318K 74s
+ 86000K .......... .......... .......... .......... .......... 77% 6.07M 74s
+ 86050K .......... .......... .......... .......... .......... 77%  139K 74s
+ 86100K .......... .......... .......... .......... .......... 77%  668K 74s
+ 86150K .......... .......... .......... .......... .......... 77%  703K 73s
+ 86200K .......... .......... .......... .......... .......... 78% 47.6M 73s
+ 86250K .......... .......... .......... .......... .......... 78%  173K 73s
+ 86300K .......... .......... .......... .......... .......... 78% 73.0M 73s
+ 86350K .......... .......... .......... .......... .......... 78% 65.0M 73s
+ 86400K .......... .......... .......... .......... .......... 78%  134K 73s
+ 86450K .......... .......... .......... .......... .......... 78%  603K 72s
+ 86500K .......... .......... .......... .......... .......... 78%  128K 72s
+ 86550K .......... .......... .......... .......... .......... 78%  883K 72s
+ 86600K .......... .......... .......... .......... .......... 78%  220K 72s
+ 86650K .......... .......... .......... .......... .......... 78% 55.9K 72s
+ 86700K .......... .......... .......... .......... .......... 78% 72.7K 72s
+ 86750K .......... .......... .......... .......... .......... 78% 4.10M 72s
+ 86800K .......... .......... .......... .......... .......... 78%  896K 72s
+ 86850K .......... .......... .......... .......... .......... 78% 66.6K 72s
+ 86900K .......... .......... .......... .......... .......... 78% 1.68M 72s
+ 86950K .......... .......... .......... .......... .......... 78%  625K 72s
+ 87000K .......... .......... .......... .......... .......... 78%  686K 72s
+ 87050K .......... .......... .......... .......... .......... 78%  137K 72s
+ 87100K .......... .......... .......... .......... .......... 78%  203K 71s
+ 87150K .......... .......... .......... .......... .......... 78% 3.55M 71s
+ 87200K .......... .......... .......... .......... .......... 78%  724K 71s
+ 87250K .......... .......... .......... .......... .......... 78%  836K 71s
+ 87300K .......... .......... .......... .......... .......... 79%  725K 71s
+ 87350K .......... .......... .......... .......... .......... 79%  677K 70s
+ 87400K .......... .......... .......... .......... .......... 79% 1001K 70s
+ 87450K .......... .......... .......... .......... .......... 79%  650K 70s
+ 87500K .......... .......... .......... .......... .......... 79% 1.21M 70s
+ 87550K .......... .......... .......... .......... .......... 79%  707K 70s
+ 87600K .......... .......... .......... .......... .......... 79%  970K 69s
+ 87650K .......... .......... .......... .......... .......... 79%  217K 69s
+ 87700K .......... .......... .......... .......... .......... 79%  146K 69s
+ 87750K .......... .......... .......... .......... .......... 79% 2.72M 69s
+ 87800K .......... .......... .......... .......... .......... 79% 1.65M 69s
+ 87850K .......... .......... .......... .......... .......... 79%  792K 69s
+ 87900K .......... .......... .......... .......... .......... 79%  673K 68s
+ 87950K .......... .......... .......... .......... .......... 79%  799K 68s
+ 88000K .......... .......... .......... .......... .......... 79%  127K 68s
+ 88050K .......... .......... .......... .......... .......... 79%  587K 68s
+ 88100K .......... .......... .......... .......... .......... 79%  244K 68s
+ 88150K .......... .......... .......... .......... .......... 79% 1.59M 68s
+ 88200K .......... .......... .......... .......... .......... 79%  152M 67s
+ 88250K .......... .......... .......... .......... .......... 79% 84.7K 68s
+ 88300K .......... .......... .......... .......... .......... 79% 1.01M 67s
+ 88350K .......... .......... .......... .......... .......... 79% 4.07M 67s
+ 88400K .......... .......... .......... .......... .......... 80%  746K 67s
+ 88450K .......... .......... .......... .......... .......... 80%  474K 67s
+ 88500K .......... .......... .......... .......... .......... 80%  470K 67s
+ 88550K .......... .......... .......... .......... .......... 80%  200K 66s
+ 88600K .......... .......... .......... .......... .......... 80%  461K 66s
+ 88650K .......... .......... .......... .......... .......... 80%  366K 66s
+ 88700K .......... .......... .......... .......... .......... 80%  638K 66s
+ 88750K .......... .......... .......... .......... .......... 80% 4.36M 66s
+ 88800K .......... .......... .......... .......... .......... 80% 73.2K 66s
+ 88850K .......... .......... .......... .......... .......... 80%  102M 66s
+ 88900K .......... .......... .......... .......... .......... 80% 1.55M 65s
+ 88950K .......... .......... .......... .......... .......... 80%  760K 65s
+ 89000K .......... .......... .......... .......... .......... 80%  615K 65s
+ 89050K .......... .......... .......... .......... .......... 80%  108K 65s
+ 89100K .......... .......... .......... .......... .......... 80%  136M 65s
+ 89150K .......... .......... .......... .......... .......... 80%  546K 65s
+ 89200K .......... .......... .......... .......... .......... 80% 2.43M 64s
+ 89250K .......... .......... .......... .......... .......... 80%  128K 64s
+ 89300K .......... .......... .......... .......... .......... 80% 81.8M 64s
+ 89350K .......... .......... .......... .......... .......... 80% 43.6M 64s
+ 89400K .......... .......... .......... .......... .......... 80% 87.0K 64s
+ 89450K .......... .......... .......... .......... .......... 80% 28.3M 64s
+ 89500K .......... .......... .......... .......... .......... 81%  233K 64s
+ 89550K .......... .......... .......... .......... .......... 81%  196K 64s
+ 89600K .......... .......... .......... .......... .......... 81%  125K 63s
+ 89650K .......... .......... .......... .......... .......... 81%  839K 63s
+ 89700K .......... .......... .......... .......... .......... 81% 1.59M 63s
+ 89750K .......... .......... .......... .......... .......... 81%  826K 63s
+ 89800K .......... .......... .......... .......... .......... 81% 1.13M 63s
+ 89850K .......... .......... .......... .......... .......... 81%  207K 63s
+ 89900K .......... .......... .......... .......... .......... 81% 6.55M 62s
+ 89950K .......... .......... .......... .......... .......... 81%  136K 62s
+ 90000K .......... .......... .......... .......... .......... 81% 1.54M 62s
+ 90050K .......... .......... .......... .......... .......... 81% 1.68M 62s
+ 90100K .......... .......... .......... .......... .......... 81% 4.25M 62s
+ 90150K .......... .......... .......... .......... .......... 81% 1.90M 61s
+ 90200K .......... .......... .......... .......... .......... 81%  161K 61s
+ 90250K .......... .......... .......... .......... .......... 81%  122K 61s
+ 90300K .......... .......... .......... .......... .......... 81%  703K 61s
+ 90350K .......... .......... .......... .......... .......... 81% 3.89M 61s
+ 90400K .......... .......... .......... .......... .......... 81% 72.0K 61s
+ 90450K .......... .......... .......... .......... .......... 81%  132M 61s
+ 90500K .......... .......... .......... .......... .......... 81% 24.8M 61s
+ 90550K .......... .......... .......... .......... .......... 81% 29.1M 60s
+ 90600K .......... .......... .......... .......... .......... 82%  560K 60s
+ 90650K .......... .......... .......... .......... .......... 82%  157K 60s
+ 90700K .......... .......... .......... .......... .......... 82%  124M 60s
+ 90750K .......... .......... .......... .......... .......... 82% 57.7M 60s
+ 90800K .......... .......... .......... .......... .......... 82% 55.8M 59s
+ 90850K .......... .......... .......... .......... .......... 82%  308K 59s
+ 90900K .......... .......... .......... .......... .......... 82%  764K 59s
+ 90950K .......... .......... .......... .......... .......... 82% 64.1M 59s
+ 91000K .......... .......... .......... .......... .......... 82%  382K 59s
+ 91050K .......... .......... .......... .......... .......... 82%  228K 59s
+ 91100K .......... .......... .......... .......... .......... 82% 2.06M 58s
+ 91150K .......... .......... .......... .......... .......... 82%  174K 58s
+ 91200K .......... .......... .......... .......... .......... 82%  368K 58s
+ 91250K .......... .......... .......... .......... .......... 82%  385K 58s
+ 91300K .......... .......... .......... .......... .......... 82%  289K 58s
+ 91350K .......... .......... .......... .......... .......... 82%  167K 58s
+ 91400K .......... .......... .......... .......... .......... 82% 99.3K 58s
+ 91450K .......... .......... .......... .......... .......... 82%  169K 58s
+ 91500K .......... .......... .......... .......... .......... 82%  405K 58s
+ 91550K .......... .......... .......... .......... .......... 82%  264K 57s
+ 91600K .......... .......... .......... .......... .......... 82%  249K 57s
+ 91650K .......... .......... .......... .......... .......... 82% 72.1K 57s
+ 91700K .......... .......... .......... .......... .......... 83% 2.17M 57s
+ 91750K .......... .......... .......... .......... .......... 83%  561K 57s
+ 91800K .......... .......... .......... .......... .......... 83%  919K 57s
+ 91850K .......... .......... .......... .......... .......... 83%  302K 57s
+ 91900K .......... .......... .......... .......... .......... 83%  365K 56s
+ 91950K .......... .......... .......... .......... .......... 83%  782K 56s
+ 92000K .......... .......... .......... .......... .......... 83%  763K 56s
+ 92050K .......... .......... .......... .......... .......... 83%  976K 56s
+ 92100K .......... .......... .......... .......... .......... 83%  719K 56s
+ 92150K .......... .......... .......... .......... .......... 83%  960K 56s
+ 92200K .......... .......... .......... .......... .......... 83% 1.40M 55s
+ 92250K .......... .......... .......... .......... .......... 83%  968K 55s
+ 92300K .......... .......... .......... .......... .......... 83% 1.13M 55s
+ 92350K .......... .......... .......... .......... .......... 83% 1008K 55s
+ 92400K .......... .......... .......... .......... .......... 83%  401K 55s
+ 92450K .......... .......... .......... .......... .......... 83%  269K 54s
+ 92500K .......... .......... .......... .......... .......... 83%  426K 54s
+ 92550K .......... .......... .......... .......... .......... 83%  152K 54s
+ 92600K .......... .......... .......... .......... .......... 83%  249M 54s
+ 92650K .......... .......... .......... .......... .......... 83%  481K 54s
+ 92700K .......... .......... .......... .......... .......... 83%  335K 54s
+ 92750K .......... .......... .......... .......... .......... 83%  230K 54s
+ 92800K .......... .......... .......... .......... .......... 84%  138M 53s
+ 92850K .......... .......... .......... .......... .......... 84%  221K 53s
+ 92900K .......... .......... .......... .......... .......... 84%  114M 53s
+ 92950K .......... .......... .......... .......... .......... 84% 30.2M 53s
+ 93000K .......... .......... .......... .......... .......... 84%  319K 53s
+ 93050K .......... .......... .......... .......... .......... 84%  719K 52s
+ 93100K .......... .......... .......... .......... .......... 84%  131K 52s
+ 93150K .......... .......... .......... .......... .......... 84%  208K 52s
+ 93200K .......... .......... .......... .......... .......... 84% 1.70M 52s
+ 93250K .......... .......... .......... .......... .......... 84%  580K 52s
+ 93300K .......... .......... .......... .......... .......... 84%  160K 52s
+ 93350K .......... .......... .......... .......... .......... 84% 2.01M 52s
+ 93400K .......... .......... .......... .......... .......... 84%  361K 51s
+ 93450K .......... .......... .......... .......... .......... 84%  305K 51s
+ 93500K .......... .......... .......... .......... .......... 84%  432K 51s
+ 93550K .......... .......... .......... .......... .......... 84%  308K 51s
+ 93600K .......... .......... .......... .......... .......... 84%  164K 51s
+ 93650K .......... .......... .......... .......... .......... 84%  337K 51s
+ 93700K .......... .......... .......... .......... .......... 84%  477K 51s
+ 93750K .......... .......... .......... .......... .......... 84%  395K 50s
+ 93800K .......... .......... .......... .......... .......... 84%  308K 50s
+ 93850K .......... .......... .......... .......... .......... 84%  618K 50s
+ 93900K .......... .......... .......... .......... .......... 84%  515K 50s
+ 93950K .......... .......... .......... .......... .......... 85%  614K 50s
+ 94000K .......... .......... .......... .......... .......... 85%  376K 50s
+ 94050K .......... .......... .......... .......... .......... 85%  405K 49s
+ 94100K .......... .......... .......... .......... .......... 85%  742K 49s
+ 94150K .......... .......... .......... .......... .......... 85% 34.6K 50s
+ 94200K .......... .......... .......... .......... .......... 85%  134M 49s
+ 94250K .......... .......... .......... .......... .......... 85% 10.5M 49s
+ 94300K .......... .......... .......... .......... .......... 85%  663K 49s
+ 94350K .......... .......... .......... .......... .......... 85%  672K 49s
+ 94400K .......... .......... .......... .......... .......... 85%  682K 49s
+ 94450K .......... .......... .......... .......... .......... 85%  372K 48s
+ 94500K .......... .......... .......... .......... .......... 85%  407K 48s
+ 94550K .......... .......... .......... .......... .......... 85%  755K 48s
+ 94600K .......... .......... .......... .......... .......... 85%  588K 48s
+ 94650K .......... .......... .......... .......... .......... 85% 1.04M 48s
+ 94700K .......... .......... .......... .......... .......... 85%  735K 48s
+ 94750K .......... .......... .......... .......... .......... 85% 1.16M 47s
+ 94800K .......... .......... .......... .......... .......... 85%  776K 47s
+ 94850K .......... .......... .......... .......... .......... 85%  277K 47s
+ 94900K .......... .......... .......... .......... .......... 85% 6.39M 47s
+ 94950K .......... .......... .......... .......... .......... 85%  192K 47s
+ 95000K .......... .......... .......... .......... .......... 85%  542K 47s
+ 95050K .......... .......... .......... .......... .......... 86%  299K 46s
+ 95100K .......... .......... .......... .......... .......... 86% 72.6M 46s
+ 95150K .......... .......... .......... .......... .......... 86%  274K 46s
+ 95200K .......... .......... .......... .......... .......... 86%  457K 46s
+ 95250K .......... .......... .......... .......... .......... 86%  154M 46s
+ 95300K .......... .......... .......... .......... .......... 86%  202K 46s
+ 95350K .......... .......... .......... .......... .......... 86%  337K 46s
+ 95400K .......... .......... .......... .......... .......... 86%  250K 45s
+ 95450K .......... .......... .......... .......... .......... 86%  112M 45s
+ 95500K .......... .......... .......... .......... .......... 86% 1.24M 45s
+ 95550K .......... .......... .......... .......... .......... 86%  759K 45s
+ 95600K .......... .......... .......... .......... .......... 86%  105K 45s
+ 95650K .......... .......... .......... .......... .......... 86%  613K 45s
+ 95700K .......... .......... .......... .......... .......... 86%  934K 44s
+ 95750K .......... .......... .......... .......... .......... 86%  362K 44s
+ 95800K .......... .......... .......... .......... .......... 86%  154K 44s
+ 95850K .......... .......... .......... .......... .......... 86%  575K 44s
+ 95900K .......... .......... .......... .......... .......... 86% 30.4M 44s
+ 95950K .......... .......... .......... .......... .......... 86%  445K 44s
+ 96000K .......... .......... .......... .......... .......... 86%  202K 44s
+ 96050K .......... .......... .......... .......... .......... 86%  504K 43s
+ 96100K .......... .......... .......... .......... .......... 86%  212K 43s
+ 96150K .......... .......... .......... .......... .......... 87%  587K 43s
+ 96200K .......... .......... .......... .......... .......... 87% 1.59M 43s
+ 96250K .......... .......... .......... .......... .......... 87%  378K 43s
+ 96300K .......... .......... .......... .......... .......... 87%  526K 43s
+ 96350K .......... .......... .......... .......... .......... 87%  112K 43s
+ 96400K .......... .......... .......... .......... .......... 87% 33.6M 42s
+ 96450K .......... .......... .......... .......... .......... 87%  724K 42s
+ 96500K .......... .......... .......... .......... .......... 87%  663K 42s
+ 96550K .......... .......... .......... .......... .......... 87%  270K 42s
+ 96600K .......... .......... .......... .......... .......... 87% 89.5M 42s
+ 96650K .......... .......... .......... .......... .......... 87%  430K 41s
+ 96700K .......... .......... .......... .......... .......... 87%  532K 41s
+ 96750K .......... .......... .......... .......... .......... 87%  181K 41s
+ 96800K .......... .......... .......... .......... .......... 87%  442K 41s
+ 96850K .......... .......... .......... .......... .......... 87%  452K 41s
+ 96900K .......... .......... .......... .......... .......... 87%  198K 41s
+ 96950K .......... .......... .......... .......... .......... 87%  430K 41s
+ 97000K .......... .......... .......... .......... .......... 87%  268K 40s
+ 97050K .......... .......... .......... .......... .......... 87%  384K 40s
+ 97100K .......... .......... .......... .......... .......... 87%  257K 40s
+ 97150K .......... .......... .......... .......... .......... 87%  547K 40s
+ 97200K .......... .......... .......... .......... .......... 87%  468K 40s
+ 97250K .......... .......... .......... .......... .......... 88%  190K 40s
+ 97300K .......... .......... .......... .......... .......... 88%  723K 40s
+ 97350K .......... .......... .......... .......... .......... 88%  488K 39s
+ 97400K .......... .......... .......... .......... .......... 88%  320K 39s
+ 97450K .......... .......... .......... .......... .......... 88%  473K 39s
+ 97500K .......... .......... .......... .......... .......... 88%  317K 39s
+ 97550K .......... .......... .......... .......... .......... 88%  240K 39s
+ 97600K .......... .......... .......... .......... .......... 88%  702K 39s
+ 97650K .......... .......... .......... .......... .......... 88%  327K 38s
+ 97700K .......... .......... .......... .......... .......... 88%  365K 38s
+ 97750K .......... .......... .......... .......... .......... 88%  445K 38s
+ 97800K .......... .......... .......... .......... .......... 88%  188K 38s
+ 97850K .......... .......... .......... .......... .......... 88% 3.34M 38s
+ 97900K .......... .......... .......... .......... .......... 88%  452K 38s
+ 97950K .......... .......... .......... .......... .......... 88%  663K 38s
+ 98000K .......... .......... .......... .......... .......... 88%  518K 37s
+ 98050K .......... .......... .......... .......... .......... 88%  348K 37s
+ 98100K .......... .......... .......... .......... .......... 88%  587K 37s
+ 98150K .......... .......... .......... .......... .......... 88%  191K 37s
+ 98200K .......... .......... .......... .......... .......... 88% 1.04M 37s
+ 98250K .......... .......... .......... .......... .......... 88%  608K 37s
+ 98300K .......... .......... .......... .......... .......... 88%  536K 36s
+ 98350K .......... .......... .......... .......... .......... 89%  607K 36s
+ 98400K .......... .......... .......... .......... .......... 89%  503K 36s
+ 98450K .......... .......... .......... .......... .......... 89%  301K 36s
+ 98500K .......... .......... .......... .......... .......... 89%  129K 36s
+ 98550K .......... .......... .......... .......... .......... 89%  127M 36s
+ 98600K .......... .......... .......... .......... .......... 89%  650K 36s
+ 98650K .......... .......... .......... .......... .......... 89%  363K 35s
+ 98700K .......... .......... .......... .......... .......... 89%  304K 35s
+ 98750K .......... .......... .......... .......... .......... 89%  250K 35s
+ 98800K .......... .......... .......... .......... .......... 89%  452K 35s
+ 98850K .......... .......... .......... .......... .......... 89%  349K 35s
+ 98900K .......... .......... .......... .......... .......... 89%  448K 35s
+ 98950K .......... .......... .......... .......... .......... 89%  345K 34s
+ 99000K .......... .......... .......... .......... .......... 89%  204K 34s
+ 99050K .......... .......... .......... .......... .......... 89%  524K 34s
+ 99100K .......... .......... .......... .......... .......... 89%  466K 34s
+ 99150K .......... .......... .......... .......... .......... 89%  392K 34s
+ 99200K .......... .......... .......... .......... .......... 89%  322K 34s
+ 99250K .......... .......... .......... .......... .......... 89%  378K 34s
+ 99300K .......... .......... .......... .......... .......... 89%  191K 33s
+ 99350K .......... .......... .......... .......... .......... 89%  786K 33s
+ 99400K .......... .......... .......... .......... .......... 89%  463K 33s
+ 99450K .......... .......... .......... .......... .......... 90%  344K 33s
+ 99500K .......... .......... .......... .......... .......... 90%  414K 33s
+ 99550K .......... .......... .......... .......... .......... 90%  419K 33s
+ 99600K .......... .......... .......... .......... .......... 90%  170K 33s
+ 99650K .......... .......... .......... .......... .......... 90%  632K 32s
+ 99700K .......... .......... .......... .......... .......... 90%  518K 32s
+ 99750K .......... .......... .......... .......... .......... 90%  479K 32s
+ 99800K .......... .......... .......... .......... .......... 90%  593K 32s
+ 99850K .......... .......... .......... .......... .......... 90%  475K 32s
+ 99900K .......... .......... .......... .......... .......... 90%  159K 32s
+ 99950K .......... .......... .......... .......... .......... 90% 1.20M 31s
+100000K .......... .......... .......... .......... .......... 90%  513K 31s
+100050K .......... .......... .......... .......... .......... 90%  692K 31s
+100100K .......... .......... .......... .......... .......... 90%  422K 31s
+100150K .......... .......... .......... .......... .......... 90%  331K 31s
+100200K .......... .......... .......... .......... .......... 90%  152K 31s
+100250K .......... .......... .......... .......... .......... 90%  506K 31s
+100300K .......... .......... .......... .......... .......... 90%  543K 30s
+100350K .......... .......... .......... .......... .......... 90%  377K 30s
+100400K .......... .......... .......... .......... .......... 90%  264K 30s
+100450K .......... .......... .......... .......... .......... 90%  199K 30s
+100500K .......... .......... .......... .......... .......... 90%  568K 30s
+100550K .......... .......... .......... .......... .......... 91%  370K 30s
+100600K .......... .......... .......... .......... .......... 91%  291K 30s
+100650K .......... .......... .......... .......... .......... 91%  769K 29s
+100700K .......... .......... .......... .......... .......... 91%  534K 29s
+100750K .......... .......... .......... .......... .......... 91%  169K 29s
+100800K .......... .......... .......... .......... .......... 91%  425K 29s
+100850K .......... .......... .......... .......... .......... 91%  609K 29s
+100900K .......... .......... .......... .......... .......... 91%  403K 29s
+100950K .......... .......... .......... .......... .......... 91%  477K 28s
+101000K .......... .......... .......... .......... .......... 91%  518K 28s
+101050K .......... .......... .......... .......... .......... 91%  176K 28s
+101100K .......... .......... .......... .......... .......... 91% 1023K 28s
+101150K .......... .......... .......... .......... .......... 91%  481K 28s
+101200K .......... .......... .......... .......... .......... 91%  543K 28s
+101250K .......... .......... .......... .......... .......... 91%  399K 28s
+101300K .......... .......... .......... .......... .......... 91%  619K 27s
+101350K .......... .......... .......... .......... .......... 91%  208K 27s
+101400K .......... .......... .......... .......... .......... 91%  428K 27s
+101450K .......... .......... .......... .......... .......... 91% 1.93M 27s
+101500K .......... .......... .......... .......... .......... 91%  326K 27s
+101550K .......... .......... .......... .......... .......... 91% 1024K 27s
+101600K .......... .......... .......... .......... .......... 91%  258K 26s
+101650K .......... .......... .......... .......... .......... 92%  126K 26s
+101700K .......... .......... .......... .......... .......... 92%  708K 26s
+101750K .......... .......... .......... .......... .......... 92%  370K 26s
+101800K .......... .......... .......... .......... .......... 92% 4.45M 26s
+101850K .......... .......... .......... .......... .......... 92%  109K 26s
+101900K .......... .......... .......... .......... .......... 92%  128M 26s
+101950K .......... .......... .......... .......... .......... 92% 1.05M 25s
+102000K .......... .......... .......... .......... .......... 92%  967K 25s
+102050K .......... .......... .......... .......... .......... 92% 1.17M 25s
+102100K .......... .......... .......... .......... .......... 92%  221K 25s
+102150K .......... .......... .......... .......... .......... 92%  434K 25s
+102200K .......... .......... .......... .......... .......... 92%  136K 25s
+102250K .......... .......... .......... .......... .......... 92% 58.3M 25s
+102300K .......... .......... .......... .......... .......... 92%  267K 24s
+102350K .......... .......... .......... .......... .......... 92%  275K 24s
+102400K .......... .......... .......... .......... .......... 92%  387K 24s
+102450K .......... .......... .......... .......... .......... 92%  553K 24s
+102500K .......... .......... .......... .......... .......... 92%  213K 24s
+102550K .......... .......... .......... .......... .......... 92%  355K 24s
+102600K .......... .......... .......... .......... .......... 92%  355K 23s
+102650K .......... .......... .......... .......... .......... 92%  324K 23s
+102700K .......... .......... .......... .......... .......... 92%  278K 23s
+102750K .......... .......... .......... .......... .......... 93%  238K 23s
+102800K .......... .......... .......... .......... .......... 93%  311K 23s
+102850K .......... .......... .......... .......... .......... 93%  295K 23s
+102900K .......... .......... .......... .......... .......... 93%  372K 23s
+102950K .......... .......... .......... .......... .......... 93%  221K 22s
+103000K .......... .......... .......... .......... .......... 93%  614K 22s
+103050K .......... .......... .......... .......... .......... 93%  330K 22s
+103100K .......... .......... .......... .......... .......... 93%  295K 22s
+103150K .......... .......... .......... .......... .......... 93%  495K 22s
+103200K .......... .......... .......... .......... .......... 93%  171K 22s
+103250K .......... .......... .......... .......... .......... 93% 2.35M 22s
+103300K .......... .......... .......... .......... .......... 93%  316K 21s
+103350K .......... .......... .......... .......... .......... 93%  361K 21s
+103400K .......... .......... .......... .......... .......... 93%  573K 21s
+103450K .......... .......... .......... .......... .......... 93%  487K 21s
+103500K .......... .......... .......... .......... .......... 93%  701K 21s
+103550K .......... .......... .......... .......... .......... 93%  197K 21s
+103600K .......... .......... .......... .......... .......... 93%  900K 20s
+103650K .......... .......... .......... .......... .......... 93%  854K 20s
+103700K .......... .......... .......... .......... .......... 93%  374K 20s
+103750K .......... .......... .......... .......... .......... 93%  461K 20s
+103800K .......... .......... .......... .......... .......... 93%  965K 20s
+103850K .......... .......... .......... .......... .......... 93%  400K 20s
+103900K .......... .......... .......... .......... .......... 94%  216K 20s
+103950K .......... .......... .......... .......... .......... 94%  256K 19s
+104000K .......... .......... .......... .......... .......... 94% 82.7M 19s
+104050K .......... .......... .......... .......... .......... 94% 52.5M 19s
+104100K .......... .......... .......... .......... .......... 94%  163K 19s
+104150K .......... .......... .......... .......... .......... 94%  522K 19s
+104200K .......... .......... .......... .......... .......... 94%  204K 19s
+104250K .......... .......... .......... .......... .......... 94%  930K 19s
+104300K .......... .......... .......... .......... .......... 94%  351K 18s
+104350K .......... .......... .......... .......... .......... 94%  260K 18s
+104400K .......... .......... .......... .......... .......... 94% 42.7M 18s
+104450K .......... .......... .......... .......... .......... 94% 68.4M 18s
+104500K .......... .......... .......... .......... .......... 94%  204K 18s
+104550K .......... .......... .......... .......... .......... 94%  267K 18s
+104600K .......... .......... .......... .......... .......... 94%  401K 17s
+104650K .......... .......... .......... .......... .......... 94%  489K 17s
+104700K .......... .......... .......... .......... .......... 94%  303K 17s
+104750K .......... .......... .......... .......... .......... 94%  474K 17s
+104800K .......... .......... .......... .......... .......... 94%  151K 17s
+104850K .......... .......... .......... .......... .......... 94%  829K 17s
+104900K .......... .......... .......... .......... .......... 94%  255K 17s
+104950K .......... .......... .......... .......... .......... 94%  605K 16s
+105000K .......... .......... .......... .......... .......... 95%  454K 16s
+105050K .......... .......... .......... .......... .......... 95%  168K 16s
+105100K .......... .......... .......... .......... .......... 95%  911K 16s
+105150K .......... .......... .......... .......... .......... 95%  341K 16s
+105200K .......... .......... .......... .......... .......... 95%  460K 16s
+105250K .......... .......... .......... .......... .......... 95%  391K 16s
+105300K .......... .......... .......... .......... .......... 95%  167K 15s
+105350K .......... .......... .......... .......... .......... 95%  918K 15s
+105400K .......... .......... .......... .......... .......... 95%  512K 15s
+105450K .......... .......... .......... .......... .......... 95%  463K 15s
+105500K .......... .......... .......... .......... .......... 95%  400K 15s
+105550K .......... .......... .......... .......... .......... 95%  418K 15s
+105600K .......... .......... .......... .......... .......... 95%  467K 14s
+105650K .......... .......... .......... .......... .......... 95%  203K 14s
+105700K .......... .......... .......... .......... .......... 95%  537K 14s
+105750K .......... .......... .......... .......... .......... 95%  492K 14s
+105800K .......... .......... .......... .......... .......... 95%  399K 14s
+105850K .......... .......... .......... .......... .......... 95%  424K 14s
+105900K .......... .......... .......... .......... .......... 95%  221K 14s
+105950K .......... .......... .......... .......... .......... 95%  166K 13s
+106000K .......... .......... .......... .......... .......... 95%  416K 13s
+106050K .......... .......... .......... .......... .......... 95%  347K 13s
+106100K .......... .......... .......... .......... .......... 96%  557K 13s
+106150K .......... .......... .......... .......... .......... 96%  223K 13s
+106200K .......... .......... .......... .......... .......... 96%  426K 13s
+106250K .......... .......... .......... .......... .......... 96%  401K 13s
+106300K .......... .......... .......... .......... .......... 96%  348K 12s
+106350K .......... .......... .......... .......... .......... 96%  626K 12s
+106400K .......... .......... .......... .......... .......... 96%  159K 12s
+106450K .......... .......... .......... .......... .......... 96% 7.67M 12s
+106500K .......... .......... .......... .......... .......... 96%  316K 12s
+106550K .......... .......... .......... .......... .......... 96%  687K 12s
+106600K .......... .......... .......... .......... .......... 96%  373K 12s
+106650K .......... .......... .......... .......... .......... 96%  503K 11s
+106700K .......... .......... .......... .......... .......... 96%  336K 11s
+106750K .......... .......... .......... .......... .......... 96%  220K 11s
+106800K .......... .......... .......... .......... .......... 96%  535K 11s
+106850K .......... .......... .......... .......... .......... 96%  445K 11s
+106900K .......... .......... .......... .......... .......... 96%  373K 11s
+106950K .......... .......... .......... .......... .......... 96%  427K 10s
+107000K .......... .......... .......... .......... .......... 96%  276K 10s
+107050K .......... .......... .......... .......... .......... 96%  188K 10s
+107100K .......... .......... .......... .......... .......... 96%  474K 10s
+107150K .......... .......... .......... .......... .......... 96%  938K 10s
+107200K .......... .......... .......... .......... .......... 97%  384K 10s
+107250K .......... .......... .......... .......... .......... 97%  154K 10s
+107300K .......... .......... .......... .......... .......... 97% 62.0M 9s
+107350K .......... .......... .......... .......... .......... 97%  462K 9s
+107400K .......... .......... .......... .......... .......... 97% 2.30M 9s
+107450K .......... .......... .......... .......... .......... 97%  258K 9s
+107500K .......... .......... .......... .......... .......... 97% 43.4M 9s
+107550K .......... .......... .......... .......... .......... 97%  572K 9s
+107600K .......... .......... .......... .......... .......... 97%  394K 9s
+107650K .......... .......... .......... .......... .......... 97%  175K 8s
+107700K .......... .......... .......... .......... .......... 97%  587K 8s
+107750K .......... .......... .......... .......... .......... 97%  345K 8s
+107800K .......... .......... .......... .......... .......... 97%  487K 8s
+107850K .......... .......... .......... .......... .......... 97%  468K 8s
+107900K .......... .......... .......... .......... .......... 97%  383K 8s
+107950K .......... .......... .......... .......... .......... 97%  186K 7s
+108000K .......... .......... .......... .......... .......... 97%  337K 7s
+108050K .......... .......... .......... .......... .......... 97%  228K 7s
+108100K .......... .......... .......... .......... .......... 97% 1.67M 7s
+108150K .......... .......... .......... .......... .......... 97%  557K 7s
+108200K .......... .......... .......... .......... .......... 97%  306K 7s
+108250K .......... .......... .......... .......... .......... 97%  233K 7s
+108300K .......... .......... .......... .......... .......... 98%  375K 6s
+108350K .......... .......... .......... .......... .......... 98%  374K 6s
+108400K .......... .......... .......... .......... .......... 98% 1.15M 6s
+108450K .......... .......... .......... .......... .......... 98%  267K 6s
+108500K .......... .......... .......... .......... .......... 98%  188K 6s
+108550K .......... .......... .......... .......... .......... 98%  339K 6s
+108600K .......... .......... .......... .......... .......... 98% 1.94M 6s
+108650K .......... .......... .......... .......... .......... 98%  491K 5s
+108700K .......... .......... .......... .......... .......... 98%  104K 5s
+108750K .......... .......... .......... .......... .......... 98%  102M 5s
+108800K .......... .......... .......... .......... .......... 98% 1.16M 5s
+108850K .......... .......... .......... .......... .......... 98%  445K 5s
+108900K .......... .......... .......... .......... .......... 98%  272K 5s
+108950K .......... .......... .......... .......... .......... 98%  709K 5s
+109000K .......... .......... .......... .......... .......... 98%  644K 4s
+109050K .......... .......... .......... .......... .......... 98%  190K 4s
+109100K .......... .......... .......... .......... .......... 98%  460K 4s
+109150K .......... .......... .......... .......... .......... 98%  332K 4s
+109200K .......... .......... .......... .......... .......... 98% 1.01M 4s
+109250K .......... .......... .......... .......... .......... 98%  475K 4s
+109300K .......... .......... .......... .......... .......... 98%  522K 3s
+109350K .......... .......... .......... .......... .......... 98%  170K 3s
+109400K .......... .......... .......... .......... .......... 99%  405K 3s
+109450K .......... .......... .......... .......... .......... 99%  356K 3s
+109500K .......... .......... .......... .......... .......... 99%  587K 3s
+109550K .......... .......... .......... .......... .......... 99%  303K 3s
+109600K .......... .......... .......... .......... .......... 99%  375K 3s
+109650K .......... .......... .......... .......... .......... 99%  238K 2s
+109700K .......... .......... .......... .......... .......... 99%  379K 2s
+109750K .......... .......... .......... .......... .......... 99%  218K 2s
+109800K .......... .......... .......... .......... .......... 99%  555K 2s
+109850K .......... .......... .......... .......... .......... 99%  530K 2s
+109900K .......... .......... .......... .......... .......... 99%  215K 2s
+109950K .......... .......... .......... .......... .......... 99% 9.25M 2s
+110000K .......... .......... .......... .......... .......... 99%  413K 1s
+110050K .......... .......... .......... .......... .......... 99%  260K 1s
+110100K .......... .......... .......... .......... .......... 99%  489K 1s
+110150K .......... .......... .......... .......... .......... 99%  397K 1s
+110200K .......... .......... .......... .......... .......... 99%  220K 1s
+110250K .......... .......... .......... .......... .......... 99%  484K 1s
+110300K .......... .......... .......... .......... .......... 99%  409K 1s
+110350K .......... .......... .......... .......... .......... 99%  560K 0s
+110400K .......... .......... .......... .......... .......... 99%  326K 0s
+110450K .......... .......... .......... .......... .......... 99%  183K 0s
+110500K .......... .......... .......... ...                  100%  539K=3m19s
+
+utime(/home/rivascel/.vscode-server/bin/10c8e557c8b9f9ed0a87f61f1c9a44bde731c409-1776981944.tar.gz): No such file or directory
+2026-04-23 17:27:19 (338 KB/s) - ‘/home/rivascel/.vscode-server/bin/10c8e557c8b9f9ed0a87f61f1c9a44bde731c409-1776981944.tar.gz’ saved [113186068/113186068]
+

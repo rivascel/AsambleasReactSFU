@@ -1,24 +1,25 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
 import { UserContext } from "../../components/UserContext";
-import { getLocalStream, listenForApprovals, startProducing } from "../../hooks/webrtc-manager";
+import { getLocalStream, listenForApprovals } from "../../hooks/webrtc-manager";
 import AppContext from '../../context/AppContext';
 import * as mediasoupClient from "mediasoup-client";
 import { getSocket  } from "../../hooks/socket";
-import send from "send";
+import useVideoQuality from "../../hooks/useVideoQuality";
+import useVisibility from "../../hooks/useVisibility";
   
 const VideoGeneral = () => {
- 
   const { apiUrl } = useContext(AppContext);
   const [isBroadcasting, setIsBroadcasting] = useState(false);
   const localRef = useRef();
   const remoteRef = useRef();
+  const quality = useVideoQuality(remoteRef);
+  const isVisible = useVisibility(remoteRef);
+  const [currentQuality, setCurrentQuality] = useState(null);
+
   const { email } = useContext(UserContext);
   const [stream, setStream] = useState(false);
   const roomId="main-room";
   const [remote, setRemote] = useState(false);
-  // const isProducingRef = useRef(false);
-  // const [deviceReady, setDeviceReady] = useState(false);
-  
   const ownerInfo = JSON.parse(localStorage.getItem("ownerInfo"));
 
   const socketRef = useRef(null);
@@ -32,11 +33,12 @@ const VideoGeneral = () => {
   const initializedRef = useRef(false); // 🔥 evita doble ejecución (React Strict)
   const rtpCapabilitiesRef = useRef(null);
   const stateRef = useRef("IDLE");
-  
-  //crea los sockets
-  // useEffect(() => {
-  //   socketRef.current = getSocket(apiUrl);
-  // }, []);
+
+ const encodings = [
+  { maxBitrate: 100000, scaleResolutionDownBy: 4 },
+  { maxBitrate: 300000, scaleResolutionDownBy: 2 },
+  { maxBitrate: 900000, scaleResolutionDownBy: 1 }
+];
 
   //escuchar aprobaciones de viewers para activar pantalla
   useEffect(() => {
@@ -46,13 +48,17 @@ const VideoGeneral = () => {
       // const socket = socketRef.current;
 
       //2. Función que escucha si existe una aprobación de viewer para activar pantalla y escucha todas las señales
-        const exists = listenForApprovals(roomId);
+        const init = async () => {
+          const exists = listenForApprovals(roomId);
 
-        if (exists) {
-          setRemote(true);
-        } else {
-          return;
-        };
+          if (exists) {
+            setRemote(true);
+          } else {
+            return;
+          };
+
+        }
+        init();
         
       //3. recibe mensaje que existe nuevo viewer
       // socketRef.current.on("listen-user", async ({ userId, roomId })=>{
@@ -82,21 +88,6 @@ const VideoGeneral = () => {
     await setupConsumerFlow();
   };
 
-  useEffect(() => {
-    if (!deviceRef.current) {
-      console.warn("⚠️ Dispositivo no cargado, no se puede iniciar flujo");
-      return;
-    }
-    if (stream) {
-        console.log("activando flujo de productor");
-      startProducing();
-      } else {
-        console.log("Desactivando flujo de productor");
-        stopProducing();
-      }
-    
-  },[stream]);
-
   const startProducing = async () => {
     if (sendTransportRef.current) {
       console.warn("⚠️ Ya estás produciendo");
@@ -125,17 +116,17 @@ const VideoGeneral = () => {
     console.log("🛑 Producción detenida");
   };
 
-
   // 4. joinRoom
   const joinRoom = () => {
     return new Promise((resolve) => {
-      socketRef.current.emit("join-room", { roomId }, (data) => {
+      socketRef.current.emit("join-room", { roomId, userid:email }, (data) => { 
         rtpCapabilitiesRef.current = data.rtpCapabilities;
         console.log("✅ Unido a la sala", roomId);
+        setState("JOINED");
         resolve();
       });
-      });
-      setState("JOINED");
+    });
+    
   };
 
   // 5. loadDevice
@@ -150,55 +141,103 @@ const VideoGeneral = () => {
     setState("DEVICE_LOADED");
   };
 
-  // 6. FLUJO ADMIN (PRODUCTOR)
-  // const setupProducerFlow = async () => {
-  //   await createSendTransport();
-  //   await produce();
-
-  //   // opcional consumir también
-  //   await createRecvTransport();
-  //   listenForNewProducers();
-  // };
-
   // createSendTransport
   const createSendTransport = () => {
-    return new Promise((resolve) => {
+    return new Promise((resolve, reject) => {
       socketRef.current.emit(
-        "createTransport",
-        { consumer: false }, // 🔥 CLAVE
-        (params) => {
+        "createTransport", { consumer: false, roomId }, (params) => 
+        {
+          
+            // Verificar que params tiene los datos necesarios
+          if (!params.iceParameters || !params.iceCandidates || !params.dtlsParameters) {
+            console.error("❌ Params incompletos:", params);
+            reject(new Error("Missing required transport parameters"));
+            return;
+          }
+
           const transport = deviceRef.current.createSendTransport(params);
 
-          transport.on("connect", ({ dtlsParameters }, callback) => {
+          sendTransportRef.current = transport;
+
+          transport.on("connect", ({ dtlsParameters }, callback, errback) => {
+             console.log("🔌 SendTransport conectando...");
+
             socketRef.current.emit(
               "connectTransport",
-              { transportId: transport.id, dtlsParameters },
-              callback
+              { transportId: transport.id, dtlsParameters, roomId }, ({ error }) => {
+                  if (error) {
+                    console.error("❌ Error conectando transport:", error);
+                    errback(error);
+                  } else {
+                    console.log(
+                      "✅ sendTransport DTLS conectado" 
+                    );
+                    callback();
+                  }
+                }
             );
           });
 
-          transport.on("produce", ({ kind, rtpParameters }, callback) => {
-            socketRef.current.emit(
-              "produce",
-              {
+          transport.on("produce", async ({ kind, rtpParameters }, callback, errback) => {
+            
+            console.log("📡 produce event:", kind);
+
+
+            try {
+              const { id } = await emitPromise("produce", {
                 transportId: transport.id,
                 kind,
                 rtpParameters,
-              },
-              ({ id }) => callback({ id })
-            );
+                roomId
+              });
+              
+              callback({ id }); 
+              console.log("✅ Produce exitoso", id);
+            } catch (error) {
+              console.error("❌ Error en produce:", error);
+              errback(error);
+            }
+            
+          });
+
+          // Manejar cambios de estado
+
+          // Monitoreo de estados
+          transport.on("connectionstatechange", (state) => {
+            console.log(`📡 5. connectionstatechange: ${state}`);
+            
+            if (state === "connected") {
+              console.log("✅ 6. Transport CONECTADO - Resolviendo promesa!");
+              setState("SEND_TRANSPORT_READY");
+              // resolve();
+            }
+            
+            if (state === "failed" || state === "closed" || state === "disconnected") {
+              console.error(`❌ Transport ${state}`);
+              reject(new Error(`Transport ${state}`));
+            }
           });
 
           sendTransportRef.current = transport;
+
           resolve();
+          
         }
-        
       );
-      setState("SEND_TRANSPORT_READY");
     });
   };
 
-  
+  const emitPromise = (event, data) => {
+    return new Promise((resolve, reject) => {
+      socketRef.current.emit(event, data, (response) => {
+        if (response && response.error) {
+          reject(response.error);
+        } else {
+          resolve(response);
+        }
+        });
+    });
+  };
 
   // produce (clave)
   const produce = async () => {
@@ -209,7 +248,20 @@ const VideoGeneral = () => {
     localRef.current.srcObject = stream;
 
     for (const track of stream.getTracks()) {
-      const producer = await sendTransportRef.current.produce({ track });
+      const isVideo = track.kind === "video";
+
+      const producer = await sendTransportRef.current.produce({ 
+        track,
+        ...(isVideo && {
+          encodings,
+          codecOptions: {
+            videoGoogleStartBitrate: 1000,
+          },
+        }),
+        appData: {
+          peerId: socketRef.current.id,            // Metadata adicional
+        } 
+      });
       producersRef.current.push(producer);
     }
 
@@ -217,13 +269,12 @@ const VideoGeneral = () => {
     setState("PRODUCING");
   };
 
-  
-
   // 7. FLUJO VIEWER
   const setupConsumerFlow = async () => {
     await createRecvTransport();
-    await consumeExisting();
     listenForNewProducers();
+    await consumeExisting();
+    
   };
 
   // createRecvTransport
@@ -231,77 +282,158 @@ const VideoGeneral = () => {
     return new Promise((resolve) => {
       socketRef.current.emit(
         "createTransport",
-        { consumer: true }, // 🔥 CLAVE
+        { consumer: true, roomId, email}, // 🔥 CLAVE
         (params) => {
           const transport = deviceRef.current.createRecvTransport(params);
 
-          transport.on("connect", ({ dtlsParameters }, callback) => {
+          transport.on("connect", ({ dtlsParameters }, callback, errback) => {
             socketRef.current.emit(
               "connectTransport",
-              { transportId: transport.id, dtlsParameters },
-              callback
+              { transportId: transport.id, dtlsParameters, roomId },
+              ({ error }) => {
+                if (error) {
+                  errback(error);
+                } else {
+                  callback();
+                }
+              }
             );
           });
+
+          transport.on("connectionstatechange", (state) => {
+
+              console.log(
+                "📡 sendTransport state:", state);
+
+                 if (state === "connected") {
+                    setState("RECV_TRANSPORT_READY");
+                  }
+
+                  if (state === "failed") {
+                    console.error("❌ Transport failed");
+                  }
+              
+            }
+          );
+
           recvTransportRef.current = transport;
           resolve();
         }
       );
-      setState("RECV_TRANSPORT_READY");
+      
     });
   };
-  
 
   // consumir existentes
   const consumeExisting = async () => {
     const producers = await new Promise((resolve) => {
-      socketRef.current.emit("getProducers", resolve);
+      socketRef.current.emit("getProducers", { roomId }, resolve);
+      console.log("📡 Solicitando productores existentes para la sala", roomId);
     });
 
-    console.log("📡 Producers disponibles:", producers);
+    if (producers === null || producers.length === 0) {
+      console.log("📡 No hay productores disponibles");
+      return;
+    }
 
     for (const producerId of producers) {
+      console.log("📡 Producers disponibles:", producers);
       await consume(producerId);
     }
+    
     setState("CONSUMING_EXISTING");
   };
 
   // 🎥 consume
-  const consume = async (producerId) => {
-    const data = await new Promise((resolve) => {
-      socketRef.current.emit(
-        "consume",
-        {
-          producerId,
-          rtpCapabilities: deviceRef.current.rtpCapabilities,
-        },
-        resolve
-      );
-    });
+    const consume = async (producerId) => {
+      const data = await new Promise((resolve) => {
+        socketRef.current.emit(
+          "consume",
+          {
+            producerId,
+            rtpCapabilities: deviceRef.current.rtpCapabilities,
+            roomId,
+            email
+          },
+          resolve
+        );
+      });
 
-    if (!data) {
-      console.warn("❌ Productor no encontrado:", producerId);
-      return;
-    }
+      if (!data) {
+        console.warn("❌ Productor no encontrado:", producerId);
+        return;
+      }
 
-    const consumer = await recvTransportRef.current.consume({
-      id: data.id,
-      producerId: data.producerId,
-      kind: data.kind,
-      rtpParameters: data.rtpParameters,
-    });
+      console.log("📦 Datos recibidos:", data);
+      
+      const consumer = await recvTransportRef.current.consume({
+        id: data.id,
+        producerId: data.producerId,
+        kind: data.kind,
+        rtpParameters: data.rtpParameters,
+      });
 
-    consumersRef.current.push(consumer);
+      console.log("🎥 Consumer creado frontend");
+      console.log("🎥 kind:", data.kind);
+      console.log("🎥 track:", consumer.track.kind);
 
-    // 🎥 montar en video
-    const stream = new MediaStream();
-    stream.addTrack(consumer.track);
 
-    if (remoteRef.current) {
-    remoteRef.current.srcObject = stream;
+      await new Promise((resolve)=>{
+        socketRef.current.emit("resume-consumer", 
+          { consumerId: consumer.id }, resolve );
+      })
 
-    setState("READY");
+      consumersRef.current.push(consumer);
+
+      // 🔥 1. Asegurar que tenemos un MediaStream limpio
+      if (!remoteRef.current.srcObject) {
+          remoteRef.current.srcObject = new MediaStream();
+      }
+
+      const stream = remoteRef.current.srcObject;
+
+      // 🔥 2. ELIMINAR tracks antiguos del mismo tipo para evitar el acumulado (el Array(4) que viste)
+      const existingTracks = stream.getTracks().filter(t => t.kind === data.kind);
+      existingTracks.forEach(track => {
+          track.stop(); // Detener el hardware
+          stream.removeTrack(track); // Quitar del stream
+      });
+
+      // 🔥 3. Agregar el nuevo track limpio
+
+      consumersRef.current.forEach(consumer => {
+        if (!stream.getTracks().find(t => t.id === consumer.track.id)) {
+          stream.addTrack(consumer.track);
+        }
+      });
+
+      // ... después de stream.addTrack(consumer.track)
+      if (remoteRef.current) {
+          // Forzar que el elemento reconozca el nuevo stream
+          remoteRef.current.srcObject = stream;
+          
+          // IMPORTANTE: Algunos navegadores necesitan esto para despertar el renderizado
+          remoteRef.current.load(); 
+
+          remoteRef.current.play()
+              .then(() => console.log("▶️ Reproducción iniciada con éxito"))
+              .catch(err => {
+                  console.error("❌ Error en play():", err);
+                  // Si falla, intentamos mutearlo de nuevo por si es política de autoplay
+                  remoteRef.current.muted = true;
+                  remoteRef.current.play();
+              });
+      }
+
+      console.log(`✅ Track de ${data.kind} actualizado. Total tracks:`, stream.getTracks().length);
+
+      // 🔥 4. Forzar visibilidad y reproducción
+      remoteRef.current.muted = true; // Obligatorio para video autoplay
+      remoteRef.current.playsInline = true;
+
+      remoteRef.current.play().catch(e => console.warn("Error play:", e));
+
     };
-  };
 
   // 🔴 nuevos producers en tiempo real
   const listenForNewProducers = () => {
@@ -311,6 +443,49 @@ const VideoGeneral = () => {
     });
   };
 
+
+const updateConsumers = () => {
+  if (!consumersRef.current.length) return;
+
+  consumersRef.current.forEach((consumer) => {
+    if (!isVisible) {
+      socketRef.current.emit("pause-consumer", {
+        consumerId: consumer.id,
+      });
+      return;
+    }
+
+    socketRef.current.emit("resume-consumer", {
+      consumerId: consumer.id,
+    });
+
+    socketRef.current.emit("set-quality", {
+      consumerId: consumer.id,
+      quality,
+    });
+  });
+};
+  //==============================USE EFFECTS==============================
+    useEffect(() => {
+    if (!deviceRef.current) {
+      console.warn("⚠️ Dispositivo no cargado, no se puede iniciar flujo");
+      return;
+    }
+    if (stream) {
+        console.log("activando flujo de productor");
+        startProducing();
+      } else {
+        console.log("Desactivando flujo de productor");
+        stopProducing();
+      }
+  },[stream]);
+
+    useEffect(() => {
+      updateConsumers();
+  
+    }, [quality, isVisible]);
+
+
   // 8. useEffect correcto (ANTI-CAOS)
   useEffect(() => {
     if (initializedRef.current) return;
@@ -319,23 +494,19 @@ const VideoGeneral = () => {
     const socket = getSocket(apiUrl);
     socketRef.current = socket;
 
-    await initFlow();
-
-    // socket.on("connect", async () => {
-    //   console.log("🟢 Conectado:", socket.id);
-    //   await initFlow();
-    // });
+    socketRef.current.on("connect", async () => {
+      console.log("🟢 Conectado:", socket.id);
+      await initFlow();
+    });
 
     if (remoteRef.current) {
       remoteRef.current.srcObject = null;
 
-    // socket.on("producer-closed", () => {
-    //   console.log("📴 Stream detenido");
-    
-    // if (remoteRef.current) {
-    //   remoteRef.current.srcObject = null;
+      socketRef.current.on("producer-closed", () => {
+        console.log("📴 Stream detenido");
+      
+      });
     }
-    // });
   }, []);
 
   const openBroadcasting = async () => {

@@ -1,24 +1,36 @@
 import mediasoup from "mediasoup";
+import os from "os";
 import { config } from "./config.js";
 
-let worker;
+// let worker;
+const workers = [];
+let nextWorkerIndex = 0;
 
-export async function createWorker() {
-  worker = await mediasoup.createWorker({
-    rtcMinPort: config.mediasoup.worker.rtcMinPort,
-    rtcMaxPort: config.mediasoup.worker.rtcMaxPort,
-  });
+export async function createWorkers() {
+  const numCores = os.cpus().length;
 
-  console.log("✅ Worker creado");
+  for (let i = 0; i < numCores; i++) {
+    const worker = await mediasoup.createWorker({
+      rtcMinPort: config.mediasoup.worker.rtcMinPort,
+      rtcMaxPort: config.mediasoup.worker.rtcMaxPort,
+    });
 
-  worker.on("died", () => {
-    console.error("💀 Worker murió, reiniciar servidor");
-    process.exit(1);
-  });
+    worker.on("died", () => {
+      console.error("💀 Worker murió, reinicia el proceso");
+      process.exit(1);
+    });
 
-  return worker;
+    workers.push({
+      worker, 
+      routers: [],
+      load: 0
+    });
+    console.log(`🧵 Worker ${i} creado`);
+  }
 }
 
 export function getWorker() {
+  const worker = workers[nextWorkerIndex];
+  nextWorkerIndex = (nextWorkerIndex + 1) % workers.length;
   return worker;
 }

@@ -1,19 +1,31 @@
-export const peers = new Map(); // socket.id -> { roomId, transports, producers, consumers }
-export const rooms = new Map();  // roomId -> { router, producers }
 
 // Helpers
-export const getPeer = (socketId) => peers.get(socketId);
-export const getAllPeers = () => peers;
-export const addPeer = (socketId, data) => {
-    peers.set(socketId, {
-        
-        id: socketId,
-        transports: [],
-        producers: [],
-        consumers: [],
-        ...data
-    });
-};
+// export const getPeer = (socketId) => peers.get(socketId);
+// export const getAllPeers = () => peers;
+// export const addPeer = (socketId, data) => {
+//     peers.set(socketId, {
+//         id: socketId,
+//         transports: [],
+//         producers: [],
+//         consumers: [],
+//         ...data
+//     });
+// };
+
+// export function createRoomAux(roomId, router) {
+//   const room = {
+//     roomId,
+//     router,
+//     peers: new Map(),
+//     producers: [],
+//     transports: [],
+//     consumers: [],
+//     createdAt: Date.now()
+//   };
+//   return room;
+// }
+
+
 export const removePeer = (socketId) => peers.delete(socketId);
 
 export const addTransport = (socketId, transport) => {
@@ -36,5 +48,3 @@ export const addConsumer = (socketId, transport) => {
         peer.consumers.push(transport);
     }
 };
-
-export const getRoom = (roomId) => rooms.get(roomId);

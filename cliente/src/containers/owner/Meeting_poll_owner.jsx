@@ -3,7 +3,6 @@ import { io } from "socket.io-client";
 import { UserContext } from "../../components/UserContext";
 import AppContext from '../../context/AppContext';
 
-
 const PollManage = () => {
 
   const { apiUrl } = useContext(AppContext);
@@ -35,6 +34,7 @@ const PollManage = () => {
 
       socketRef.current.on('end-cronometer', () => {
         alert("Tiempo terminado");
+        flag=false;
         setVotingEnabled(false);
     });  
     

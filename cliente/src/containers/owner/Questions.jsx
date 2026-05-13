@@ -5,7 +5,6 @@ import { UserContext } from "../../components/UserContext";
 import AppContext from '../../context/AppContext';
 
 
-
 const Questions = () => {
   const { apiUrl } = useContext(AppContext);
   const socketRef = useRef(null);
@@ -33,11 +32,11 @@ const Questions = () => {
       };
     }, []);
 
- 
+    //de userContext, votingEnabled viene falso.
   const handleVoteChange = async (e, decision) => {
     if (!votingEnabled) return;
     const value = e.target.value;
-    setSelected(value);
+    setVotingEnabled(false); // Deshabilita la votación después de votar
 
     const nuevoVoto = {
       interior: ownerData.interior,
@@ -46,6 +45,7 @@ const Questions = () => {
       proposicion: decision, 
       valor: parseInt(value),
     };
+    setSelected(null); //despues de registrar el voto, select pasa a null
 
     await axios.post(`${apiUrl}/api/votacion`, nuevoVoto)
       .then(response => {

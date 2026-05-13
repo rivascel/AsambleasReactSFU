@@ -11,15 +11,15 @@ import fs from "fs";
 import jwt from "jsonwebtoken";
 // const { addViewerToBroadcast }= require("../utils/js/webrtc/supabase");
 
-import  sendMagicLink  from "../utils/sendMagicLink.js";
+import sendMagicLink  from "../utils/sendMagicLink.js";
 import createRoom from "../utils/js/webrtc/supabase.js";
-import requestToJoinRoom from "../utils/js/webrtc/supabase.js";
-import getPendingRequest from "../utils/js/webrtc/supabase.js";
-import approveUser from "../utils/js/webrtc/supabase.js";
-import ApprovedUserQuery from "../utils/js/webrtc/supabase.js";
-import deleteCandidate from "../utils/js/webrtc/supabase.js";
-import getPendingRequestById from "../utils/js/webrtc/supabase.js";
-import getApprovedUserById from "../utils/js/webrtc/supabase.js";
+// import requestToJoinRoom from "../utils/js/webrtc/supabase.js";
+// import getPendingRequest from "../utils/js/webrtc/supabase.js";
+// import approveUser from "../utils/js/webrtc/supabase.js";
+// import ApprovedUserQuery from "../utils/js/webrtc/supabase.js";
+// import deleteCandidate from "../utils/js/webrtc/supabase.js";
+// import getPendingRequestById from "../utils/js/webrtc/supabase.js";
+// import getApprovedUserById from "../utils/js/webrtc/supabase.js";
 import offers from "../utils/js/webrtc/supabase.js";
 
 // const { getPeerConnection, getRemoteStream, closeConnection }= require("../utils/js/webrtc/webrtc-no");
@@ -259,114 +259,129 @@ router.get('/magic-link', (req, res) => {
   }
 });
 
-
-router.post('/request-participation', async (req, res) => {
-  try {
-
-     const token = req.cookies?.token;
-    //  const io = req.io; // Usa la instancia compartida
+router.post('/cancel-users', async (req, res) => {
     
-    if (!token) {
-        console.log('Token no encontrado en cookies');
-        return res.status(401).json({ error: 'Token no proporcionado' });
-    }
+  try {
+    const { userId } = req.body;
 
-    const decoded = jwt.verify(token, config.jwtSecret);
-    const email = decoded.email;
-    const { roomId } = req.body;
+    await deleteCandidate(userId);
 
-    if (!roomId) return res.status(400).json({ error: 'roomId requerido' });
-
-    await requestToJoinRoom(roomId, email);
-
-    res.status(200).json({ message: 'Solicitud enviada' });
+    res.status(200).json({ message: 'Solicitante cancelado' });
   } catch (err) {
     console.error("Error al procesar solicitud:", err);
     res.status(500).json({ error: 'Error del servidor' });
   }
 });
+
+
+// router.post('/request-participation', async (req, res) => {
+//   try {
+
+//     const token = req.cookies?.token;
+//     //  const io = req.io; // Usa la instancia compartida
+    
+//     if (!token) {
+//         console.log('Token no encontrado en cookies');
+//         return res.status(401).json({ error: 'Token no proporcionado' });
+//     }
+
+//     const decoded = jwt.verify(token, config.jwtSecret);
+//     const email = decoded.email;
+//     const { roomId } = req.body;
+
+//     if (!roomId) return res.status(400).json({ error: 'roomId requerido' });
+
+//     await requestToJoinRoom(roomId, email);
+
+//     res.status(200).json({ message: 'Solicitud enviada' });
+//   } catch (err) {
+//     console.error("Error al procesar solicitud:", err);
+//     res.status(500).json({ error: 'Error del servidor' });
+//   }
+// });
 
 //recupera solicitudes por id
-router.post('/recover-users-id', async (req, res) => {
-  try {
-    const { roomId, userId } = req.body;
 
-    if (!roomId || !userId) return res.status(400).json({ error: 'roomId/userId y userId son requeridos' });
+// router.post('/recover-users-id', async (req, res) => {
+//   try {
+//     const { roomId, userId } = req.body;
 
-    const pendingUsersById = await getPendingRequestById(roomId, userId);
-    const approvedUsersById = await getApprovedUserById(roomId, userId);
+//     if (!roomId || !userId) return res.status(400).json({ error: 'roomId/userId y userId son requeridos' });
 
-    // console.log("usuarios pendientes",pendingUsers);
-    res.status(200).json({ 
-      pendingUsersById, 
-      approvedUsersById
-    });
+//     const pendingUsersById = await getPendingRequestById(roomId, userId);
+//     const approvedUsersById = await getApprovedUserById(roomId, userId);
 
-    // const approvedUsersById = await approveUser(roomId, userId);
-    // console.log("usuarios pendientes",pendingUsers);
-    // res.status(200).json({ approvedUsersById});
+//     // console.log("usuarios pendientes",pendingUsers);
+//     res.status(200).json({ 
+//       pendingUsersById, 
+//       approvedUsersById
+//     });
 
-    // res.status(200).json({ message: 'Solicitantes enviados' });
-  } catch (err) {
-    console.error("Error al procesar solicitud:", err);
-    res.status(500).json({ error: 'Error del servidor' });
-  }
-});
+//     // const approvedUsersById = await approveUser(roomId, userId);
+//     // console.log("usuarios pendientes",pendingUsers);
+//     // res.status(200).json({ approvedUsersById});
 
-router.post('/searched-users-approved', async (req, res) => {
+//     // res.status(200).json({ message: 'Solicitantes enviados' });
+//   } catch (err) {
+//     console.error("Error al procesar solicitud:", err);
+//     res.status(500).json({ error: 'Error del servidor' });
+//   }
+// });
+
+// router.post('/searched-users-approved', async (req, res) => {
     
-  try {
-    const { roomId } = req.body;
-    // console.log('Request recibido con roomId:', roomId); // Debug 1
+//   try {
+//     const { roomId } = req.body;
+//     // console.log('Request recibido con roomId:', roomId); // Debug 1
 
-    if (!roomId) return res.status(400).json({ error: 'roomId requerido' });
-    const data = await ApprovedUserQuery(roomId);
-    // console.log('Datos obtenidos de Supabase:', data); // Debug 2
+//     if (!roomId) return res.status(400).json({ error: 'roomId requerido' });
+//     const data = await ApprovedUserQuery(roomId);
+//     // console.log('Datos obtenidos de Supabase:', data); // Debug 2
 
-    res.status(200).json({ 
-        success: true,
-        approvedUsers: data });
-  } catch (err) {
-    console.error("Error al procesar solicitud:", err);
-    res.status(500).json({ error: 'Error del servidor' });
-  }
-});
+//     res.status(200).json({ 
+//         success: true,
+//         approvedUsers: data });
+//   } catch (err) {
+//     console.error("Error al procesar solicitud:", err);
+//     res.status(500).json({ error: 'Error del servidor' });
+//   }
+// });
 
 
 //recupera los que piden la palabra de supabase
-router.post('/recover-users', async (req, res) => {
-  try {
-    const { roomId } = req.body;
+// router.post('/recover-users', async (req, res) => {
+//   try {
+//     const { roomId } = req.body;
 
-    if (!roomId) return res.status(400).json({ error: 'roomId requerido' });
+//     if (!roomId) return res.status(400).json({ error: 'roomId requerido' });
 
-    const pendingUsers = await getPendingRequest(roomId);
-    // console.log("usuarios pendientes",pendingUsers);
-    res.status(200).json({ pendingUsers});
-
-
-    // res.status(200).json({ message: 'Solicitantes enviados' });
-  } catch (err) {
-    console.error("Error al procesar solicitud:", err);
-    res.status(500).json({ error: 'Error del servidor' });
-  }
-});
+//     const pendingUsers = await getPendingRequest(roomId);
+//     // console.log("usuarios pendientes",pendingUsers);
+//     res.status(200).json({ pendingUsers});
 
 
-router.post('/approved-users', async (req, res) => {
+//     // res.status(200).json({ message: 'Solicitantes enviados' });
+//   } catch (err) {
+//     console.error("Error al procesar solicitud:", err);
+//     res.status(500).json({ error: 'Error del servidor' });
+//   }
+// });
+
+
+// router.post('/approved-users', async (req, res) => {
     
-  try {
-    const { roomId, userId } = req.body;
+//   try {
+//     const { roomId, userId } = req.body;
 
-    if (!roomId) return res.status(400).json({ error: 'roomId requerido' });
-    await approveUser(roomId, userId);
+//     if (!roomId) return res.status(400).json({ error: 'roomId requerido' });
+//     await approveUser(roomId, userId);
 
-    res.status(200).json({ message: 'Solicitante aprobado' });
-  } catch (err) {
-    console.error("Error al procesar solicitud:", err);
-    res.status(500).json({ error: 'Error del servidor' });
-  }
-});
+//     res.status(200).json({ message: 'Solicitante aprobado' });
+//   } catch (err) {
+//     console.error("Error al procesar solicitud:", err);
+//     res.status(500).json({ error: 'Error del servidor' });
+//   }
+// });
 
 router.post('/offer', async (req, res) => {
     
@@ -399,19 +414,7 @@ router.post('/answer', async (req, res) => {
 });
 
 
-router.post('/cancel-users', async (req, res) => {
-    
-  try {
-    const { userId } = req.body;
 
-    await deleteCandidate(userId);
-
-    res.status(200).json({ message: 'Solicitante cancelado' });
-  } catch (err) {
-    console.error("Error al procesar solicitud:", err);
-    res.status(500).json({ error: 'Error del servidor' });
-  }
-});
 
 
 //================== ENDPOINTS WEBRTC-CLIENT - SUPABASE============================

@@ -99,7 +99,6 @@ export async function getApprovedUserById(roomId, userId) {
 }
 
 //consulta de usuarios aprobados
-//consulta de usuarios aprobados
 export default async function ApprovedUserQuery(roomId) {
     try {
         const { data, error } = await supabase
@@ -160,7 +159,6 @@ export async function approveUser(roomId, userId, approved='approved') {
     if (updateRoomError) throw updateRoomError;
 }
 
-
 //Actualizar las ofertas sdp
 export async function offers(offer) {
 
@@ -218,17 +216,6 @@ export async function deleteCandidate(userId, roomId = 'main-room') {
   }
 }
 
-// module.exports = {
-//     createRoom,
-//     requestToJoinRoom,
-//     getPendingRequest,
-//     approveUser,
-//     deleteCandidate,
-//     ApprovedUserQuery,
-//     getPendingRequestById,
-//     offers,
-//     offersAnswer,
-//     getApprovedUserById
-// };
+
   
 

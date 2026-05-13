@@ -151,36 +151,7 @@ export const listenToSignals = (userId, callback) => {
   }
 };
 
-//Los vieweres escuchan las señales del admin y envian la respuesta (answers)
-export const listenToSignalsFromAdmin = async (userId, callback) => {
-
-    if (!userId) {
-      console.error("Usuario no definido aun"); 
-      return;
-    }
-    const channel = supabase
-    .channel(`Signals from Admin-${userId}`)
-    .on(
-      'postgres_changes',
-      {
-        event: 'INSERT',
-        schema: 'public',
-        table: 'webrtc_signaling',
-        filter: `to_user=eq.${userId}`
-      },
-      (payload) => {
-        callback(payload.new)
-      }
-    )
-    .subscribe((status) => {
-    console.log("Estado de suscripción:", status);
-
-    return {
-      removeChannel: () => supabase.removeChannel(channel)
-    }
-  });
-
-};
+// 
 
 
 // Esta es la versión que deben usar los USUARIOS (no el admin)
@@ -275,7 +246,7 @@ export const listenToRequests = (room, options={}, onChange) => {
         filter: `room_id=eq.${room}`
       },
       (payload) => {
-        // console.log(`🎯 [ADMIN-via-deprecated] Evento ${payload.eventType}`);
+        console.log(`🎯 [ADMIN-via-deprecated] Evento ${payload.eventType}`);
         onChange?.(payload.new || payload.old);
       }
     )
@@ -288,6 +259,68 @@ export const listenToRequests = (room, options={}, onChange) => {
 };
 
 
+export const sendJoinRequest = async (roomId, viewerId, adminId) => {
+  const { error } = await supabase.from('webrtc_signaling').upsert([
+    {
+      room_id: roomId,
+      from_user: viewerId, // The viewer's ID
+      to_user: adminId,     // The admin's ID
+      type: 'join',
+      payload: { message: 'Requesting to join stream' }, // Payload can be simple
+      created_at: new Date().toISOString()
+    }
+  ]);
+
+  if (error) throw new Error('Error sending join request: ', error.message);
+};
+
+export async function registerAdminIsActive(roomId, adminId) {
+  try {
+    const { error } = await supabase.from('active_users').upsert([
+      {
+        user_id: adminId,
+        room_id: roomId,
+        is_admin: true,
+        created_at: new Date().toISOString(),
+      }
+    ]);
+    if (error) {console.error("Error registering admin as active:", error)}
+    else {console.log("✅ Admin registrado como activo");};
+  } catch (error) {
+    console.error("❌ Excepción en registerAdminIsActive:", error);
+  }  
+}
+
+//Los vieweres escuchan las señales del admin y envian la respuesta (answers)
+// export const listenToSignalsFromAdmin = async (userId, callback) => {
+
+//     if (!userId) {
+//       console.error("Usuario no definido aun"); 
+//       return;
+//     }
+//     const channel = supabase
+//     .channel(`Signals from Admin-${userId}`)
+//     .on(
+//       'postgres_changes',
+//       {
+//         event: 'INSERT',
+//         schema: 'public',
+//         table: 'webrtc_signaling',
+//         filter: `to_user=eq.${userId}`
+//       },
+//       (payload) => {
+//         callback(payload.new)
+//       }
+//     )
+//     .subscribe((status) => {
+//     console.log("Estado de suscripción:", status);
+
+//     return {
+//       removeChannel: () => supabase.removeChannel(channel)
+//     }
+//   });
+
+// };
 // export const listenToSignalsFromViewer = async (userId, callback) => {
 
 //   if (!userId) {
@@ -330,38 +363,6 @@ export const listenToRequests = (room, options={}, onChange) => {
 //   }
 //   });
 // };
-
-export const sendJoinRequest = async (roomId, viewerId, adminId) => {
-  const { error } = await supabase.from('webrtc_signaling').upsert([
-    {
-      room_id: roomId,
-      from_user: viewerId, // The viewer's ID
-      to_user: adminId,     // The admin's ID
-      type: 'join',
-      payload: { message: 'Requesting to join stream' }, // Payload can be simple
-      created_at: new Date().toISOString()
-    }
-  ]);
-
-  if (error) throw new Error('Error sending join request: ', error.message);
-};
-
-export async function registerAdminIsActive(roomId, adminId) {
-  try {
-    const { error } = await supabase.from('active_users').upsert([
-      {
-        user_id: adminId,
-        room_id: roomId,
-        is_admin: true,
-        created_at: new Date().toISOString(),
-      }
-    ]);
-    if (error) {console.error("Error registering admin as active:", error)}
-    else {console.log("✅ Admin registrado como activo");};
-  } catch (error) {
-    console.error("❌ Excepción en registerAdminIsActive:", error);
-  }  
-}
 
 // export async function setAdminIsStreaming(roomId, adminId) {
 //   try {
@@ -512,4 +513,179 @@ export async function registerViewer(roomId, viewerId ) {
     },
   ]);
   if (error) console.error("Error registrando viewer:", error);
+}
+
+//El usuario se une a la sala
+export async function requestToJoinRoom(roomId, userId) {
+    const { data, error1 } = await supabase
+        .from('requests')
+        .select('user_id')
+        .eq('room_id', roomId)
+        .eq('status', 'pending')
+        // .single();
+        // .maybeSingle();
+    if (data && data.some(request => request.user_id === userId)) {
+        // Ya existe una solicitud pendiente para este usuario en esta sala
+        console.log(`El usuario ${userId} ya tiene una solicitud pendiente en la sala ${roomId}.`);
+        return;
+    }
+    if (error1) {
+        throw error1;
+    }
+
+    const { error } = await supabase
+      .from('requests')
+      .insert([{ user_id: userId, status: 'pending', room_id: roomId }]);
+  
+    if (error) {
+      console.error("Error sending request:", error);
+      return;
+    }
+  
+    // console.log(`Request sent for room: ${roomId}. Waiting for admin approval.`);
+}
+  
+export async function getPendingRequest(roomId) {
+    const { data, error } = await supabase
+        .from('requests')
+        .select('user_id')
+        .eq('room_id', roomId)
+        .eq('status', 'pending')
+        // .single();
+        // .maybeSingle();
+    if (error) {
+        throw error;
+    }
+    // console.log('Supabase data:', data);
+    return data;
+}
+
+export async function getPendingRequestById(roomId, userId) {
+    const { data: request, error } = await supabase
+        .from('requests')
+        .select('user_id')
+        .eq('room_id', roomId)
+        .eq('user_id', userId)
+        .eq('status', 'pending')
+    if (error) {
+        throw error;
+    }
+
+    const currentViewers= Array.isArray(request) 
+        ? request.map(request => request.user_id)
+        : [];
+    return currentViewers;
+    }
+
+export async function getApprovedUserById(roomId, userId) {
+
+    // obtener lista actual de candidatos en sala
+    const { data: requestsData, error: roomError } = await supabase
+        .from('requests')
+        .select('user_id')
+        .eq('room_id', roomId)
+        .eq('status', 'approved')
+        .eq('user_id', userId)
+        // .single();
+
+    if (roomError) throw roomError;
+
+    const currentIds = Array.isArray(requestsData)
+        ? requestsData.map(request => request.user_id)
+        : [];
+    return currentIds;
+}
+
+//consulta de usuarios aprobados
+export async function ApprovedUserQuery(roomId) {
+    try {
+        const { data, error } = await supabase
+        .from('requests')
+        .select('user_id')
+        .eq('room_id', roomId)
+        .eq('status', 'approved')
+        // .single();
+        // .maybeSingle();
+
+        // console.log('Respuesta cruda de Supabase:', { data, error });   
+
+        if (error) throw error;
+
+        if (!data || data.length === 0) {
+            return [];
+        };
+
+        return data.map(row => row.user_id).filter(Boolean) 
+    } catch (error) {
+        console.error('Error en ApprovedUserQuery:', error);
+        // throw error; // Propaga el error para manejarlo en el endpoint
+        return [];
+    }
+}
+
+export async function approveUser(roomId, userId, approved='approved') {
+
+   //aprobar el usuario
+    const { error } = await supabase
+        .from('requests')
+        .update({ status: 'approved' })
+        .eq('user_id', userId)
+        .eq('room_id', roomId)
+
+    if (error) throw error;
+
+    // obtener lista actual de candidatos en sala
+    const { data: requestsData, error: roomError } = await supabase
+      .from('requests')
+      .select('user_id')
+      .eq('room_id', roomId)
+      .eq('status', 'pending')
+
+    if (roomError) throw roomError;
+
+    const currentCandidates = requestsData?.user_id || [];
+
+    //agregar el nuevo candidato si no esta ya incluido
+    const newCandidates = [...new Set([...currentCandidates, userId])];
+
+    // 4. Actualizar la sala con los nuevos candidatos
+    const { error: updateRoomError } = await supabase
+        .from('requests')
+        .update({ candidate: newCandidates })
+        .eq('room_id', roomId);
+
+    if (updateRoomError) throw updateRoomError;
+}
+
+export async function deleteCandidate(userId, roomId = 'main-room') {
+    try{
+        // Primero, obtén los datos actuales
+        const { data: dataUser, error: fetchError } = await supabase
+        .from('requests')
+        .select('user_id')
+        .eq('user_id', userId)
+        .eq('room_id', roomId)
+        .maybeSingle()
+        // .single()
+
+        if (fetchError) throw fetchError;
+
+        if (!dataUser) {
+        console.warn(`No se encontró un request del usuario ${userId} en la sala ${roomId}.`);
+        return;
+        }
+
+  // 2️⃣ Eliminar el request
+    const { error: deleteError } = await supabase
+      .from('requests')
+      .delete()
+      .eq('user_id', userId)
+      .eq('room_id', roomId);
+
+    if (deleteError) throw deleteError;
+
+    // console.log(`Request del usuario ${userId} eliminado correctamente de la sala ${roomId}.`);
+  } catch (err) {
+    console.error('Error al eliminar candidato:', err);
+  }
 }

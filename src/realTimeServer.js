@@ -1,11 +1,12 @@
 //una funcion que se esta exportando para ser usada en otro
 //archivo, y crea el servidor socket.io en tiempo real
 
-import { createWorker } from "./mediasoup/worker.js";
-import { createRoom, getRoom } from "./mediasoup/router.js";
+import { normalizeModuleId } from "vite/module-runner";
+import { createRoomWithWorker  } from "./mediasoup/router.js";
+import { createRoom, getRoom , addPeerToRoom, getOnePeerInRoom, getPeersInRoom, removePeerFromRoom } from "./mediasoup/router.js";
 import { createWebRtcTransport } from "./mediasoup/transport.js";
-import { addPeer, getPeer, addTransport, getAllPeers, removePeer  } from "./mediasoup/helpers.js";
 import { Server } from "socket.io";
+// import { registerSocketHandlers } from ".   /socketHandlers.js";
 
 export default (httpServer) => {
     const io = new Server(httpServer, {
@@ -14,21 +15,13 @@ export default (httpServer) => {
             methods: ['GET', 'POST'],
             credentials: true
         }
-    }
-    );
-
-     // ✅ WORKER GLOBAL
-     let worker;
-
-        (async () => {
-            worker = await createWorker();
-            console.log("✅ Worker creado (único)");
-        })();
+    });
 
     let connectedUsers = [];
     const ADMIN_EMAIL = "admin";
     let administrador = "";
     let userIdentifier;
+    const transports = new Map();
 
     // Configuración de Socket.IO con CORS
     io.on("connection", socket => {
@@ -54,24 +47,20 @@ export default (httpServer) => {
             // Usamos el email como identificador en la lista
             userIdentifier = sessionData.email;
 
-              // 🔥 CLAVE: guardar en el socket
-            socket.userId = userIdentifier;
+            // console.log("🔐 Socket autenticado:", socket.id, userIdentifier);
 
-            console.log("🔐 Socket autenticado:", socket.id, userIdentifier);
+            if (!userIdentifier) return;
 
             if (userIdentifier && !connectedUsers.includes(userIdentifier)) {
                 connectedUsers.push(userIdentifier);
-                io.emit("updateConnectedUsers", connectedUsers);
+                // io.emit("updateConnectedUsers", connectedUsers);
                 console.log("lista de conectados",connectedUsers)
             }
             } catch (e) {
                 console.error("Error al parsear la cookie session en Socket:", e.message);
             }
             console.log("Usuarios conectados actualmente:", connectedUsers);
-
         }
-
-        if (!userIdentifier) return;
 
         if (userIdentifier != '') {
     
@@ -79,7 +68,6 @@ export default (httpServer) => {
 
             // Manejar la desconexión
             socket.on("disconnect", () => {
-                // console.log("Usuario desconectado:", user);
                 connectedUsers = connectedUsers.filter(id => id !== userIdentifier);
                 console.log("Usuario desconectado:", userIdentifier);
                 io.emit("updateConnectedUsers", connectedUsers); // ⬅️ importante
@@ -108,7 +96,7 @@ export default (httpServer) => {
                 socket.broadcast.emit("receive-decision", text );
             });
             
-        // ================= ENVIO DE VOTOS A CLIENTES =================
+            // ================= ENVIO DE VOTOS A CLIENTES =================
             //enviar el mensaje y el usuario
             socket.on("message", (data) => {
                 socket.broadcast.emit("message", data);
@@ -153,34 +141,11 @@ export default (httpServer) => {
                 socket.broadcast.emit("canceled", { userId, roomId });
             });
         };
-        // ===============CONEXION VIDEO ===================================
-        // Manejar eventos de WebRTC (señalización)
-        socket.on("offer", data => {
-            const { to, offer } = data;
-            io.to(to).emit("offer", { from: socket.id, offer });
-        });
 
-        socket.on("answer", data => {
-            const { to, answer } = data;
-            io.to(to).emit("answer", { from: socket.id, answer });
-        });
+        registerSocketHandlers(socket,io);
+    });
 
-        socket.on("ice-candidate", data => {
-            const { to, candidate } = data;
-            io.to(to).emit("ice-candidate", { from: socket.id, candidate });
-        });
-
-        // Notificar a otros usuarios sobre nuevas conexiones
-        socket.on("join-room", roomId => {
-            socket.join(roomId);
-            socket.to(roomId).emit("user-connected", socket.id);
-        });
-
-        socket.on("broadCasting",   (email)   => {
-            console.log("Administrador transmitiendo:", administrador);
-            // Enviar mensaje a todos los clientes conectados   
-            io.emit("admin-connected", email );
-        });
+    function registerSocketHandlers(socket, io) {
 
         // ================= ENVIO DEL CRONOMETRO A CLIENTES ===================
         // Escuchar el inicio del cronómetro
@@ -218,64 +183,46 @@ export default (httpServer) => {
         socket.on("disconnect", () => {
             console.log("🔴 Usuario desconectado:", socket.id);
         });
-
         
         //===========SFU==============
        
-        // 🔹 Unirse a sala (crear o unirse)
-          // Cuando un usuario se une a una sala
-
         // 🔹 Unirse a la sala
-        socket.on("join-room", async ({ roomId, userId }, callback) => {
-             userId = socket.userId; // 🔥 desde backend
-            console.log("📥 joinRoom:", socket.id, "sala:", roomId, "userId", userId);
+        socket.on("join-room", async ({ roomId, userId:email }, callback) => {
+            console.log("📥 joinRoom:", socket.id, "sala:", roomId /*, "userId", userId*/);
 
             console.log("📡 Evento desde:", socket.id);
             
-            let room = getRoom(roomId);
+            let room = getRoom(roomId); //busca en router.js
             if (!room) {
-                room = await createRoom(roomId, worker); // Asumiendo que createRoom usa el worker internamente
+                room = await createRoomWithWorker(roomId); // lo crea usando router.js
                 console.log("🏠 Sala creada:", roomId);
             }
 
-            // ✅ Verificar que room.producers existe
-            if (!room.producers) {
-                room.producers = [];
-            }
-            
-            // Guardar peer con datos básicos
-            addPeer(socket.id, { 
-                roomId, 
-                userId, 
-                // transports: [], 
-                // producers: [], 
-                // consumers: [] 
-            });
-            
+            addPeerToRoom(roomId, socket.id); //lo agrega a la sala usando router.js
+
             socket.join(roomId);
             socket.roomId = roomId;
-            socket.userId = userId;
+            // socket.userId = userId; //aca es donde guarda el socket
 
             // ✅ Verificar que el peer se guardó correctamente
-            const savedPeer = getPeer(socket.id);
-            console.log("✅ Peer guardado:", socket.id, "en sala:", savedPeer?.roomId);
+            const savedPeer = getOnePeerInRoom(roomId, socket.id);
+            console.log("✅ Peer guardado:", socket.id, savedPeer?.roomId);
 
             // Devolver las capacidades del router para que el cliente cargue su device
             callback({
-                rtpCapabilities: room.router.rtpCapabilities,
+                rtpCapabilities: room.router.rtpCapabilities
             });
         });
 
         // 🔹 Crear transport (WebRTC)
-        socket.on("createTransport", async ({ consumer }, callback) => {
-            const peer = getPeer(socket.id);
+        socket.on("createTransport", async ({ consumer, roomId }, callback) => {
+            const room = await getRoom(roomId);
+            const peer = await getOnePeerInRoom(roomId, socket.id);
 
             if (!peer) {
                 console.error("❌ Peer no existe");
                 return callback({ error: "Peer no registrado" });
             }
-
-            const room = getRoom(peer.roomId);
 
             if (!room) {
                 console.error("❌ Sala no existe");
@@ -285,8 +232,27 @@ export default (httpServer) => {
             try {
                 const transport = await createWebRtcTransport(room.router);
 
+                // ¡CRUCIAL! Guarda el transport en una estructura accesible
+                transports.set(transport.id, transport);
+
+                // Opcional: Guardar info extra para limpieza posterior
+                transport.on("routerclose", () => transports.delete(transport.id));
+                transport.on("close", () => transports.delete(transport.id));
+
                 // 🔥 CLAVE: distinguir tipo
                 transport.appData = { consumer };
+
+                // 🔥 AQUÍ VA
+                transport.on("close", () => {
+                    console.log(`🚛 Transport para usuario ${peer.id} en transport.id: ${transport.id}`);
+
+                    // limpiar peer
+                    peer.transports = peer.transports.filter(t => t.id !== transport.id);
+
+                    // cerrar todo lo asociado
+                    peer.producers.forEach(p => p.close());
+                    peer.consumers.forEach(c => c.close());
+                });
 
                 peer.transports.push(transport);
 
@@ -307,10 +273,16 @@ export default (httpServer) => {
             });
 
         // 🔹 Conectar transport
-        socket.on("connectTransport", async ({ transportId, dtlsParameters }, callback) => {
-            const peer = getPeer(socket.id);
+        socket.on("connectTransport", async ({ transportId, dtlsParameters, roomId }, callback) => { //se agrega roomId y userId para buscar el peer correcto
+            
+            console.log("📡 connectTransport:", transportId);
+            
+            const peer = await getOnePeerInRoom(roomId, socket.id);
 
             if (!peer) return callback?.({ error: "Peer no encontrado" });
+
+            // 🔍 BUSCAR: Obtenemos el objeto usando el ID que viene del cliente
+            // const transport = transports.get(transportId);
 
             const transport = peer.transports.find(t => t.id === transportId);
 
@@ -320,24 +292,45 @@ export default (httpServer) => {
             }
 
             try {
+                console.log(
+                    "Conectando transport:",
+                    transport.id
+                    );
+
                 await transport.connect({ dtlsParameters });
-                callback?.({ success: true });
+                console.log("✅ Transport conectado backend:",transport.id);
+                callback?.({ connected: true });
+                    
+                console.log(
+                    "✅ Backend transport conectado:",
+                    transport.id
+                );
+
+                   // Servidor
+                transport.on("dtlsstatechange", (dtlsState) => {
+                    console.log("DTLS state:", dtlsState);
+                });
+                transport.on("icestatechange", (iceState) => {
+                    console.log("ICE state:", iceState);
+                });
+
             } catch (error) {
                 console.error("❌ Error en connectTransport:", error);
                 callback?.({ error: error.message });
             }
+
+           
         });
 
         // 🔹 Producir (Enviar stream al SFU)
-        socket.on("produce", async ({ transportId, kind, rtpParameters }, callback) => {
-            const peer = getPeer(socket.id);
-            const room = getRoom(peer.roomId);
+        socket.on("produce", async ({ transportId, kind, rtpParameters, roomId }, callback) => {
+            const room = await getRoom(roomId);
+            const peer = await getOnePeerInRoom(roomId, socket.id);
 
-            if (!room) return callback({ error: "Room not found" });
+            if (!room || !peer) return callback({ error: "Room or peer  not found" });
 
             // 🔥 SOLO UN PRODUCER
-            if (room.activeProducer && room.activeProducer !== socket.id) {
-                console.warn("❌ Ya hay un productor activo");
+            if (room.activeProducerId && room.activeProducerId !== socket.id) {
                 return callback({ error: "Ya hay un productor activo" });
             }
 
@@ -347,102 +340,48 @@ export default (httpServer) => {
                 const producer = await transport.produce({
                 kind,
                 rtpParameters,
-                appData: {
-                    peerId: socket.id, // 🔥 CLAVE
-                },
+                appData: { peerId: socket.id, },
                 });
 
-                // 🔥 Guardar en peer
-                if (!peer.producers) peer.producers = [];
                 peer.producers.push(producer);
-
-                 // 🔥 marcar activo
-                room.activeProducer = socket.id;
-
-                room.producers = [producer]; // 🔥 SOLO UNO
-
-                console.log("🎥 Producer ACTIVO:", producer.id);
-
-                // 🔥 Guardar en sala (FUENTE DE VERDAD)
-                if (!room.producers) room.producers = [];
-
-                if (!room.producers.find(p => p.id === producer.id)) {
-                room.producers.push(producer);
-                }
+                room.activeProducerId = socket.id;
 
                 console.log("🎥 Producer creado:", producer.id);
 
                 callback({ id: producer.id });
-
-                socket.to(peer.roomId).emit("new-producer", {
-                    producerId: producer.id,
-                });
 
                 // 🔥 Notificar a otros
                 socket.to(peer.roomId).emit("new-producer", {
                     producerId: producer.id,
                     peerId: socket.id,
                     kind: producer.kind,
+                    
                 });
+                console.log("📢 Emitiendo a:", peer.roomId);
 
-                if (room.activeProducer === socket.id) {
-                    room.activeProducer = null;
-                    room.producers = [];
-
-                    socket.to(peer.roomId).emit("producer-closed");
-                }
-
+                producer.on("close", () => {
+                    room.activeProducerId = null;
+                    socket.to(roomId).emit("producer-closed");
+                });
+                
             } catch (error) {
                 console.error("❌ Error en produce:", error);
                 callback?.({ error: error.message });
             }
         });
 
-        socket.on("getProducers", (callback) => {
-            const peer = getPeer(socket.id);
-
-            if (!peer) {
-                console.warn("❌ Peer no encontrado en getProducers");
-                return callback([]);
-            }
-
-            const room = getRoom(peer.roomId);
-
-            if (!room || !room.producers) {
-                console.warn("❌ No hay producers en la sala");
-                return callback([]);
-            }
-
-            // 🔥 Fuente única: room.producers
-            const producers = room.producers
-                .filter(p => p.appData?.peerId !== socket.id) // opcional
-                .map(p => p.id);
-
-            console.log("📡 getProducers:", producers);
-
-            callback(producers);
-        });
-
         // 🔹 Consumir (Recibir stream del SFU)
-        socket.on("consume", async ({ producerId, rtpCapabilities }, callback) => {
-            const peer = getPeer(socket.id);
+        socket.on("consume", async ({ producerId, rtpCapabilities, roomId }, callback) => {
+            const room = getRoom(roomId);
+            const peer = getOnePeerInRoom(socket.roomId, socket.id);
 
-            if (!peer) {
-                console.error("❌ Peer no encontrado");
-                return callback?.(null);
-            }
-
-            const room = getRoom(peer.roomId);
-
-            if (!room) {
-                console.error("❌ Sala no encontrada");
-                return callback?.(null);
-            }
+            if (!room ||!peer) return callback(null);
 
             const router = room.router;
 
-            // 🔥 Buscar producer en la sala
-            const producer = room.producers?.find(p => p.id === producerId);
+            const producer = Array.from(room.peers.values())
+                .flatMap(p => p.producers)
+                .find(p => p.id === producerId);
 
             if (!producer) {
                 console.error("❌ Productor no encontrado:", producerId);
@@ -462,60 +401,123 @@ export default (httpServer) => {
                 return callback?.(null);
             }
 
-            try {
-                const consumer = await transport.consume({
-                    producerId,
-                    rtpCapabilities,
-                    paused: false,
-                });
-
-                if (!peer.consumers) peer.consumers = [];
-                peer.consumers.push(consumer);
-
-                console.log("📺 Consumer creado:", consumer.id);
-
-                callback({
-                    id: consumer.id,
-                    producerId,
-                    kind: consumer.kind,
-                    rtpParameters: consumer.rtpParameters,
-                });
-
-            } catch (error) {
-                console.error("❌ Error en consume:", error);
-                callback?.(null);
-            }
+            const consumer = await transport.consume({
+                producerId,
+                rtpCapabilities,
+                paused: false,
             });
 
+            if (!peer.consumers) peer.consumers = [];
+            peer.consumers.push(consumer);
+
+            console.log("📺 Consumer creado:", consumer.id);
+
+            callback({
+                id: consumer.id,
+                producerId,
+                kind: consumer.kind,
+                rtpParameters: consumer.rtpParameters,
+            });
+
+            consumer.on("close", () => {
+                peer.consumers = peer.consumers.filter(c => c.id !== consumer.id);
+                socket.to(roomId).emit("consumer-closed");
+            });
+        });
+        
+        // 🔹 Obtener productores existentes (para usuarios que entran tarde)
+        socket.on("getProducers", (data, callback) => {
+            const { roomId } = data; //extraemos roomId del objeto data
+            const room = getRoom(roomId);
+            if (!room) return callback?.([]);
+
+            // 🔥 Fuente única: room.producers
+            if (room.activeProducerId) {
+                console.log("room.activeProducerId", room.activeProducerId);
+                const producers = Array.from(room.peers.values())
+                    .flatMap(p => p.producers)
+                    .find(p => p.id === room.activeProducerId) // solo el activo
+                    console.log("productores", producers);
+                    callback(producers);
+                } else { 
+                    console.log("no hay productores");
+                    callback(null);
+                }
+        });
+
         // 🔹 Reanudar consumo
-        socket.on("resume", async ({ consumerId }, callback) => {
-            const peer = getPeer(socket.id);
+        socket.on("resume-consumer", async ({ consumerId }, callback) => {
+            
+            console.log("▶️ Resume solicitado:", consumerId);
+            const peer = getOnePeerInRoom(socket.roomId, socket.id);
+            
+            console.log("👤 Peer:", !!peer);
             const consumer = peer?.consumers.find(c => c.id === consumerId);
+            
+            console.log("📺 Consumer encontrado:", !!consumer);
 
             if (consumer) {
                 await consumer.resume();
+
+                console.log("✅ Consumer resumido");
                 callback?.({ success: true });
             }
         });
 
-        // 🔹 Obtener productores existentes (para usuarios que entran tarde)
+        socket.on("set-quality", async ({ consumerId, quality }) => {
+            const peer = getOnePeerInRoom(socket.roomId, socket.id);
+
+            const consumer = peer.consumers.find(c => c.id === consumerId);
+
+            const map = { low: 0, mid: 1, high: 2 };
+
+            await consumer.setPreferredLayers({
+                spatialLayer: map[quality],
+                temporalLayer: 2,
+            });
+        });
+
+        socket.on("pause-consumer", async ({ consumerId }) => {
+            const peer = getOnePeerInRoom(socket.roomId, socket.id);
+            const consumer = peer.consumers.find(c => c.id === consumerId);
+
+            await consumer.pause();
+        });
+
+        //reconect
+        socket.on("connect", () => {
+            console.log("🟢 Reconectado");
+        
+            if (wasConnectedBefore) {
+                rejoinRoom();
+            }
+        });
 
         // 🔹 Desconexión
-        socket.on("disconnect", () => {
-            const peer = getPeer(socket.id);
+        socket.on("disconnect", ({ roomId, socketId }) => {
+            console.log("❌ Socket desconectado:", socket.id);
+
+            const room = getRoom(socket.roomId);
+            const peer = getOnePeerInRoom(socket.roomId, socket.id);
+
             if (!peer) return;
 
-            // 1. Eliminar sus productores de la sala
-            const room = getRoom(peer.roomId);
-            if (room) {
-                room.producers = room.producers.filter(p => !peer.producers.includes(p));
-            }
+            // 🔴 NO borres todo inmediatamente
+            // espera unos segundos por reconexión
 
-            // 2. Cerrar todos sus transports (cierra automáticamente producers y consumers asociados)
-            peer.transports.forEach(t => t.close());
+            setTimeout(() => {
+                const stillPeer = getOnePeerInRoom(socket.roomId, socket.id);    
 
-            removePeer(socket.id);
-            socket.to(peer.roomId).emit("peer-left", { peerId: socket.id });
+                if (!stillPeer) return;
+                console.log("⏳ Verificando reconexión de:", socket.id);
+
+                removePeerFromRoom(roomId, socketId); //lo elimina de la sala usando router.js
+                socket.to(peer.roomId).emit("peer-left", { peerId: socket.id });
+
+            }, 5000); // ventana de reconexion
+
+            
         });
-    });
+    // });
+    };
 }

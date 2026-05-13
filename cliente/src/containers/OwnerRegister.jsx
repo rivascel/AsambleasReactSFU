@@ -6,12 +6,9 @@ import AppContext from '../context/AppContext';
 
 const RegisterOwner = ({ onRegister }) => {
     const { apiUrl } = useContext(AppContext);
-
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
-
     const { login } = useContext(UserContext);
-  
     const handleSendLink = async () => {
       try {
         await axios.post(`${apiUrl}/api/request-magic-link`, 
@@ -20,6 +17,7 @@ const RegisterOwner = ({ onRegister }) => {
             },
             { withCredentials: true }
         );
+        console.log("Enlace mágico solicitado para:", email, role);
 
 
         setMessage("Enlace enviado. Revisa tu correo.");

@@ -38,6 +38,7 @@ const allowedOrigins = [
   'https://asambleasdeployed.onrender.com', 
   'https://asambleasreact.onrender.com', // Agrega todas las variantes que veas en tus logs
   'http://localhost:5173',
+  'http://localhost:5174',
   'http://localhost:3000'
 ];
 

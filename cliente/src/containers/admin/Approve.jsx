@@ -1,163 +1,117 @@
 import React, { useState, useEffect, useContext, useRef } from "react";
 import { io } from "socket.io-client";
-import { listenToRequests } from "../../supabase-client";
-import AppContext from '../../context/AppContext'
-
+import { listenToRequests, getPendingRequest, ApprovedUserQuery, approveUser, deleteCandidate } from "../../supabase-client";
+import AppContext from '../../context/AppContext';
+import { UserContext } from "../../components/UserContext";
 
 const AttendeesList = () => {
   const { apiUrl } = useContext(AppContext);
-
-
+  const { email } = useContext(UserContext);
   const socketRef = useRef(null);
   const roomId = 'main-room';
   const [loading, setLoading] = useState(true);
   const [pendingUsersIds, setPendingUsersIds] = useState([]);
   const [approvedUsersIds, setApprovedUsersIds] = useState([]);
-  // const [updatedUsers, setUpdatedUsers] = useState('default');
 
    // Elimina updatedUsers y usa los estados directamente
   const hasPending = pendingUsersIds.length > 0;
   const hasApproved = approvedUsersIds.length > 0;
 
-    socketRef.current = io(`${apiUrl}`, {
+  socketRef.current = io(`${apiUrl}`, {
     withCredentials: true,
     transports: ["websocket"]
   });
-
   
   useEffect( ()=>{
-  let isMounted = true;
-    let channelRequests, channelApprovals;
+    let isMounted = true;
+    let channelRequests, channelApprovals,channelReqAppr;
 
-  const fetchUsers = async () => {
+    const fetchUsers = async () => {
       try {
-        // console.log("🔄 Ejecutando fetchUsers...");
-        const [pendingRes, approvedRes] = await Promise.all([
-          fetch(`${apiUrl}/api/recover-users`, { 
-            method: 'POST',
-            headers: { 'Content-Type':'application/json' },
-            credentials: 'include',
-            body: JSON.stringify({ roomId: "main-room" }),
-          }),
-          fetch(`${apiUrl}/api/searched-users-approved`, { 
-            method: 'POST',
-            headers: { 'Content-Type':'application/json' },
-            credentials: 'include',
-            body: JSON.stringify({ roomId: "main-room" }),
-          })
-        ]);
+        console.log("🔄 Ejecutando fetchUsers...");
+          const pendingRes=await getPendingRequest(roomId);
+          const approvedRes=await ApprovedUserQuery(roomId);
 
-        if (!pendingRes.ok || !approvedRes.ok) {
-          throw new Error("Error al cargar los usuarios");
-        }
+        console.log("pendingUsers:", pendingRes);
+        console.log("approvedUsers:", approvedRes);
 
-        const pendingUsersJson = await pendingRes.json();
-        const approvedUsersJson = await approvedRes.json();
-        
-        // console.log("pendingUsersJson:", pendingUsersJson);
-        // console.log("approvedUsersJson:", approvedUsersJson);
-
-        const pendingUsers = pendingUsersJson?.pendingUsers || [];
-        const approvedUsers = approvedUsersJson?.approvedUsers || [];
-
-        const pendingIds = Array.isArray(pendingUsers) 
-          ? pendingUsers.map(user => user?.user_id || user?.id).filter(id => id) 
+        const pendingIds = Array.isArray(pendingRes) 
+          ? pendingRes.map(user => user?.user_id || user?.id).filter(id => id) 
           : [];
 
-        const approvedIds = Array.isArray(approvedUsers) 
-          ? approvedUsers.filter(id => id) 
+        const approvedIds = Array.isArray(approvedRes) 
+          ? approvedRes.filter(id => id) 
           : [];
         
-        // console.log(`📊 Resultado fetchUsers - Pendientes: ${pendingIds.length}, Aprobados: ${approvedIds.length}`);
+        console.log(`📊 Resultado fetchUsers - Pendientes: ${pendingIds.length}, Aprobados: ${approvedIds.length}`);
 
         if (isMounted) {
           setPendingUsersIds(pendingIds);
           setApprovedUsersIds(approvedIds);
           setLoading(false);
           
-          // console.log("✅ Estados actualizados:", {
-          //   pending: pendingIds,
-          //   approved: approvedIds
-          // });
+          console.log("✅ Estados actualizados:", {
+            pending: pendingIds,
+            approved: approvedIds
+          });
         }
       } catch (error) {
-        // console.error("Error cargando usuarios:", error);
-        if (isMounted) {
-          setLoading(false);
+          // console.error("Error cargando usuarios:", error);
+          if (isMounted) {
+            setLoading(false);
+          }
         }
+    };
+
+    // Función para manejar cambios, carga usuarios si hay un cambio en el listenToRequests
+    const handleChange = (type) => {
+      console.log(`📡 Cambio detectado en ${type}`);
+      if (isMounted) {
+        fetchUsers();
       }
     };
 
-
-  // Función para manejar cambios
-  const handleChange = (type) => {
-    // console.log(`📡 Cambio detectado en ${type}`);
-    if (isMounted) {
-      fetchUsers();
-    }
-  };
-
+    //este recupera los usuarios cuando carga pagina
     fetchUsers();
 
 
-// Configurar suscripciones (sin filtrar)
-  channelRequests = listenToRequests(
-    "main-room",
-    // null, // Escuchar todo
-    { componentId: 'AttendeesList' },
-    () => handleChange('solicitudes'),
-    // false
-  );
+    // Configurar suscripciones (sin filtrar)
+      channelReqAppr = listenToRequests(
+        "main-room",
+        { componentId: 'AttendeesList' },
+        () => handleChange('solicitudes/Aprobacion'),
+        // false
+      );
 
-  channelApprovals = listenToRequests(
-    "main-room",
-    // null, // Escuchar todo
-    { componentId: 'AttendeesList' },
-    () => handleChange('aprobaciones'),
-    // true
-  );
-
-  // console.log("✅ Suscripciones configuradas");
-
-  // Limpieza
+    // Limpieza
     return () => {
       console.log("🧹 Limpiando efectos...");
       isMounted = false;
-      if (channelRequests) {
+      if (channelReqAppr) {
         console.log("Desuscribiendo channelRequests");
-        channelRequests.removeChannel();
-      }
-      if (channelApprovals) {
-        console.log("Desuscribiendo channelApprovals");
-        channelApprovals.removeChannel();
+        channelReqAppr.removeChannel();
       }
     };
 },[]);
 
-
-
   // Keep only the logging useEffect for debugging
   useEffect(() => {
-    // console.log("📊 Estado actual:", {
-    //   pendingUsersIds,
-    //   approvedUsersIds,
-    //   hasPending,
-    //   hasApproved,
-    //   loading
-    // });
+    console.log("📊 Estado actual:", {
+      pendingUsersIds, 
+      approvedUsersIds,
+      hasPending,
+      hasApproved,
+      loading
+    });
   }, [pendingUsersIds, approvedUsersIds, hasPending, hasApproved, loading]);
 
 
-    const handleApprove = async (userId) => {
+  const handleApprove = async (userId) => {
     try {
-      const response = await fetch(`${apiUrl}/api/approved-users`,
-        { 
-            method: 'POST',
-            headers: { 'Content-type':'application/json' },
-            body: JSON.stringify({ roomId: "main-room" , userId: userId }),
-      });
+      console.log(`✅ Aprobando usuario ${userId} en el servidor...`);
+      approveUser(roomId, userId);
 
-      if (response.ok) {
+      // if (response.ok) {
         // console.log(`✅ Usuario ${userId} aprobado en el servidor`);
 
         socketRef.current.emit("approval-notification", { userId, roomId: "main-room" });
@@ -171,38 +125,31 @@ const AttendeesList = () => {
         // console.log(`✅ Estados locales actualizados: 
         //   Pendientes eliminado: ${userId}
         //   Aprobados agregado: ${userId}`);
-      } else {
-        console.error("❌ Error en la respuesta del servidor");
-      }
+      // } else {
+      //   console.error("❌ Error en la respuesta del servidor");
+      // }
     } catch (err) {
       console.error("❌ Error al aprobar usuario:", err);
     }
- 
-    }
+  }
 
   const handleCancel = async (userId) => {
     try {
-      // console.log(`❌ Intentando cancelar aprobación de: ${userId}`);
+
+      deleteCandidate(userId);
       
-      const response = await fetch(`${apiUrl}/api/cancel-users`, { 
-        method: 'POST',
-        headers: { 'Content-type':'application/json' },
-        body: JSON.stringify({ userId: userId }),
-      });
-      
-      if (response.ok) {
+      // if (response.ok) {
         console.log(`✅ Aprobación de ${userId} cancelada en el servidor`);
 
         socketRef.current.emit("cancel-notification", { userId, roomId: "main-room" });
-        // console.log(`📡 Emitida notificación de cancelación para ${userId}`);
         
         // Actualiza los estados localmente
         setApprovedUsersIds(prev => prev.filter(id => id !== userId));
         
         // console.log(`✅ Estado local actualizado: Aprobados eliminado: ${userId}`);
-      } else {
-        console.error("❌ Error en la respuesta del servidor");
-      }
+      // } else {
+      //   console.error("❌ Error en la respuesta del servidor");
+      // }
     } catch (err) {
       console.error("❌ Error al cancelar aprobación:", err);
     }
@@ -217,44 +164,43 @@ const AttendeesList = () => {
       return <p className="text-gray-600 mb-2">No hay usuarios pendientes ni aprobados.</p>;
     }
 
-
-  return (
-      <>
-        {hasPending && (
-          <div className="mb-6">
-            <h2 className="text-lg font-bold mb-2">Usuarios pendientes</h2>
-            {pendingUsersIds.map((userId, index) => (
-              <div key={`pending-${userId}-${index}`} className="mb-2 p-2 border rounded">
-                <p>{userId}</p>
-                <button
-                  onClick={() => handleApprove(userId)}
-                  className="bg-green-500 text-red px-3 py-1 rounded hover:bg-green-600 mt-1"
-                >
-                  Aprobar
-                </button>
-              </div>
-            ))}
-          </div>
-        )}
-        
-        {hasApproved && (
-          <div>
-            <h2 className="text-lg font-bold mb-2">Usuarios aprobados</h2>
-            {approvedUsersIds.map((userId, index) => (
-              <div key={`approved-${userId}-${index}`} className="mb-2 p-2 border rounded">
-                <p>{userId}</p>
-                <button
-                  onClick={() => handleCancel(userId)}
-                  className="bg-red-500 text-red px-3 py-1 rounded hover:bg-red-600 mt-1"
-                >
-                  Cancelar aprobación
-                </button>
-              </div>
-            ))}
-          </div>
-        )}
-      </>
-    );
+    return (
+        <>
+          {hasPending && (
+            <div className="mb-6">
+              <h2 className="text-lg font-bold mb-2">Usuarios pendientes</h2>
+              {pendingUsersIds.map((userId, index) => (
+                <div key={`pending-${userId}-${index}`} className="mb-2 p-2 border rounded">
+                  <p>{userId}</p>
+                  <button
+                    onClick={() => handleApprove(userId)}
+                    className="bg-green-500 text-red px-3 py-1 rounded hover:bg-green-600 mt-1"
+                  >
+                    Aprobar
+                  </button>
+                </div>
+              ))}
+            </div>
+          )}
+          
+          {hasApproved && (
+            <div>
+              <h2 className="text-lg font-bold mb-2">Usuarios aprobados</h2>
+              {approvedUsersIds.map((userId, index) => (
+                <div key={`approved-${userId}-${index}`} className="mb-2 p-2 border rounded">
+                  <p>{userId}</p>
+                  <button
+                    onClick={() => handleCancel(userId)}
+                    className="bg-red-500 text-red px-3 py-1 rounded hover:bg-red-600 mt-1"
+                  >
+                    Cancelar aprobación
+                  </button>
+                </div>
+              ))}
+            </div>
+          )}
+        </>
+      );
   };
 
   return (
